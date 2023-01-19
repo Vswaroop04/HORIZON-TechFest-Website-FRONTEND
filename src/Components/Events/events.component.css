@@ -1,0 +1,108 @@
+.events-header {
+  color: azure;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  font-family: bujji;
+}
+.event-page {
+  background-color: black;
+  padding-inline: 70px;
+}
+.events-timeline {
+  background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+  -webkit-transition: background 2s ease-out;
+  width: 100%;
+
+  display: flex;
+}
+.events_cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.timeline-heading {
+  color: white;
+  font-family: bujji;
+  padding-left: 160px;
+  margin-top: 35px;
+}
+.timeline-content {
+  color: white;
+  padding-left: 160px;
+}
+.timeline-button {
+  display: flex;
+  width: 400px;
+  height: 60px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 75px;
+  margin-right: 100px;
+  margin-left: 100px;
+
+  background: linear-gradient(90deg, #1e149d 46.26%, #b2016b 94.71%);
+  -webkit-transition: background 2s ease-out;
+  transition: background 2s ease-out;
+}
+.timeline-button:hover {
+  background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+  -webkit-transition: background 2s ease-out;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+  text-decoration: none;
+}
+.timeline-button:link {
+  text-decoration: none;
+}
+.timeline-button:active {
+  text-decoration: none;
+}
+.timeline-button:visited {
+  text-decoration: none;
+}
+
+.timeline-button-text {
+  color: azure;
+  font-family: bujji;
+}
+.event-div {
+  display: inline-block;
+  height: 200px;
+}
+
+@media (max-width: 500px) {
+  .events-header {
+    font-size: 16px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 16px;
+  }
+  .event-page {
+    padding: 5px;
+    padding-bottom: 50px;
+  }
+  .events-timeline {
+    flex-wrap: wrap;
+    display: none;
+  }
+  .timeline-heading {
+    padding-left: 10px;
+    margin-top: 10px;
+  }
+  .timeline-content {
+    padding-left: 10px;
+  }
+  .timeline-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .event-div {
+    width: 100%;
+  }
+}

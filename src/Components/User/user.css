@@ -1,0 +1,151 @@
+root {
+  background-color: black;
+}
+
+.user_body {
+  background-color: black;
+}
+
+.user_main {
+  margin-inline: 300px;
+  background-color: black;
+}
+
+.user_info {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-bottom: 40px;
+}
+
+.user_img {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
+}
+
+.name {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 39px;
+
+  background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.participation {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 20px;
+
+  color: #b5b0b0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logout {
+  height: 40px;
+  width: 200px;
+  background-color: black;
+
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 15px;
+
+  color: #ffffff;
+}
+
+.border {
+  padding: 2px;
+  background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
+}
+
+.welcome {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+
+  margin-bottom: 50px;
+  color: #b5b0b0;
+}
+
+.heading_suy {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 39px;
+
+  color: white;
+}
+
+.c2 {
+  background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card_heading {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  grid-area: header;
+  margin-bottom: 20px;
+}
+
+.status {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: rgba(231, 61, 61, 0.72);
+
+  grid-area: right;
+}
+
+.card_content {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: #b5b0b0;
+
+  grid-area: content;
+}
+
+.indiCard {
+  background-color: black;
+  height: 220px;
+  width: 625px;
+  padding-block: 40px;
+  padding-inline: 30px;
+
+  display: grid;
+  grid-template-areas:
+    "header header header header header header header header right"
+    "content content content content content content content content content";
+}
+
+.card_grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}

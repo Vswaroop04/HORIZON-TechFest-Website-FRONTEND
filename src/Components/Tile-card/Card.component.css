@@ -1,0 +1,95 @@
+/* .card-list{
+  marg
+} */
+
+.card-container {
+  max-width: 400px;
+  display: flex;
+  margin-right: 50px;
+  margin-block: 25px;
+  flex-direction: column;
+  background-color: blueviolet;
+  padding: 15px;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 124.68%),
+    linear-gradient(90deg, #5b0037 37.74%, #0b0371 93.02%);
+}
+
+.heading_vis {
+  margin-block: 15px;
+  color: white;
+  margin-inline: 36px;
+  font-family: bujji;
+  font-size: 25px;
+}
+.content_vis {
+  color: #b5b0b0;
+  font-family: "Poppins";
+  text-align: justify;
+  margin-inline: 36px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.view-button_vis {
+  display: flex;
+  width: 144px;
+  height: 40px;
+  margin-bottom: 15px;
+  margin-inline: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+  -webkit-transition: background 2s ease-out; /* Safari */
+  transition: background 2s ease-out;
+}
+.view-button:hover {
+  background: transparent;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+}
+
+.button-text_suy {
+  font-size: 15px;
+  margin-block: 13px;
+  margin-inline: 40px;
+  color: white;
+  font-family: bujji;
+}
+
+@media (max-width: 500px) {
+  .card-container {
+    min-width: 142.5px;
+    width: 37.5vw;
+    height: 185px;
+    margin: 12px;
+  }
+
+  .heading_vis {
+    font-size: 8px;
+    margin: 0px;
+  }
+
+  .content_vis {
+    font-size: 8px;
+    margin: 5px 0px;
+  }
+
+  .button-text_suy {
+    margin: 3px;
+    font-size: 6px;
+  }
+
+  .view-button_vis {
+    width: 55px;
+    height: 22px;
+    margin: 5px;
+    font-size: 6px;
+    border: none;
+    left: 2px;
+  }
+}
