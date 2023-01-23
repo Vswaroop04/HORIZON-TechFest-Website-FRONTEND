@@ -1,0 +1,23 @@
+.navbar__link {
+  padding: 0 35px;
+  color: white;
+}
+
+.nav_nav .active {
+  background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

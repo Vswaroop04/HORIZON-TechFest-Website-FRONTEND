@@ -7,7 +7,7 @@ root {
 }
 
 .user_main {
-  margin-inline: 300px;
+  margin-inline: 70px;
   background-color: black;
 }
 
@@ -21,6 +21,10 @@ root {
   width: 200px;
   height: 200px;
   margin-right: 20px;
+  position: relative;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
   background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
 }
 
@@ -148,4 +152,49 @@ root {
 .card_grid {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdown_active {
+  display: flex;
+  flex-wrap: wrap;
+
+  position: absolute;
+  z-index: 5;
+  background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
+  padding: 25px;
+  margin-top: 50px;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+
+  width: 725px;
+  height: 570px;
+}
+
+.avatar_img {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.avatar_img_dd {
+  width: 183px;
+  height: 183px;
+  margin: 20px;
+}
+
+.edit_icon {
+  position: absolute;
+  background: transparent;
+  border: 0px;
+  padding: 0px;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }

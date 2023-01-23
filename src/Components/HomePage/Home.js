@@ -8,7 +8,7 @@ function Home() {
     <Container>
       <Wrap>
         <Description>
-          <Title>PRAVINYA</Title>
+          <Title>HORIZON</Title>
           <Data>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
             repellendus ratione quaerat minima suscipit repudiandae dolores

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { useState } from "react";
-// import SignUp from "../LoginSignUp/SignUp";
-// import SignIn from "../LoginSignUp/SignIn";
+import SignUp from "../LoginSignUp/SignUp";
+import SignIn from "../LoginSignUp/SignIn";
 import CloseIcon from "@mui/icons-material/Close";
+import { NavLink } from "react-router-dom";
+import "./header.css";
 
 function Header() {
   const [LoginOrSignUp, setLoginOrSignUp] = useState("");
@@ -10,7 +12,6 @@ function Header() {
   const [closeState, setCloseState] = useState(true);
 
   function handleClickBurgerNav() {
-    console.log(closeState);
     if (!closeState) document.body.style.overflow = "auto";
     else {
       document.body.style.overflow = "hidden";
@@ -101,19 +102,29 @@ function Header() {
             </CloseWrapper>
 
             <li>
-              <a href="/">Home</a>
+              <NavLink to="/" onClick={handleClickBurgerNav}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <a href="/events">Events</a>
+              <NavLink to="/events" onClick={handleClickBurgerNav}>
+                Events
+              </NavLink>
             </li>
             <li>
-              <a href="/about">About</a>
+              <NavLink to="/about" onClick={handleClickBurgerNav}>
+                About
+              </NavLink>
             </li>
             <li>
-              <a href="/teams">Teams</a>
+              <NavLink to="/teams" onClick={handleClickBurgerNav}>
+                Teams
+              </NavLink>
             </li>
             <li>
-              <a href="/tribute">Tribute</a>
+              <NavLink to="/tribute" onClick={handleClickBurgerNav}>
+                Tribute
+              </NavLink>
             </li>
             <LoginLogo className="login_burger_nav" onClick={handleClickLogin}>
               LOGIN
@@ -121,25 +132,53 @@ function Header() {
           </BurgerNav>
         </BurgerWrap>
 
-        <NavMenu>
-          <a href="/" id="home-nav">
+        <NavMenu className="nav_nav">
+          <NavLink
+            to="/"
+            activeClassName="navbar__link--active"
+            className="navbar__link"
+          >
             HOME
-          </a>
-          <a href="/events">EVENTS</a>
-          <a href="/about">ABOUT</a>
-          <a href="/teams">TEAMS</a>
-          <a href="/tribute">TRIBUTE</a>
+          </NavLink>
+          <NavLink
+            to="/events"
+            activeClassName="navbar__link--active"
+            className="navbar__link"
+          >
+            Events
+          </NavLink>
+          <NavLink
+            to="/about"
+            activeClassName="navbar__link--active"
+            className="navbar__link"
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/teams"
+            activeClassName="navbar__link--active"
+            className="navbar__link"
+          >
+            Teams
+          </NavLink>
+          <NavLink
+            to="/tribute"
+            activeClassName="navbar__link--active"
+            className="navbar__link"
+          >
+            Tribute
+          </NavLink>
         </NavMenu>
         <LoginLogo onClick={handleClickLogin}>LOGIN</LoginLogo>
       </Nav>
-      {/* <SignUp
+      <SignUp
         LoginOrSignUp={LoginOrSignUp}
         setLoginOrSignUp={setLoginOrSignUp}
       />
       <SignIn
         LoginOrSignUp={LoginOrSignUp}
         setLoginOrSignUp={setLoginOrSignUp}
-      /> */}
+      />
     </>
   );
 }
@@ -187,10 +226,6 @@ const NavMenu = styled.div`
     text-fill-color: transparent;
   }
 
-  a {
-    padding: 0 35px;
-    color: white;
-  }
   a:hover {
     background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
     -webkit-background-clip: text;
@@ -253,14 +288,14 @@ const BurgerNav = styled.div`
   text-align: start;
   padding: 20px;
   background: linear-gradient(90deg, #b2016b 10.26%, #1e149d 94.71%);
-  ${"" /* to hide and show right menu bar on click */}
+   ${"" /* to hide and show right menu bar on click */}
   transform: ${(props) => (props.show ? "translateX(-120%)" : "translate(0)")};
-  transition: transform 0.2s;
+  transition: transform 0.2s; 
   li {
     padding: 10px 0;
     list-style: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    a {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    a{ 
       text-decoration: none;
       font-weight: 600;
       font-size: 17px;
@@ -270,12 +305,14 @@ const BurgerNav = styled.div`
       line-height: 10px;
       letter-spacing: 0em;
       text-align: left;
+
     }
   }
-
+  
   .login_burger_nav {
     margin-top: 40px;
   }
+  
 `;
 const CustomClose = styled(CloseIcon)`
   cursor: pointer;
@@ -293,5 +330,6 @@ const BurgerWrap = styled.div`
   right: 0;
   z-index: 2;
   display: none;
+
   background-color: rgba(7, 7, 7, 0.75);
 `;

@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
   const navigate = useNavigate();
@@ -11,71 +12,53 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
   const [MN, SetMN] = useState("");
   const [PD, SetPD] = useState("");
   const [CPD, SetCPD] = useState("");
-  const [proof, SetProof] = useState({ preview: "", data: "" });
   const [checkbox, SetCheckbox] = useState(false);
+  const [proof, SetProof] = useState("");
 
   async function postUserDetails(e) {
     e.preventDefault();
-    let formData = {
-      name: FN,
-      institute: IN,
-      number: MN,
-      email: ML,
-      password: PD,
-      image: proof.data
-    };
     const formimgData = new FormData();
-    formimgData.append("file", proof.data);
+    formimgData.append("proof", proof);
     formimgData.append("name", FN);
     formimgData.append("institute", IN);
     formimgData.append("number", MN);
     formimgData.append("email", ML);
     formimgData.append("password", PD);
 
-    console.log(formimgData.get("file"));
-    var data = JSON.stringify(formData);
-    console.log(data);
-    console.log(proof.data);
-
-    // formData.append("file", proof.data);
-    // console.log(proof);
     if (checkbox) {
       if (PD === CPD) {
-        const response = await fetch("http://localhost:3000/signupuser", {
-          method: "POST",
-          headers: {},
-          formimgData
-        });
-        const json = await response.json();
-        console.log(json);
-        if (json.success) {
-          // Save the auth token and redirect
-          localStorage.setItem("token", json.authtoken);
-          navigate("/");
-          alert("SuccessFully Created Account", "success");
+        if (proof !== "") {
+          const config = {
+            headers: { "content-type": "multipart/form-data" }
+          };
+          const response = await axios.post(
+            "http://localhost:3000/signupuser",
+            formimgData,
+            config
+          );
+          const json = await response.json();
+          console.log(json);
+          if (json.success) {
+            // Save the auth token and redirect
+            localStorage.setItem("token", json.authtoken);
+            navigate("/");
+            document.body.style.overflow = "auto";
+
+            alert("SuccessFully Created Account", "success");
+          } else {
+            alert("Error");
+          }
         } else {
-          alert("Error");
+          alert("Attach a valid Proof");
         }
-        //save token of user
-        console.log(json.authtoken);
-        localStorage.setItem("auth-token", json.authtoken);
-        navigate("/");
       } else {
         alert("Passwords Not Matched");
       }
     } else {
       alert("Please agree the terms & conditions");
     }
-
     e.preventDefault();
   }
-  const handleFileChange = (e) => {
-    const img = {
-      preview: URL.createObjectURL(e.target.files[0]),
-      data: e.target.files[0]
-    };
-    SetProof(img);
-  };
 
   return (
     <Container
@@ -107,11 +90,13 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             </label>
             <br />
             <input
-              onChange={(e) => SetFN(e.target.value)}
+              onChange={(e) => {
+                SetFN(e.target.value);
+              }}
               className="input_perin"
+              required={true}
               type="text"
-              name=""
-              id=""
+              name="name"
             />
           </div>
           <div className="div_perin email">
@@ -122,9 +107,9 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             <input
               onChange={(e) => SetML(e.target.value)}
               className="input_perin"
+              name="email"
+              required={true}
               type="email"
-              name=""
-              id=""
             />
           </div>
           <div className="div_perin password">
@@ -135,9 +120,9 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             <input
               onChange={(e) => SetPD(e.target.value)}
               className="input_perin"
+              name="password"
+              required={true}
               type="password"
-              name=""
-              id=""
             />
           </div>
           <div className="div_perin password">
@@ -148,9 +133,8 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             <input
               onChange={(e) => SetCPD(e.target.value)}
               className="input_perin"
+              required={true}
               type="password"
-              name=""
-              id=""
             />
           </div>
           <div className="div_perin password">
@@ -161,9 +145,9 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             <input
               onChange={(e) => SetMN(e.target.value)}
               className="input_perin"
+              required={true}
               type="number"
-              name=""
-              id=""
+              name="number"
             />
           </div>
           <div className="div_perin password">
@@ -174,9 +158,9 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             <input
               onChange={(e) => SetIN(e.target.value)}
               className="input_perin"
+              name="institute"
+              required={true}
               type="text"
-              name=""
-              id=""
             />
           </div>
           <div className="div_perin password">
@@ -185,11 +169,12 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             </label>
             <br />
             <input
-              onChange={handleFileChange}
+              //   onChange={handleFileChange}
+              onChange={(e) => SetProof(e.target.files[0])}
               className="input_perin"
+              name="proof"
+              required={true}
               type="file"
-              name=""
-              id=""
             />
           </div>
           <div className="div_perin password">
@@ -197,9 +182,9 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
             <input
               onClick={(e) => SetCheckbox(true)}
               className="checkbox_perin"
+              required={true}
               type="checkbox"
-              name=""
-              id=""
+              name="checkbox"
             />
             <label className="" htmlFor="">
               I hereby declare that all the information provided by me are

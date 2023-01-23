@@ -8,7 +8,7 @@ const About = () => {
     <div className="about_body">
       <br />
       <div className="about_main">
-        <h1 className="about_heading1_suy">
+        <h1 className="about_heading0_suy">
           About&ensp;<span className="c2">Horizon</span>
         </h1>
         <p className="h_text">
@@ -42,7 +42,7 @@ const About = () => {
         </h1>
         <AutoCarousal />
         <h1 className="about_heading3_suy">Frequently Asked Questions</h1>
-        <br />
+        <h1 className="about_heading4_suy">FAQ's</h1>
         <div>
           <Accordion allowToggle className="lol">
             <Question ques="How are You?" ans="Fine" />

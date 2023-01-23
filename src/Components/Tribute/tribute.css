@@ -1,0 +1,102 @@
+.tribute_main {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-block: 50px;
+
+  background: transparent;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+}
+
+.tribute_body {
+  margin: 20px;
+  padding: 65px;
+
+  background: linear-gradient(
+    114.88deg,
+    rgba(255, 153, 51, 0.9) 1.27%,
+    rgba(255, 255, 255, 0.738) 51.46%,
+    rgba(19, 136, 8, 0.9) 100%
+  );
+}
+
+.per_suy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tribute_content {
+  margin-right: 80px;
+  width: 65%;
+  height: auto;
+}
+
+.l1_suy {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+
+  color: black;
+}
+.l2_suy {
+  line-height: 50px;
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+
+  color: white;
+}
+
+.l3_suy {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+
+  color: white;
+}
+
+.a_suy {
+  font-family: Bujji;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 16px;
+
+  margin-bottom: 20px;
+}
+
+.a1_suy {
+  padding: 15px;
+  color: white;
+
+  width: 277px;
+  height: 62px;
+  border: 3px solid #534e93;
+
+  margin-right: 20px;
+}
+
+.a2_suy {
+  padding: 15px;
+  color: white;
+
+  width: 277px;
+  height: 62px;
+  border: 3px solid #534e93;
+}
+
+.tribute_soldier {
+  width: 35%;
+}
+
+.tribute_end_line {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}

@@ -1,7 +1,9 @@
 import "./user.css";
-import Avatar1 from "./avatars/Asset 1.svg";
 import TeamCard from "./cards/team";
 import IndividualCard from "./cards/individual";
+import AvatarDropdown from "./avatarDropdown";
+import Avatar1 from "./avatars/Asset 1.svg";
+import axios from "axios";
 // import Avatar2 from "./avatars/Avatar 2.svg";
 // import Avatar3 from "./avatars/Avatar 3.svg";
 // import Avatar4 from "./avatars/Avatar 4.svg";
@@ -14,8 +16,9 @@ const UserDashboard = () => {
       <div className="user_main">
         <div className="welcome">Welcome!</div>
         <div className="user_info">
-          <div className="user_img">
-            <img src={Avatar1} alt="error" />
+          <div>
+            {/* <img src={Avatar1} alt="error" /> */}
+            <AvatarDropdown />
           </div>
           <div className="details">
             <span className="name">Vivek Borole</span>
@@ -29,8 +32,6 @@ const UserDashboard = () => {
             </div>
           </div>
         </div>
-        <br />
-        <br />
         <div className="heading_suy">
           <span className="c2">Individual</span>&ensp; Participations
         </div>

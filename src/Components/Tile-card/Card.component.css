@@ -66,9 +66,9 @@
     min-width: 142.5px;
     width: 37.5vw;
     height: 185px;
-    margin: 12px;
+    margin: 15px;
+    padding: 10px;
   }
-
   .heading_vis {
     font-size: 8px;
     margin: 0px;
@@ -91,5 +91,14 @@
     font-size: 6px;
     border: none;
     left: 2px;
+  }
+}
+
+@media (max-width: 370px) {
+  :root {
+    --tracker: 97vw;
+  }
+  .card-container {
+    margin: calc(100vw - var(--tracker));
   }
 }

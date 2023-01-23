@@ -2,104 +2,105 @@ import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function SignIn({ LoginOrSignUp, setLoginOrSignUp }) {
+function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
   const navigate = useNavigate();
 
-  const [ML, SetML] = useState("");
-  const [PD, SetPD] = useState("");
-
-  async function postUserDetails(e) {
+  async function handleRegister(e) {
     e.preventDefault();
-
-    const response = await fetch("http://localhost:3000/loginuser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: ML,
-        password: PD
-      })
-    });
-    const json = await response.json();
-    console.log(json);
-    if (json.success) {
-      // Save the auth token and redirect
-      localStorage.setItem("auth-token", json.authtoken);
-      localStorage.setItem("user", JSON.stringify(json.user));
-      alert("SuccessFully login", "success");
-      navigate("/");
-      document.body.style.overflow = "auto";
+    var chkbx = document.querySelectorAll(".cb");
+    for (let i = 0; i < 2; i++) {
+      if (!chkbx[i].checked) {
+        alert("Please tick the check box");
+        return;
+      }
+    }
+    console.log(localStorage["auth-token"]);
+    if (localStorage["auth-token"]) {
+      const config = {
+        headers: {
+          "auth-token": localStorage["auth-token"]
+        }
+      };
+      const response = await axios
+        .post(`http://localhost:3000/eventregister/${eventid}`, {}, config)
+        .then((res) => res.data)
+        .catch((err) => err);
+      alert(response.message);
+      if (response.status) {
+        document.body.style.overflow = "auto";
+        navigate("/");
+      }
     } else {
-      alert("Invalid credentials");
+      alert("Please Login to Continue");
     }
   }
 
   return (
     <Container
       style={
-        LoginOrSignUp === "Login" ? { display: "block" } : { display: "none" }
+        registersingle === "Register"
+          ? { display: "block" }
+          : { display: "none" }
       }
     >
       <Wrap>
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
-            return setLoginOrSignUp("");
+            setRegistersingle("");
           }}
         ></Close>
-
-        <form action="" method="" onSubmit={postUserDetails}>
+        <form action="" method="" onSubmit={handleRegister}>
           <div className="div_perin heading_perin">
-            <h2 className="h2_perin">LOGIN</h2>
-            <p className="p_perin">
-              New User?{" "}
-              <a className="a_perin" onClick={() => setLoginOrSignUp("SignUp")}>
-                SignUp
-              </a>
-            </p>
+            <h2 className="h2_perin">Register</h2>
+            <p className="p_perin">Individual Participation</p>
           </div>
-          <div className=" div_perin email">
-            <label className="label_perin" htmlFor="">
-              Email
-            </label>
-            <br />
+          <div className="div_perin name_home">
+            <p className="">Register for this event ?</p>
+
             <input
-              value={ML}
-              onChange={(e) => SetML(e.target.value)}
-              className="input_perin"
-              type="email"
-              required={true}
+              type="checkbox"
+              className="checkbox_perin cb"
               name=""
-              id=""
+              required={true}
+              value=""
             />
+            <br />
+
+            <label className="" for="">
+              {" "}
+              Yes
+            </label>
           </div>
           <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Password
-            </label>
-            <br />
             <input
-              value={PD}
-              onChange={(e) => SetPD(e.target.value)}
-              className="input_perin"
-              type="password"
+              type="checkbox"
+              className="checkbox_perin cb"
+              id=""
               required={true}
               name=""
-              id=""
+              value=""
             />
+            <br />
+            <label for="">
+              {" "}
+              I hereby declare that all the information provided by me are
+              correct. I also agree to follow all the guidelines of the fest and
+              agree to the fact that in case of any discrepancy, the decision of
+              the organizers will be final and binding.
+            </label>
           </div>
           <div className="div_perin">
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
           </div>
         </form>
       </Wrap>
     </Container>
   );
 }
-
-export default SignIn;
+export default RegisterSingle;
 
 const Container = styled.div`
   position: fixed;
@@ -110,16 +111,13 @@ const Container = styled.div`
   z-index: 2;
   font-family: "bujji", sans-serif;
 `;
-
 const Wrap = styled.div`
-  ${"" /* position: absolute; */}
   &::-webkit-scrollbar {
     display: none;
   }
   overflow: auto;
-
-  position: relative;
   margin: auto;
+  position: relative;
   color: white;
   width: 40%;
   height: 100%;
@@ -130,14 +128,17 @@ const Wrap = styled.div`
     #b2016b 89.51%
   );
   display: flex;
+
   justify-content: center;
 
   .div_perin {
+    overflow: auto;
+
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
     .label_perin {
       font-family: Poppins;
       font-size: 20px;
@@ -150,9 +151,15 @@ const Wrap = styled.div`
       border: 4px solid;
       border-image-slice: 1;
       border-image-source: linear-gradient(90deg, #b2016b, #1e149d);
+      padding-left: 4px;
     }
     .input_perin:focus-visible {
       outline: none;
+    }
+
+    .checkbox_perin {
+      width: 25px;
+      height: 25px;
     }
   }
   button {
@@ -168,6 +175,7 @@ const Wrap = styled.div`
     cursor: pointer;
     background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
     border: 0px;
+    margin-top: 20px;
 
     &:hover {
       background: transparent;

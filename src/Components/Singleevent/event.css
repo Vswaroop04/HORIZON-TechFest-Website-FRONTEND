@@ -1,6 +1,6 @@
 @font-face {
   font-family: Bujji;
-  src: url(../Matroska.ttf);
+  src: url("../../../public/Matroska.ttf");
 }
 
 .single-viewbutton {
@@ -166,7 +166,7 @@ body {
   background-clip: text;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 667px) {
   .single-event {
     margin: 20px;
   }

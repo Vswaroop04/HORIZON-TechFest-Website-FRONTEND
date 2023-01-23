@@ -75,7 +75,7 @@
   height: 200px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 667px) {
   .events-header {
     font-size: 16px;
     padding-top: 10px;
@@ -85,6 +85,10 @@
   .event-page {
     padding: 5px;
     padding-bottom: 50px;
+  }
+  .events_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .events-timeline {
     flex-wrap: wrap;

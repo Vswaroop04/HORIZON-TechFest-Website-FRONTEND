@@ -1,0 +1,196 @@
+.carousel {
+  margin-left: 15vw;
+  overflow-x: hidden;
+  width: 70%;
+  max-height: 500vh;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  justify-content: center;
+  display: inline-block;
+  width: 9vw;
+  margin-left: 30vw;
+}
+
+.carousel-item-active {
+  margin-top: 5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 7.5vw;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #1b0d1b 100%),
+    linear-gradient(
+      114.88deg,
+      rgba(178, 1, 107, 0.5) 9.29%,
+      rgba(30, 20, 157, 0.5) 49.91%,
+      rgba(178, 1, 107, 0.5) 89.51%
+    );
+  clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
+}
+.carousel-item {
+  margin-top: 5vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 7.5vw;
+  color: #fff;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(46, 21, 36, 0.5) 100%
+    ),
+    linear-gradient(
+      114.88deg,
+      rgba(41, 15, 30, 0.5) 9.29%,
+      rgba(30, 20, 157, 0.5) 49.91%,
+      rgba(163, 19, 105, 0.5) 89.51%
+    );
+  clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
+}
+
+.date {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9vw;
+  /* identical to box height, or 136% */
+
+  text-align: center;
+  display: inline;
+  color: #b5b0b0;
+}
+.day {
+  font-family: "bujji";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.4vw;
+  /* identical to box height */
+
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.card-listall {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-top: 30px;
+}
+.cardevent {
+  border: 2px solid;
+  border-color: #b2016b;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heading {
+  color: white;
+  font-family: "bujji";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 150%;
+  display: inline;
+  float: left;
+  /* or 30px */
+
+  display: flex;
+  align-items: center;
+
+  /* textgradient */
+
+  background: linear-gradient(99.32deg, #b2016b 0%, #1e149d 119.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.content {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  /* or 136% */
+
+  display: flex;
+  align-items: center;
+
+  color: #b5b0b0;
+}
+.time {
+  justify-content: right;
+  left: 74.36%;
+  right: 4.91%;
+  bottom: 60.15%;
+  font-family: "bujji";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height */
+
+  display: inline;
+  float: right;
+  align-items: center;
+  text-align: right;
+
+  color: #b5b0b0;
+}
+
+.view-button {
+  display: flex;
+  width: 253px;
+  height: 50px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+  -webkit-transition: background 2s ease-out; /* Safari */
+  transition: background 2s ease-out;
+}
+.view-button:hover {
+  background: transparent;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+}
+
+.button-text {
+  color: white;
+  font-family: "bujji";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 15px;
+  margin-bottom: 0px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.linedate {
+  position: absolute;
+  margin-top: 220px;
+}
