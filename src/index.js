@@ -10,6 +10,8 @@ import SingleEvent from "./Components/Singleevent/event";
 import Events from "./Components/Events/events.component";
 import Tribute from "./Components/Tribute/tribute";
 import Timeline from "./Components/Timeline/Timeline";
+import PrivateRoutes from "./Components/PrivateRoute";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -20,13 +22,16 @@ root.render(
       <Header />
       <Routes>
         <Route element={<Timeline />} path="/timeline" exact />
-        <Route component={Home} element={<Home />} path="/" exact />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/event/:id" element={<SingleEvent />} />
+        </Route>
         <Route element={<Teams />} path="/teams" exact />
+        <Route component={Home} element={<Home />} path="/" exact />
         <Route element={<About />} path="/about" exact />
-        <Route path="/event/:id" element={<SingleEvent />} />
         <Route element={<UserDashboard />} path="/user" exact />
         <Route component={Events} element={<Events />} path="/events" exact />
         <Route element={<Tribute />} path="/tribute" exact />
+        <Route element={<UserDashboard />} path="/profile" exact />
       </Routes>
       <Footer />
     </Router>
