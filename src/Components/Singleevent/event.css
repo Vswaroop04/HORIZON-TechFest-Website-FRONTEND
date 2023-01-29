@@ -1,6 +1,6 @@
 @font-face {
   font-family: Bujji;
-  src: url(../Matroska.ttf);
+  src: url("../../../public/Matroska.ttf");
 }
 
 .single-viewbutton {
