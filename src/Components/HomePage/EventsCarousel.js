@@ -1,7 +1,6 @@
 import { Component } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -22,7 +21,7 @@ export default class EventsCarousel extends Component {
             slidesToScroll: 1,
             initialSlide: 2
           }
-        },
+        }
       ]
     };
     return (
@@ -59,7 +58,7 @@ export default class EventsCarousel extends Component {
 const Container = styled.div`
   margin-left: 150px;
   margin-right: 150px;
-  height: 700px;
+  height: auto;
   h2 {
     color: white;
     font-weight: 900;
@@ -68,6 +67,14 @@ const Container = styled.div`
     text-align: center;
     margin-bottom: 100px;
 
+    @media (max-width: 820px) {
+      font-size: 23px;
+      font-weight: 900;
+      line-height: 23px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin-bottom: 60px;
+    }
     @media (max-width: 667px) {
       margin-top: 21px;
       font-size: 20px;
@@ -75,9 +82,14 @@ const Container = styled.div`
       letter-spacing: 0em;
       text-align: center;
       margin-bottom: 17px;
-    }  
+    }
   }
 
+  @media (max-width: 820px) {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: auto;
+  }
   @media (max-width: 667px) {
     margin-left: 16px;
     margin-right: 16px;
@@ -88,7 +100,7 @@ const Container = styled.div`
     margin-left: 51px;
     margin-right: 51px;
   }
-`
+`;
 const Wrap = styled.a`
   position: relative;
   img {
@@ -97,15 +109,17 @@ const Wrap = styled.a`
     padding: 2.5px;
     border: 4px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(225deg, #B2016B, #1E149D);
+    border-image-source: linear-gradient(
+      90deg,
+      rgba(209, 45, 45, 0.92) 0%,
+      #1e149d 65.43%
+    );
 
-    @media (max-width: 667px) {
+    @media (max-width: 820px) {
       padding: 0px;
     }
   }
-
-  
-`
+`;
 const PosterTitle = styled.div`
   height: 80px;
   font-weight: 900;
@@ -122,7 +136,20 @@ const PosterTitle = styled.div`
   line-height: 25px;
   box-shadow: rgba(0, 0, 0, 100) 0px -65px 25px -15px inset;
   color: white;
-  
+
+  @media (max-width: 820px) {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0em;
+    text-align: center;
+    padding: 0;
+    left: 17px;
+    right: 17px;
+    bottom: 4px;
+    height: 50px;
+    line-height: 70px;
+    box-shadow: rgba(0, 0, 0, 100) 0px -70px 15px -42px inset;
+  }
   @media (max-width: 667px) {
     font-size: 6px;
     font-weight: 900;
@@ -136,7 +163,7 @@ const PosterTitle = styled.div`
     line-height: 40px;
     box-shadow: rgba(0, 0, 0, 100) 0px -70px 12px -52px inset;
   }
-`
+`;
 const Button = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -153,16 +180,30 @@ const Button = styled.div`
   background: transparent;
   border: 2px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(225deg, #B2016B, #1E149D);
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(209, 45, 45, 0.92) 0%,
+    #1e149d 65.43%
+  );
 
   &:hover {
-    background: linear-gradient(99.32deg, #B2016B 0%, #5346F8 119.64%);
+    background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
   }
 
+  @media (max-width: 820px) {
+    width: 110px;
+    height: 40px;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 9px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 48px;
+  }
   @media (max-width: 667px) {
     width: 89px;
     height: 23px;
@@ -173,4 +214,4 @@ const Button = styled.div`
     text-align: center;
     margin-top: 21px;
   }
-`
+`;

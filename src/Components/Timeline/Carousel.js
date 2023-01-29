@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
-import prev from "./prev.jpg";
-import next from "./next.jpg";
+import prev from "./prev.png";
+import next from "./next.png";
 import linedate from "./linedate.png";
-
 import "./Carousel.css";
 
 export const CarouselItem = ({ children, width }, props) => {
@@ -46,7 +45,7 @@ const Carousel = ({ children }) => {
 
   let Day1 = [
     {
-      Topic: "Hackoverflovg, De5igne4, Call of Duty, Cadence Valour",
+      Topic: "Hackoverflovg, De5igne4",
       Content:
         "Themes of Hackeroverflow and De5igne4 releases. Call of Duty, Cadence Valour team registration commences.",
       Time: "0:00 AM"
@@ -65,7 +64,7 @@ const Carousel = ({ children }) => {
   ];
   let Day2 = [
     {
-      Topic: "CS: Cannon Crev•z, Capture Point 5353, Code Cornbat",
+      Topic: "CS: Cannon Crev•z",
       Content:
         "   Team registrations for CS: Cannon Crew and Capture Point 5353 begin Code Combat registration ends.",
       Time: "0:00 AM"
@@ -123,7 +122,7 @@ const Carousel = ({ children }) => {
     return names.map((name) => <li>{name}</li>);
   };
   return (
-    <>
+    <div className="hello">
       <div className="temp">
         <div {...handlers} className="carousel">
           <div
@@ -134,6 +133,8 @@ const Carousel = ({ children }) => {
               return React.cloneElement(child, { width: "100%" });
             })}
           </div>
+        </div>
+        <div {...handlers} className="carousel carousel1">
           <div className="indicators">
             <img
               className="linedate"
@@ -141,38 +142,23 @@ const Carousel = ({ children }) => {
               onClick={() => {
                 updateIndex(activeIndex + 1);
               }}
-              style={{
-                // position: "absolute",
-                marginTop: "-1.5vw",
-                width: "100%"
-                // left: "-30%"
-              }}
               alt="previous"
             />
-            <div
-              style={{
-                marginTop: "3vw",
-                marginLeft: "31vw"
-              }}
-            >
+            <div className="arrows">
               <img
+                className="img1"
                 src={prev}
                 onClick={() => {
                   updateIndex(activeIndex - 1);
-                }}
-                style={{
-                  width: "4vw"
                 }}
                 alt="previous"
               />
 
               <img
+                className="img2"
                 src={next}
                 onClick={() => {
                   updateIndex(activeIndex + 1);
-                }}
-                style={{
-                  width: "4vw"
                 }}
                 alt="next"
               />
@@ -180,13 +166,93 @@ const Carousel = ({ children }) => {
           </div>
         </div>
       </div>
-      <div
-        classname="outer-cards"
-        style={{
-          position: "absolute",
-          marginLeft: "15vw"
-        }}
-      >
+      <div className="temp1">
+        <div {...handlers} className="carousel">
+          <div
+            className="inner"
+            style={{ transform: `translateX(-${activeIndex * 40}vw)` }}
+          >
+            {React.Children.map(children, (child, index) => {
+              return React.cloneElement(child, { width: "100%" });
+            })}
+          </div>
+        </div>
+        <div {...handlers} className="carousel carousel1">
+          <div className="indicators">
+            <img
+              className="linedate"
+              src={linedate}
+              onClick={() => {
+                updateIndex(activeIndex + 1);
+              }}
+              alt="previous"
+            />
+            <div className="arrows">
+              <img
+                className="img1"
+                src={prev}
+                onClick={() => {
+                  updateIndex(activeIndex - 1);
+                }}
+                alt="previous"
+              />
+
+              <img
+                className="img2"
+                src={next}
+                onClick={() => {
+                  updateIndex(activeIndex + 1);
+                }}
+                alt="next"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="temp2">
+        <div {...handlers} className="carousel">
+          <div
+            className="inner"
+            style={{ transform: `translateX(-${activeIndex * 20}vw)` }}
+          >
+            {React.Children.map(children, (child, index) => {
+              return React.cloneElement(child, { width: "100%" });
+            })}
+          </div>
+        </div>
+        <div {...handlers} className="carousel carousel1">
+          <div className="indicators">
+            <img
+              className="linedate"
+              src={linedate}
+              onClick={() => {
+                updateIndex(activeIndex + 1);
+              }}
+              alt="previous"
+            />
+            <div className="arrows">
+              <img
+                className="img1"
+                src={prev}
+                onClick={() => {
+                  updateIndex(activeIndex - 1);
+                }}
+                alt="previous"
+              />
+
+              <img
+                className="img2"
+                src={next}
+                onClick={() => {
+                  updateIndex(activeIndex + 1);
+                }}
+                alt="next"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div classname="outer-cards">
         {days.map((Day1, idx) => {
           return (
             <div className="card-listall">
@@ -194,7 +260,7 @@ const Carousel = ({ children }) => {
                 <p className="time">{Day1.Time}</p>
 
                 <h2 className="heading">{Day1.Topic}</h2>
-                <br />
+                <p className="time1">{Day1.Time}</p>
                 <p className="content">{Day1.Content}</p>
 
                 <button className="view-button">
@@ -211,7 +277,7 @@ const Carousel = ({ children }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

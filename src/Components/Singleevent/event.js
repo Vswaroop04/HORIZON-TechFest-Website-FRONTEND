@@ -33,7 +33,7 @@ const SingleEvent = () => {
     {
       eventid: "63bf91a5b96674e099da1c6c",
       eventtype: "individual",
-      Topic: "Hackoverflow",
+      Topic: "Hackoverflow2",
       Content:
         " sollkitudin nibh sit amet cornmxio nulla fæilisi nunun vehicula ipsu o arcu cursus congue mouris rhorcus cEnean vel  mowis pellentesque pulvinar pellentesque",
       Time: "0:00 AM",
@@ -55,15 +55,15 @@ const SingleEvent = () => {
     setevent(x);
   }, [id]);
 
-  const [register, setRegister] = useState("");
-  const [registersingle, setRegistersingle] = useState("");
+  const [register, setRegister] = useState(false);
+  const [registersingle, setRegistersingle] = useState(false);
 
   function handleClickRegister() {
     document.body.style.overflow = "hidden";
-    if (events[0].eventtype === "team") {
-      setRegister("Register");
+    if (events[0].eventtype !== "team") {
+      setRegister(true);
     } else {
-      setRegistersingle("Register");
+      setRegistersingle(true);
     }
   }
 
@@ -103,6 +103,31 @@ const SingleEvent = () => {
                   </div>
                 </div>
               </div>
+
+              <h1 className="event-title">DETAILS</h1>
+
+              <div className="details-box">
+                {/* <p className="content-box"> */}
+                <div className="inside-box">
+                  <p>
+                    <span>Round 1 Date:</span> February 8, 2023
+                  </p>
+                  <p>
+                    {" "}
+                    <span>Round 2 Date:</span> February 8, 2023
+                  </p>
+                </div>
+                <div className="inside-box">
+                  <p>
+                    <span>Mode of conduct:</span> Offline
+                  </p>
+                  <p>
+                    <span>Venue:</span> IIITV-ICD premises, Education Hub, Diu
+                  </p>
+                </div>
+                {/* </p> */}
+              </div>
+
               <h1 className="event-title">RULES & REGULATIONS </h1>
               <div className="s2div">
                 <p className="content-box">{Event.Rules}</p>

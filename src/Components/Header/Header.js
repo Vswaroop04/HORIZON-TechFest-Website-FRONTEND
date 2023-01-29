@@ -1,13 +1,30 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SignUp from "../LoginSignUp/SignUp";
 import SignIn from "../LoginSignUp/SignIn";
 import CloseIcon from "@mui/icons-material/Close";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import "./header.css";
+import { Login } from "@mui/icons-material";
 
 function Header() {
-  const [LoginOrSignUp, setLoginOrSignUp] = useState("");
+  var navigate = useNavigate();
+  var [user, setUser] = useState(false);
+  var [log, setLog] = useState("Login");
+  var authtoken = localStorage["auth-token"];
+
+  useEffect(() => {
+    if (localStorage["auth-token"] !== undefined) {
+      setUser(true);
+      setLog("Profile");
+    } else {
+      setUser(false);
+      setLog("Login");
+    }
+  }, [authtoken]);
+
+  const [login, setLogin] = useState(false);
+  const [signUp, setSignUp] = useState(false);
 
   const [closeState, setCloseState] = useState(true);
 
@@ -20,8 +37,12 @@ function Header() {
   }
 
   function handleClickLogin() {
-    document.body.style.overflow = "hidden";
-    setLoginOrSignUp("Login");
+    if (user) {
+      navigate("/profile");
+    } else {
+      document.body.style.overflow = "hidden";
+      setLogin(true);
+    }
   }
 
   return (
@@ -45,7 +66,7 @@ function Header() {
                 y2="16.5899"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#B2016B" />
+                <stop stop-color="#d12d2d" />
                 <stop offset="1" stop-color="#1E149D" />
               </linearGradient>
             </defs>
@@ -67,7 +88,7 @@ function Header() {
                 y2="16.5899"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#B2016B" />
+                <stop stop-color="#d12d2d" />
                 <stop offset="1" stop-color="#1E149D" />
               </linearGradient>
             </defs>
@@ -89,7 +110,7 @@ function Header() {
                 y2="16.5899"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#B2016B" />
+                <stop stop-color="#d12d2d" />
                 <stop offset="1" stop-color="#1E149D" />
               </linearGradient>
             </defs>
@@ -126,9 +147,9 @@ function Header() {
                 Tribute
               </NavLink>
             </li>
-            <LoginLogo className="login_burger_nav" onClick={handleClickLogin}>
-              LOGIN
-            </LoginLogo>
+            {/* <LoginLogo className="login_burger_nav" onClick={handleClickLogin}>
+              {log}
+            </LoginLogo> */}
           </BurgerNav>
         </BurgerWrap>
 
@@ -138,7 +159,7 @@ function Header() {
             activeClassName="navbar__link--active"
             className="navbar__link"
           >
-            HOME
+            Home
           </NavLink>
           <NavLink
             to="/events"
@@ -169,15 +190,19 @@ function Header() {
             Tribute
           </NavLink>
         </NavMenu>
-        <LoginLogo onClick={handleClickLogin}>LOGIN</LoginLogo>
+        <LoginLogo onClick={handleClickLogin}>{log}</LoginLogo>
       </Nav>
       <SignUp
-        LoginOrSignUp={LoginOrSignUp}
-        setLoginOrSignUp={setLoginOrSignUp}
+        login={login}
+        setLogin={setLogin}
+        signUp={signUp}
+        setSignUp={setSignUp}
       />
       <SignIn
-        LoginOrSignUp={LoginOrSignUp}
-        setLoginOrSignUp={setLoginOrSignUp}
+        signUp={signUp}
+        setSignUp={setSignUp}
+        login={login}
+        setLogin={setLogin}
       />
     </>
   );
@@ -200,7 +225,12 @@ const Nav = styled.div`
     display: none;
   }
 
-  @media (max-width: 667px) {
+  @media (max-width: 1150px) {
+    font-size: 10px;
+    padding: 30px;
+  }
+
+  @media (max-width: 600px) {
     display: flex;
     justify-content: space-between;
     padding: 0px;
@@ -213,21 +243,21 @@ const NavMenu = styled.div`
   flex: 1;
   cursor: pointer;
 
-  @media (max-width: 667px) {
+  @media (max-width: 600px) {
     display: none;
-    background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+    background: linear-gradient(90deg, #d12d2d 37.74%, #0b0371 93.02%);
   }
 
-  #home-nav {
-    background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
+  /* #home-nav {
+    background: linear-gradient(99.32deg, #d12d2d 0%, #5346f8 119.64%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-  }
+  } */
 
   a:hover {
-    background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
+    background: #d12d2d;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -238,7 +268,7 @@ const NavMenu = styled.div`
 const Menu = styled.div`
   display: none;
   cursor: pointer;
-  @media (max-width: 667px) {
+  @media (max-width: 600px) {
     display: block;
     display: flex;
     flex-direction: column;
@@ -259,17 +289,27 @@ const LoginLogo = styled.a`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+  background: linear-gradient(
+    90deg,
+    rgba(209, 45, 45, 0.92) 0%,
+    #1e149d 65.43%
+  );
   opacity: 0.93;
 
   &:hover {
     background: transparent;
     border: 2px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+    border-image-source: linear-gradient(225deg, #d12d2d, #1e149d);
   }
 
-  @media (max-width: 667px) {
+  @media (max-width: 1150px) {
+    width: 100px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  @media (max-width: 600px) {
     width: 80px;
     height: 23px;
     font-size: 9px;
@@ -287,7 +327,7 @@ const BurgerNav = styled.div`
   z-index: 100; // to show above all when it opens
   text-align: start;
   padding: 20px;
-  background: linear-gradient(90deg, #b2016b 10.26%, #1e149d 94.71%);
+  background: linear-gradient(56.74deg, #D12D2D 39.61%, #1E149D 120.53%);;
    ${"" /* to hide and show right menu bar on click */}
   transform: ${(props) => (props.show ? "translateX(-120%)" : "translate(0)")};
   transition: transform 0.2s; 

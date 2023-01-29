@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import EventsCarousel from "./EventsCarousel";
 import SponsorsCarousel from "./SponsorsCarousel";
-import Header from "../Header/Header";
+import Animation from "./Animation/animation";
 
 function Home() {
   return (
@@ -10,53 +10,56 @@ function Home() {
         <Description>
           <Title>HORIZON</Title>
           <Data>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
-            repellendus ratione quaerat minima suscipit repudiandae dolores
-            autem, assumenda, dolorum ducimus accusamus eligendi maxime
-            voluptatibus maiores officia harum eaque. Quia, incidunt!
+            Join us for the annual "HORIZON" Technical Fest. Showcase your
+            talents and learn about the latest innovations in technology. From
+            coding challenges to panel discussions, this event has something for
+            everyone. Don't miss out!
           </Data>
           <Button>Know More</Button>
         </Description>
       </Wrap>
       <NumTag>
         <Event>
-          <EventNum>10</EventNum>
+          <EventNum>11</EventNum>
           <EventName>events</EventName>
         </Event>
         <Price>
-          <PriceNum>35K+</PriceNum>
+          <PriceNum>42.5K+</PriceNum>
           <PriceName>prizes</PriceName>
         </Price>
         <Days>
-          <DaysNum>15</DaysNum>
+          <DaysNum>12</DaysNum>
           <DaysName>days</DaysName>
         </Days>
       </NumTag>
 
       <ComboSection>
         <About>
-          <img src="/images/about-illustration.svg" alt="illustration"></img>
+          {/* <img src="/images/about-illustration.svg" alt="illustration"></img> */}
+          <div className="animation_perin">
+            <Animation className="animation_perin_2" />
+          </div>
           <Content>
             <h2>
-              About <span>Pravinya</span>
+              About <span>HORIZON</span>
             </h2>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-              iure doloribus ut quasi maiores, ad magni quod accusantium atque
-              odio porro numquam, repellendus quo delectus distinctio. Optio
-              esse aut recusandae.
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-              iure doloribus ut quasi maiores, ad magni quod accusantium atque
-              odio porro numquam.
+              “Horizon” is the premier edition of the annual technical festival
+              of IIITV-ICD that takes place in the form of a twelve-day, intense
+              and exhilarating experience consisting of sensational events,
+              interesting learnings, and impelling prizes. The fest contains a
+              total of 11 amazing events covering 5 technical events, 2 gaming
+              events, 1 designing event, 1 workshop and 2 speaker sessions
+              forming the pillars of this frenzy and amusing festival. With 2023
+              being the first year of “Horizon”, we aim to achieve new heights
+              while simultaneously creating history.
             </p>
             <Button className="About_Button">Read More</Button>
           </Content>
         </About>
         <EventsCarousel />
 
-        <SponsorsCarousel></SponsorsCarousel>
+        <SponsorsCarousel />
       </ComboSection>
     </Container>
   );
@@ -86,11 +89,19 @@ const Wrap = styled.div`
   background-color: black;
   background-image: url("./images/background.svg");
 
+  @media (max-width: 820px) {
+    width: 100vw;
+    height: auto;
+    padding-bottom: 121px;
+    padding-top: 90px;
+  }
   @media (max-width: 667px) {
     background-image: none;
     display: block;
     width: 100vw;
     height: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 `;
 const Description = styled.div`
@@ -99,6 +110,11 @@ const Description = styled.div`
   padding-left: 76px;
   /* margin-top: 80px; */
 
+  @media (max-width: 821px) {
+    width: 100vw;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
   @media (max-width: 667px) {
     width: 100vw;
     padding-left: 16px;
@@ -111,6 +127,14 @@ const Title = styled.div`
   font-weight: 900;
   margin: 26px 0 26px;
 
+  @media (max-width: 820px) {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 51px;
+    text-align: left;
+    margin: 0;
+    height: auto;
+  }
   @media (max-width: 667px) {
     font-size: 25px;
     font-weight: 900;
@@ -130,6 +154,15 @@ const Data = styled.div`
   color: #b5b0b0;
   margin: 26px 0 26px;
 
+  @media (max-width: 821px) {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 480px;
+  }
   @media (max-width: 667px) {
     font-family: Poppins;
     font-size: 10px;
@@ -154,16 +187,33 @@ const Button = styled.div`
   background: transparent;
   border: 2px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(209, 45, 45, 0.92) 0%,
+    #1e149d 65.43%
+  );
 
   &:hover {
-    background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
+    background: linear-gradient(
+      90deg,
+      rgba(209, 45, 45, 0.92) 0%,
+      #1e149d 65.43%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
   }
 
+  @media (max-width: 820px) {
+    width: 121px;
+    height: 34px;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 9px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
   @media (max-width: 667px) {
     width: 89px;
     height: 23px;
@@ -180,6 +230,9 @@ const Button = styled.div`
 const Days = styled.div`
   padding-right: 150px;
 
+  @media (max-width: 820px) {
+    padding-right: 100px;
+  }
   @media (max-width: 667px) {
     padding-right: 38px;
   }
@@ -191,6 +244,14 @@ const DaysNum = styled.div`
   height: 65px;
   color: white;
 
+  @media (max-width: 820px) {
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    height: auto;
+  }
   @media (max-width: 667px) {
     font-size: 16px;
     font-weight: 900;
@@ -207,6 +268,13 @@ const DaysName = styled.div`
   font-size: 30px;
   color: #b5b0b0;
 
+  @media (max-width: 820px) {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+  }
   @media (max-width: 667px) {
     font-family: Poppins;
     font-size: 10px;
@@ -224,6 +292,14 @@ const PriceNum = styled.div`
   height: 65px;
   color: white;
 
+  @media (max-width: 820px) {
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    height: auto;
+  }
   @media (max-width: 667px) {
     font-size: 16px;
     font-weight: 900;
@@ -240,6 +316,13 @@ const PriceName = styled.div`
   font-size: 30px;
   color: #b5b0b0;
 
+  @media (max-width: 820px) {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+  }
   @media (max-width: 667px) {
     font-family: Poppins;
     font-size: 10px;
@@ -252,6 +335,9 @@ const PriceName = styled.div`
 const Event = styled.div`
   padding-left: 150px;
 
+  @media (max-width: 820px) {
+    padding-left: 100px;
+  }
   @media (max-width: 667px) {
     padding-left: 38px;
   }
@@ -264,6 +350,14 @@ const EventNum = styled.div`
   height: 65px;
   color: white;
 
+  @media (max-width: 820px) {
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    height: auto;
+  }
   @media (max-width: 667px) {
     font-size: 16px;
     font-weight: 900;
@@ -280,6 +374,13 @@ const EventName = styled.div`
   font-size: 30px;
   color: #b5b0b0;
 
+  @media (max-width: 820px) {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+  }
   @media (max-width: 667px) {
     font-family: Poppins;
     font-size: 10px;
@@ -293,8 +394,12 @@ const NumTag = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #b2016b 37.74%, #1e149d 93.02%);
+  background: linear-gradient(90deg, #d12d2d 37.74%, #0b0371 93.02%);
 
+  @media (max-width: 820px) {
+    width: 100vw;
+    height: 123px;
+  }
   @media (max-width: 667px) {
     width: 100vw;
     height: 60px;
@@ -314,15 +419,17 @@ const About = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
+  .animation_perin {
     float: left;
-    height: 500.0043029785156px;
-    width: 497.67254638671875px;
     border-radius: 0px;
     margin-left: 80px;
     padding-right: 25px;
     margin-right: 100px;
 
+    @media (max-width: 820px) {
+      padding-right: 0px;
+      margin-right: 50px;
+    }
     @media (max-width: 667px) {
       display: none;
     }
@@ -330,9 +437,15 @@ const About = styled.div`
   @media (max-width: 667px) {
     height: auto;
   }
+  @media (max-width: 820px) {
+    height: auto;
+  }
 `;
 const Content = styled.div`
-  padding-right: 140px;
+  padding-right: 100px;
+  @media (max-width: 820px) {
+    padding-right: 70px;
+  }
   h2 {
     color: white;
     font-weight: 900;
@@ -341,13 +454,20 @@ const Content = styled.div`
     padding-top: 37px;
 
     span {
-      background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
+      background: linear-gradient(90deg, #d12d2d 37.74%, #0b0371 93.02%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-fill-color: transparent;
     }
 
+    @media (max-width: 820px) {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 0em;
+      text-align: left;
+      padding-bottom: 7px;
+    }
     @media (max-width: 667px) {
       font-size: 20px;
       font-weight: 900;
@@ -365,6 +485,15 @@ const Content = styled.div`
     color: #b5b0b0;
     padding-top: 25px;
 
+    @media (max-width: 820px) {
+      font-family: Poppins;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+      padding-top: 0px;
+    }
     @media (max-width: 667px) {
       font-family: Poppins;
       font-size: 10px;

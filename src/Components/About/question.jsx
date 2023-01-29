@@ -6,6 +6,7 @@ import {
   AccordionPanel,
   Box
 } from "@chakra-ui/react";
+import { NewspaperOutlined } from "@mui/icons-material";
 
 const Question = (props) => {
   const [rotate, setRotate] = useState("arrow_down");
@@ -29,7 +30,10 @@ const Question = (props) => {
           </AccordionButton>
         </h2>
         <AccordionPanel pb={4}>
-          <div className="q_ans">{props.ans}</div>
+          <div className="q_ans">
+            {props.ans}
+            <div>{props.ans2}</div>
+          </div>
         </AccordionPanel>
       </AccordionItem>
     </div>

@@ -3,7 +3,7 @@ import "./Carousel.css";
 
 const Timeline = () => {
   return (
-    <div className="App" style={{ marginBottom: "1200px" }}>
+    <div className="App" style={{ marginBottom: "10vh" }}>
       <Carousel>
         <CarouselItem>
           <h2 className="day">Day 1</h2>

@@ -3,16 +3,24 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Data from "../Host";
+import { Backdrop } from "@mui/material";
 
-function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
+function RegisterSingle({
+  registersingle,
+  setRegistersingle,
+  eventid
+}) {
+  const host = Data.URL;
   const navigate = useNavigate();
+  var [response, setResponse] = useState("");
 
   async function handleRegister(e) {
     e.preventDefault();
     var chkbx = document.querySelectorAll(".cb");
     for (let i = 0; i < 2; i++) {
       if (!chkbx[i].checked) {
-        alert("Please tick the check box");
+        setResponse("Please tick the check box");
         return;
       }
     }
@@ -24,38 +32,43 @@ function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
         }
       };
       const response = await axios
-        .post(`http://localhost:3000/eventregister/${eventid}`, {}, config)
+        .post(`${host}/eventregister/${eventid}`, {}, config)
         .then((res) => res.data)
         .catch((err) => err);
-      alert(response.message);
+      setResponse(response.message);
       if (response.status) {
         document.body.style.overflow = "auto";
         navigate("/");
       }
     } else {
-      alert("Please Login to Continue");
+      setResponse("Please Login to Continue");
     }
   }
 
   return (
-    <Container
-      style={
-        registersingle === "Register"
-          ? { display: "block" }
-          : { display: "none" }
-      }
+    // <Container
+    //   style={
+    //     registersingle === "Register"
+    //       ? { display: "block" }
+    //       : { display: "none" }
+    //   }
+    // >
+    <Backdrop
+      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={registersingle}
     >
       <Wrap>
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
-            setRegistersingle("");
+            setRegistersingle(false);
           }}
         ></Close>
         <form action="" method="" onSubmit={handleRegister}>
           <div className="div_perin heading_perin">
             <h2 className="h2_perin">Register</h2>
             <p className="p_perin">Individual Participation</p>
+            <p className="p_perin"> {response}</p>
           </div>
           <div className="div_perin name_home">
             <p className="">Register for this event ?</p>
@@ -97,7 +110,8 @@ function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
           </div>
         </form>
       </Wrap>
-    </Container>
+    </Backdrop>
+    // </Container>
   );
 }
 export default RegisterSingle;
@@ -111,55 +125,71 @@ const Container = styled.div`
   z-index: 2;
   font-family: "bujji", sans-serif;
 `;
+
 const Wrap = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
   overflow: auto;
-  margin: auto;
   position: relative;
+  margin: auto;
   color: white;
+  padding: 40px 0px;
   width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    114.88deg,
-    #b2016b 9.29%,
-    #1e149d 49.91%,
-    #b2016b 89.51%
-  );
+  height: auto;
+  background: rgba(19, 105, 198, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
-
   justify-content: center;
 
   .div_perin {
-    overflow: auto;
-
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
     .label_perin {
       font-family: Poppins;
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 11.5px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 10px;
+      }
     }
     .input_perin {
       width: 100%;
       height: 46px;
-      border: 4px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(90deg, #b2016b, #1e149d);
-      padding-left: 4px;
+      border-radius: 5px;
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        height: 26.5px;
+      }
+
+      @media (max-width: 669px) {
+        height: 25px;
+      }
     }
     .input_perin:focus-visible {
       outline: none;
     }
 
-    .checkbox_perin {
-      width: 25px;
-      height: 25px;
+    @media (min-width: 669px) and (max-width: 1150px) {
+      padding: 13px 60px;
+    }
+
+    @media (max-width: 669px) {
+      padding: 10px 18px;
+      line-height: 17px;
     }
   }
   button {
@@ -173,9 +203,20 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+    background: #b2016b;
     border: 0px;
-    margin-top: 20px;
+
+    @media (min-width: 669px) and (max-width: 1150px) {
+      font-size: 8px;
+      width: 67px;
+      height: 33px;
+    }
+
+    @media (max-width: 669px) {
+      font-size: 9px;
+      width: 90px;
+      height: 23px;
+    }
 
     &:hover {
       background: transparent;
@@ -190,13 +231,31 @@ const Wrap = styled.div`
     .h2_perin {
       font-size: 45px;
       font-weight: 900;
-      margin-top: 80px;
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 26px;
+        line-height: 26px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 15px;
+      }
     }
     .p_perin {
       font-family: Poppins;
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 11.5px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 10px;
+        margin: 0;
+      }
+
       .a_perin {
         cursor: pointer;
         font-family: Poppins;
@@ -206,8 +265,20 @@ const Wrap = styled.div`
         text-decoration: underline;
         color: #fc0198;
         font-weight: bold;
+
+        @media (min-width: 669px) and (max-width: 1150px) {
+          font-size: 11.5px;
+        }
+        @media (max-width: 669px) {
+          font-size: 10px;
+        }
       }
     }
+  }
+
+  @media (max-width: 669px) {
+    width: 80%;
+    padding: 9px 40px;
   }
 `;
 /* Line 2 */

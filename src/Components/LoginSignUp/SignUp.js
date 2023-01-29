@@ -3,27 +3,35 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Data from "../Host";
+import { Backdrop } from "@mui/material";
 
-function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
+function SignUp({ signUp, setSignUp, setLogin }) {
+  const host = Data.URL;
+
   const navigate = useNavigate();
   const [FN, SetFN] = useState("");
   const [IN, SetIN] = useState("");
   const [ML, SetML] = useState("");
   const [MN, SetMN] = useState("");
   const [PD, SetPD] = useState("");
+  const [GR, SetGR] = useState("");
   const [CPD, SetCPD] = useState("");
   const [checkbox, SetCheckbox] = useState(false);
   const [proof, SetProof] = useState("");
+  var [response, setResponse] = useState("");
 
   async function postUserDetails(e) {
     e.preventDefault();
     const formimgData = new FormData();
     formimgData.append("proof", proof);
+    formimgData.append("gender", GR);
     formimgData.append("name", FN);
     formimgData.append("institute", IN);
     formimgData.append("number", MN);
     formimgData.append("email", ML);
     formimgData.append("password", PD);
+    console.log(formimgData);
 
     if (checkbox) {
       if (PD === CPD) {
@@ -31,58 +39,62 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
           const config = {
             headers: { "content-type": "multipart/form-data" }
           };
-          const response = await axios.post(
-            "http://localhost:3000/signupuser",
-            formimgData,
-            config
-          );
-          const json = await response.json();
-          console.log(json);
-          if (json.success) {
+          const response = await axios
+            .post(`${host}/signupuser`, formimgData, config)
+            .then((res) => res.data);
+          console.log(response);
+          if (response.success) {
             // Save the auth token and redirect
-            localStorage.setItem("token", json.authtoken);
-            navigate("/");
+            localStorage.setItem("auth-token", response.authtoken);
+            localStorage.setItem("user", JSON.stringify(response.user));
+            window.location.reload(false);
             document.body.style.overflow = "auto";
-
-            alert("SuccessFully Created Account", "success");
+            setResponse("SuccessFully Created Account");
           } else {
-            alert("Error");
+            setResponse("Cant Create Account, Pls Try Again");
           }
         } else {
-          alert("Attach a valid Proof");
+          setResponse("Attach a valid Proof");
         }
       } else {
-        alert("Passwords Not Matched");
+        setResponse("Passwords Not Matched");
       }
     } else {
-      alert("Please agree the terms & conditions");
+      setResponse("Please agree the terms & conditions");
     }
     e.preventDefault();
   }
 
   return (
-    <Container
-      style={
-        LoginOrSignUp === "SignUp" ? { display: "block" } : { display: "none" }
-      }
+    <Backdrop
+      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={signUp}
     >
       <Wrap>
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
-            setLoginOrSignUp("");
+            setSignUp(false);
           }}
         ></Close>
 
         <form action="" method="" onSubmit={postUserDetails}>
           <div className="div_perin heading_perin">
             <h2 className="h2_perin">SIGN UP</h2>
+
             <p className="p_perin">
               Already Registered?{" "}
-              <a className="a_perin" onClick={() => setLoginOrSignUp("Login")}>
+              <a
+                className="a_perin"
+                onClick={() => {
+                  setLogin(true);
+                  setSignUp(false);
+                }}
+              >
                 Login
               </a>
             </p>
+            <p className="p_perin"> {response} </p>
           </div>
           <div className="div_perin name_home">
             <label className="label_perin" htmlFor="">
@@ -99,9 +111,19 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
               name="name"
             />
           </div>
+          <div className="div_perin gender">
+            <label>Gender</label>
+
+            <select onChange={(e) => SetGR(e.target.value)}>
+              <option value="male"></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
           <div className="div_perin email">
             <label className="label_perin" htmlFor="">
-              Email
+              Email (Institute ID preferred)
             </label>
             <br />
             <input
@@ -165,7 +187,8 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
           </div>
           <div className="div_perin password">
             <label className="label_perin" htmlFor="">
-              Proof of Enrollment in Institute
+              Proof of Enrollment in Institute (Please upload either Jpg or Png
+              file with filesize less than 2MB)
             </label>
             <br />
             <input
@@ -198,7 +221,7 @@ function SignUp({ LoginOrSignUp, setLoginOrSignUp }) {
           </div>
         </form>
       </Wrap>
-    </Container>
+    </Backdrop>
   );
 }
 
@@ -221,17 +244,30 @@ const Wrap = styled.div`
   margin: auto;
   position: relative;
   color: white;
+  padding: 40px 0px;
   width: 40%;
   height: 100%;
-  background: linear-gradient(
-    114.88deg,
-    #b2016b 9.29%,
-    #1e149d 49.91%,
-    #b2016b 89.51%
-  );
   display: flex;
-
   justify-content: center;
+
+  background: rgba(19, 105, 198, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  @media (max-width: 667px) {
+    position: none;
+    width: 328px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+
+    .close_sign_up_button {
+      width: 15px;
+      height: 15px;
+    }
+  }
 
   .div_perin {
     overflow: auto;
@@ -246,15 +282,36 @@ const Wrap = styled.div`
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
+
+      @media (max-width: 667px) {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0px;
+      }
     }
     .input_perin {
       width: 100%;
       height: 46px;
-      border: 4px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(90deg, #b2016b, #1e149d);
-      padding-left: 4px;
+      border-radius: 5px;
+
+      @media (max-width: 667px) {
+        width: 280px;
+        height: 25px;
+      }
     }
+
+    .input_file {
+      font-size: 16px;
+      padding-top: 6px;
+      @media (max-width: 667px) {
+        font-size: 10px;
+        padding: 0;
+      }
+    }
+
     .input_perin:focus-visible {
       outline: none;
     }
@@ -262,6 +319,21 @@ const Wrap = styled.div`
     .checkbox_perin {
       width: 25px;
       height: 25px;
+
+      @media (max-width: 667px) {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    @media (max-width: 667px) {
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
   }
   button {
@@ -275,7 +347,7 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+    background: #b2016b;
     border: 0px;
     margin-top: 20px;
 
@@ -285,20 +357,57 @@ const Wrap = styled.div`
       border-image-slice: 1;
       border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
     }
+
+    @media (max-width: 667px) {
+      width: 90px;
+      height: 23px;
+      font-size: 9px;
+      font-weight: 900;
+      line-height: 9px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 50px;
+    }
   }
   .heading_perin {
     text-align: center;
     line-height: 44px;
+
+    @media (max-width: 667px) {
+      padding-top: 20px;
+    }
+
     .h2_perin {
       font-size: 45px;
       font-weight: 900;
-      margin-top: 80px;
+
+      @media (max-width: 667px) {
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 0em;
+        text-align: center;
+        margin: 0;
+        height: 15px;
+      }
     }
     .p_perin {
       font-family: Poppins;
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
+
+      @media (max-width: 667px) {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: center;
+        padding: auto;
+        margin: 0px;
+      }
+
       .a_perin {
         cursor: pointer;
         font-family: Poppins;
@@ -308,6 +417,14 @@ const Wrap = styled.div`
         text-decoration: underline;
         color: #fc0198;
         font-weight: bold;
+
+        @media (max-width: 667px) {
+          font-family: Poppins;
+          font-size: 10px;
+          font-weight: 400;
+          letter-spacing: 0em;
+          text-align: left;
+        }
       }
     }
   }

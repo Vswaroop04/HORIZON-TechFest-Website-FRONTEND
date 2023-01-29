@@ -3,10 +3,20 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Data from "../Host";
+import { Backdrop } from "@mui/material";
 
-function Register({ register, setRegister, teamsize, eventid }) {
+function Register({
+  register,
+  setRegister,
+  teamsize,
+  eventid
+}) {
+  const host = Data.URL;
   const navigate = useNavigate();
   const rows = [];
+  var [response, setResponse] = useState("");
+
   for (let i = 1; i < teamsize; i++) {
     rows[i] = i;
   }
@@ -26,42 +36,43 @@ function Register({ register, setRegister, teamsize, eventid }) {
           }
         };
         const response = await axios
-          .post(
-            `http://localhost:3000/eventregister/${eventid}`,
-            formdata,
-            config
-          )
+          .post(`${host}/eventregister/${eventid}`, formdata, config)
           .then((res) => res.data)
           .catch((err) => err);
-        alert(response.message);
+        setResponse(response.message);
         if (response.status) {
           navigate("/");
           document.body.style.overflow = "auto";
         }
       } else {
-        alert("Please Login to Continue");
+        setResponse("Please Login to Continue");
       }
     } else {
-      alert("Please agree the terms & conditions");
+      setResponse("Please agree the terms & conditions");
     }
   }
   return (
-    <Container
-      style={
-        register === "Register" ? { display: "block" } : { display: "none" }
-      }
+    // <Container
+    //   style={
+    //     register === "Register" ? { display: "block" } : { display: "none" }
+    //   }
+    // >
+    <Backdrop
+      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={register}
     >
       <Wrap>
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
-            setRegister("");
+            setRegister(false);
           }}
         ></Close>
         <form action="" method="" onSubmit={handleRegister}>
           <div className="div_perin heading_perin">
             <h2 className="h2_perin">Register</h2>
             <p className="p_perin">Team Participation</p>
+            <p className="p_perin">{response}</p>
           </div>
           <div className="div_perin name_home">
             <label className="label_perin" htmlFor="">
@@ -144,7 +155,8 @@ function Register({ register, setRegister, teamsize, eventid }) {
           </div>
         </form>
       </Wrap>
-    </Container>
+    </Backdrop>
+    // {/* </Container> */}
   );
 }
 export default Register;

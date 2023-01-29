@@ -1,4 +1,3 @@
-import { Component } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 
@@ -6,21 +5,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import MemberCard from "./MemberCard";
-import { MemberNames } from "./MemberNames";
 
 export default function EventsCarousel({ teamName }) {
-  // render() {
+  const length = teamName.firstName.length;
+  let number_of_slides = length === 2 ? 1 : 2;
+  console.log(teamName);
+
   const settings = {
-    slidesToShow: 2,
+    slidesToShow: number_of_slides,
     slidesToScroll: 1
   };
-  const length = teamName.firstName.length;
 
   return (
     <Container>
       <Slider {...settings}>
         {teamName.firstName.map(function (firstName, index) {
-          if (index % 2 === 0 && index !== length - 1)
+          if (
+            (length === 2 && index % 2 === 0) ||
+            (index % 2 === 0 && index !== length - 1)
+          )
             return (
               <Wrap className="perin">
                 <UpperCard>
@@ -51,7 +54,6 @@ export default function EventsCarousel({ teamName }) {
                 </Wrap>
               );
             }
-            return;
           }
         })}
       </Slider>
@@ -63,6 +65,17 @@ const Container = styled.div`
   width: 50%;
   height: 100%;
   object-fit: cover;
+
+  @media (max-width: 820px) {
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+  }
+  @media (max-width: 667px) {
+    width: 80%;
+    margin: auto;
+    padding-top: 36px;
+  }
 `;
 const Wrap = styled.div``;
 const UpperCard = styled.div`
@@ -70,9 +83,25 @@ const UpperCard = styled.div`
   justify-content: center;
   margin-bottom: 80px;
   height: 298px;
+
+  @media (max-width: 820px) {
+    height: 270px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 667px) {
+    height: 117px;
+    margin-bottom: 30px;
+  }
 `;
 const BottomCard = styled.div`
   display: flex;
   justify-content: center;
   height: 298px;
+
+  @media (max-width: 820px) {
+    height: 298px;
+  }
+  @media (max-width: 667px) {
+    height: 125px;
+  }
 `;

@@ -4,7 +4,7 @@
 }
 
 .nav_nav .active {
-  background: linear-gradient(99.32deg, #b2016b 0%, #5346f8 119.64%);
+  background: #d12d2d;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -20,4 +20,10 @@
 .example {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+@media (max-width: 1150px) {
+  .navbar__link {
+    padding: 0 17.5px;
+  }
 }
