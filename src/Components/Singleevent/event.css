@@ -58,6 +58,18 @@
   float: right;
   margin-left: 74px;
 }
+
+@media screen and (min-width: 669px) {
+  .ibox2 p:nth-child(even) {
+    display: none;
+  }
+}
+@media screen and (min-width: 669px) {
+  .ibox1 p:nth-child(odd) {
+    display: none;
+  }
+}
+
 .Posterimg {
   width: 360px;
   height: 450px;
@@ -198,6 +210,10 @@ body {
   .single-event {
     margin: 20px;
   }
+
+  .ibox2 {
+    display: none;
+  }
   .s1div {
     justify-content: center;
     flex-wrap: wrap;
@@ -274,6 +290,7 @@ body {
   .single-event {
     margin: 20px;
   }
+
   .s1div {
     justify-content: center;
     margin-top: 0;
@@ -334,6 +351,5 @@ body {
     font-size: 14px;
     padding: 35px;
     line-height: 22px;
-    /* border: 2px solid; */
   }
 }

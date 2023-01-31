@@ -404,7 +404,7 @@ const SingleEvent = () => {
 
               <div className="details-box">
                 {/* <p className="content-box"> */}
-                <div className="inside-box">
+                <div className="inside-box ibox2">
                   <p className="">
                     {Event.details?.map(function (element) {
                       return <p>{element}</p>;
@@ -412,7 +412,7 @@ const SingleEvent = () => {
                   </p>
                 </div>
                 <div className="inside-box">
-                  <p className="">
+                  <p className="ibox1">
                     {Event.details?.map(function (element) {
                       return <p>{element}</p>;
                     })}

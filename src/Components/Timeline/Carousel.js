@@ -6,21 +6,11 @@ import linedate from "./linedate.png";
 import "./Carousel.css";
 
 export const CarouselItem = ({ children, width }, props) => {
-  var date = new Date();
-  var month = 2;
-  var day = 17;
+  var [classname, setclassname] = useState("carousel-item");
 
-  if (month === 2) {
-    if (day === 17 || day === 18 || day === 19 || day === 20 || day === 21) {
-      var class_name = "carousel-item";
-    }
-  } else {
-    class_name = "carousel-item-active";
-  }
   return (
-    <div className={class_name} style={{ width: width }}>
+    <div className={classname} style={{ width: width }}>
       {children}
-      <h2> {props.class}</h2>
     </div>
   );
 };
@@ -400,6 +390,17 @@ const Carousel = ({ children }) => {
       setdays(Day12);
     }
   }, [activeIndex]);
+
+  useEffect(() => {
+    var date = new Date();
+
+    console.log(date.getDate());
+    for (let i = 8; i < 20; i++) {
+      if (date.getDate() === i) {
+        setActiveIndex(i - 8);
+      }
+    }
+  }, []);
 
   var [days, setdays] = useState(Day1);
   const renderListOfUserNames = (names) => {
