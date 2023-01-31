@@ -32,7 +32,7 @@ const Tribute = () => {
         "Captain Vikram Batra, PVC (9 September 1974 – 7 July 1999) was an officer of the Indian Army, posthumously awarded with the Param Vir Chakra, India’s highest and most prestigious award for valour, for his actions during the 1999 Kargil War in Kashmir between India and Pakistan. He led one of the toughest operations in mountain warfare in Indian history.",
       link: "https://hpkangra.nic.in/war-heroes/",
       image:
-        "https://cdn.s3waas.gov.in/s348aedb8880cab8c45637abc7493ecddd/uploads/2018/10/2018103018-150x150.jpg"
+        "https://cdn.s3waas.gov.in/s348aedb8880cab8c45637abc7493ecddd/uploads/2018/10/2018103062-150x150.jpg"
     },
     {
       firstname: "Major Sudhir",
@@ -50,7 +50,7 @@ const Tribute = () => {
         "Brigadier Sher Jung Thapa also revered as The Hero of Skardu, is one of the few recipients of Indian Army’s second highest gallantary award, the Mahavir Chakra (MVC).On 11 February 1948, Skardu was attacked and surrounded by the enemy of approximately 600 strong strength. The enemy was routed under the determined leadership of Lieutenant Colonel Sher Jung Thapa.",
       link: "https://hpkangra.nic.in/war-heroes/",
       image:
-        "https://cdn.s3waas.gov.in/s348aedb8880cab8c45637abc7493ecddd/uploads/2018/10/2018103018-150x150.jpg"
+        "https://cdn.s3waas.gov.in/s348aedb8880cab8c45637abc7493ecddd/uploads/2018/10/2018103075-150x150.jpg"
     },
     {
       firstname: "Captain Saurabh",
@@ -59,7 +59,7 @@ const Tribute = () => {
         "Captain Saurabh Kalia was born at Amritsar (Punjab), hailing from Palampur in District Kangra, Himachal Pradesh. Captain Saurabh was posted with the 4 JAT Regiment (Infantry) IC No. 58522F in the Kargil Sector. In the first fortnight of May 1999, he went out for Patrol Duty three times to check the infiltration in the Kaksar area of Kargil.",
       link: "https://hpkangra.nic.in/war-heroes/",
       image:
-        "https://cdn.s3waas.gov.in/s348aedb8880cab8c45637abc7493ecddd/uploads/2018/10/2018103018-150x150.jpg"
+        "https://cdn.s3waas.gov.in/s348aedb8880cab8c45637abc7493ecddd/uploads/2018/10/2018103121-150x150.jpg"
     },
     {
       firstname: "Mary",
@@ -79,7 +79,7 @@ const Tribute = () => {
       link:
         "https://mews.in/indian-sports-heroes-who-had-an-inspiring-journey-to-success/",
       image:
-        "https://thebridge.in/h-upload/2021/07/09/10192-priyanka-goswami-and-bhawna-jat.webp"
+        "https://upload.wikimedia.org/wikipedia/commons/0/03/Bhawna_Jat.jpg"
     },
     {
       firstname: "Neeraj",
@@ -99,7 +99,7 @@ const Tribute = () => {
       link:
         "https://mews.in/indian-sports-heroes-who-had-an-inspiring-journey-to-success/",
       image:
-        "https://images.news18.com/ibnlive/uploads/2021/08/1628057969_sports-55-1200x800.png?impolicy=website&width=510&height=356"
+        "https://c.ndtvimg.com/2021-08/h55eucv_lovlina-borgohain-afp_625x300_09_August_21.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605"
     },
     {
       firstname: "Deepika",
@@ -129,7 +129,7 @@ const Tribute = () => {
       link:
         "https://mews.in/indian-sports-heroes-who-had-an-inspiring-journey-to-success/",
       image:
-        "https://mews.in/wp-content/uploads/2021/08/Devendra-Jhajharia-768x512.jpg"
+        "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcT9L1BjVUCXZKEoQwoHKzs4SBOxdzBX6tOv5AGJQm34IMZpCtiULkqzWmvtUqpH9lG1RXezko_KraIx734"
     },
     {
       firstname: "Dattu Baban",
@@ -212,16 +212,6 @@ const Tribute = () => {
         "https://leverageedu.com/blog/nobel-laureates-of-india/#:~:text=Amartya%20Sen%2C%20Nobel%20Prize%20in,Prize%20in%20Economic%20Sciences%20(2019)",
       image:
         "https://leverageedu.com/blog/wp-content/uploads/2021/12/Amartya_Sen_2017-edited-1.jpg"
-    },
-    {
-      firstname: "Kailash",
-      lastname: "Satyarthi",
-      story:
-        "Kailash Satyarthi is an Indian social reformer who campaigned against child labour in India and advocated the universal right to education. He was the co-recipient of the Nobel Peace Prize along with Malala Yousafzai. He is the founder of several social activist organizations like Bachpan Bachao Andolan, Global Campaign for Education, Global March Against Child Labour and Kailash Satyarthi Children’s Foundation.",
-      link:
-        "https://leverageedu.com/blog/nobel-laureates-of-india/#:~:text=Amartya%20Sen%2C%20Nobel%20Prize%20in,Prize%20in%20Economic%20Sciences%20(2019)",
-      image:
-        "https://leverageedu.com/blog/wp-content/uploads/2021/12/kailash-satyarthi-1412937686-8077810-edited-1.jpg"
     },
     {
       firstname: "Kailash",
@@ -353,7 +343,7 @@ const Tribute = () => {
         "Captain Pradeep Singh is the recipient of the Nao Sena Medal for Gallantry for his meticulous planning of one of the most daring operations during Operation Rahat in 2015. As the commander of INS Tarkash, his actions led to the safe evacuation of around 600 people of 18 different nationalities from Al Hodeidah and Aden harbours in the face of great hostility and backdrop of violence. He also evacuated 10 nurses who were stuck in heavy crossfiring, as well as the body of the first Indian casualty in the Yemen conflict.",
       link: "https://www.thebetterindia.com/39694/heroes-indian-navy/",
       image:
-        "https://en-media.thebetterindia.com/uploads/2015/12/Capt-Pradeep-Singh.jpg?compress=true&quality=80&w=768&dpr=1.3"
+        "https://upload.wikimedia.org/wikipedia/commons/6/6e/Captain_Pradeep_Singh.jpg?20150824084828"
     },
     {
       firstname: "S O Kalyani",
@@ -402,7 +392,6 @@ const Tribute = () => {
             <span className="l2_suy">{element.lastname}</span>
             <p className="l3_suy">{element.story}</p>
             <div className="a_suy">
-              {console.log(element.link)}
               <a className="btn a1_suy" href={element.link}>
                 Read Full Story
               </a>

@@ -47,7 +47,7 @@ function Header() {
 
   return (
     <>
-      <Nav>
+      <Nav id="header">
         <Menu onClick={handleClickBurgerNav}>
           <svg
             width="25"
@@ -143,7 +143,11 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/tribute" onClick={handleClickBurgerNav}>
+              <NavLink
+                className="tri_link"
+                to="/tribute"
+                onClick={handleClickBurgerNav}
+              >
                 Tribute
               </NavLink>
             </li>
@@ -154,39 +158,19 @@ function Header() {
         </BurgerWrap>
 
         <NavMenu className="nav_nav">
-          <NavLink
-            to="/"
-            activeClassName="navbar__link--active"
-            className="navbar__link"
-          >
+          <NavLink to="/" className="navbar__link">
             Home
           </NavLink>
-          <NavLink
-            to="/events"
-            activeClassName="navbar__link--active"
-            className="navbar__link"
-          >
+          <NavLink to="/events" className="navbar__link">
             Events
           </NavLink>
-          <NavLink
-            to="/about"
-            activeClassName="navbar__link--active"
-            className="navbar__link"
-          >
+          <NavLink to="/about" className="navbar__link">
             About
           </NavLink>
-          <NavLink
-            to="/teams"
-            activeClassName="navbar__link--active"
-            className="navbar__link"
-          >
+          <NavLink to="/teams" className="navbar__link">
             Teams
           </NavLink>
-          <NavLink
-            to="/tribute"
-            activeClassName="navbar__link--active"
-            className="navbar__link"
-          >
+          <NavLink to="/tribute" className="tri_link">
             Tribute
           </NavLink>
         </NavMenu>
@@ -203,6 +187,7 @@ function Header() {
         setSignUp={setSignUp}
         login={login}
         setLogin={setLogin}
+        headPerin="LOGIN"
       />
     </>
   );
@@ -289,6 +274,7 @@ const LoginLogo = styled.a`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  /* transition: all 1s ease; */
   background: linear-gradient(
     90deg,
     rgba(209, 45, 45, 0.92) 0%,

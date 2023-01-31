@@ -2,8 +2,18 @@ import styled from "styled-components";
 import EventsCarousel from "./EventsCarousel";
 import SponsorsCarousel from "./SponsorsCarousel";
 import Animation from "./Animation/animation";
+import { NavLink } from "react-router-dom";
 
 function Home() {
+  function goToSection(id) {
+    const section = document.getElementById(id);
+    if (!section) return;
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <Container>
       <Wrap>
@@ -15,7 +25,9 @@ function Home() {
             coding challenges to panel discussions, this event has something for
             everyone. Don't miss out!
           </Data>
-          <Button>Know More</Button>
+          <a href="#abt_suy">
+            <Button>Know More</Button>
+          </a>
         </Description>
       </Wrap>
       <NumTag>
@@ -34,7 +46,7 @@ function Home() {
       </NumTag>
 
       <ComboSection>
-        <About>
+        <About id="abt_suy">
           {/* <img src="/images/about-illustration.svg" alt="illustration"></img> */}
           <div className="animation_perin">
             <Animation className="animation_perin_2" />
@@ -54,7 +66,9 @@ function Home() {
               being the first year of “Horizon”, we aim to achieve new heights
               while simultaneously creating history.
             </p>
-            <Button className="About_Button">Read More</Button>
+            <NavLink onClick={() => goToSection("header")} to="/about">
+              <Button>Read More</Button>
+            </NavLink>
           </Content>
         </About>
         <EventsCarousel />
@@ -105,7 +119,7 @@ const Wrap = styled.div`
   }
 `;
 const Description = styled.div`
-  max-width: 820px;
+  width: 70%;
   color: white;
   padding-left: 76px;
   /* margin-top: 80px; */
@@ -415,7 +429,7 @@ const ComboSection = styled.div`
 `;
 const About = styled.div`
   width: 100%;
-  height: 800px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -443,6 +457,7 @@ const About = styled.div`
 `;
 const Content = styled.div`
   padding-right: 100px;
+
   @media (max-width: 820px) {
     padding-right: 70px;
   }

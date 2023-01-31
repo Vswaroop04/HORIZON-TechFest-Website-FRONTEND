@@ -2,26 +2,46 @@ import React from "react";
 
 export const MemberNames = {
   CoreTeam: {
-    firstName: ["Hrishubh", "Dev", "Rajat", "Karan"],
-    lastName: ["Bhandari", "Junja", "Singh", "Choudhary"],
+    firstName: [
+      "Hrishubh",
+      "Dev",
+      "Rajat",
+      "Karan",
+      "Ved",
+      "Charu",
+      "Akash",
+      "Ishita"
+    ],
+    lastName: [
+      "Bhandari",
+      "Junja",
+      "Singh",
+      "Choudhary",
+      "Vekhande",
+      "Joshi",
+      "Kumar",
+      "Agarwal"
+    ],
     linkedin: [
       "https://www.linkedin.com/in/hrishubh-bhandari/",
       "https://www.linkedin.com/in/dev-juneja/",
       "https://www.linkedin.com/in/rajat-singh-b41a26201/",
-      "https://www.linkedin.com/in/karan-chaudhary-5b420716a/"
+      "https://www.linkedin.com/in/karan-chaudhary-5b420716a/",
+      "https://www.linkedin.com/in/ved-vekhande",
+      "https://www.linkedin.com/in/charu-joshi-398003229/",
+      "https://www.linkedin.com/in/akash-kumar-saw-ab45b923a/",
+      "https://www.linkedin.com/in/ishita-agarwal-a65168238/"
     ],
     email: [
       "202011026@diu.iiitvadodara.ac.in",
       "202011020@diu.iiitvadodara.ac.in",
       "202011061@diu.iiitvadodara.ac.in",
-      "202011038@diu.iiitvadodara.ac.in"
+      "202011038@diu.iiitvadodara.ac.in",
+      "202111087@diu.iiitvadodara.ac.in",
+      "202111019@diu.iiitvadodara.ac.in",
+      "202111005@diu.iiitvadodara.ac.in",
+      "202111039@diu.iiitvadodara.ac.in"
     ]
-  },
-  Management: {
-    firstName: [],
-    lastName: [],
-    linkedin: [],
-    email: []
   },
   Designing: {
     firstName: ["Chinmay", "Raj", "Ashish", "Vartul "],
@@ -48,7 +68,7 @@ export const MemberNames = {
       "https://www.linkedin.com/in/perin-mangukiya-b8a581201/",
       "https://www.linkedin.com/in/vishnu-swaroop-08211321b/",
       "https://www.linkedin.com/in/goutham-kundena-80244a222/",
-      ""
+      "#"
     ],
     email: [
       "202011070@diu.iiitvadodara.ac.in",
@@ -134,7 +154,7 @@ export const MemberNames = {
   CODM: {
     firstName: ["Deep", "Bharath"],
     lastName: ["Chaudhary", "Venkat"],
-    linkedin: ["http://www.linkedin.com/in/godshot", ""],
+    linkedin: ["http://www.linkedin.com/in/godshot", "#"],
     email: [
       "202011019@diu.iiitvadodara.ac.in",
       "202111016@diu.iiitvadodara.ac.in"
@@ -153,7 +173,7 @@ export const MemberNames = {
     ]
   },
   Igniter: {
-    firstName: ["Yash C.", "Ishita"],
+    firstName: ["Yash C", "Ishita"],
     lastName: ["Gupta", "Agarwal"],
     linkedin: [
       "https://www.linkedin.com/in/yash-chandil-gupta-604123234",

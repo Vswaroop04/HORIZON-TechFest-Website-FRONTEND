@@ -3,8 +3,19 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Backdrop } from "@mui/material";
+import "./bigImg.css";
+import { NavLink } from "react-router-dom";
 
 export default class EventsCarousel extends Component {
+  constructor() {
+    super();
+    this.state = {
+      big: false,
+      src_suy: ""
+    };
+  }
+
   render() {
     const settings = {
       infinite: true,
@@ -24,33 +35,89 @@ export default class EventsCarousel extends Component {
         }
       ]
     };
+
+    const handleClose = () => {
+      this.setState({ big: false });
+      goToSection("ret_suy");
+    };
+
+    function goToSection(id) {
+      const section = document.getElementById(id);
+      if (!section) return;
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth"
+      });
+    }
+
+    const Enlarge = (e) => {
+      this.setState({ big: true });
+      this.setState({ src_suy: e.target.src });
+    };
+
     return (
-      <Container>
-        <h2>EVENTS</h2>
-        <Slider className="events_slider_perin" {...settings}>
-          <Wrap className="items">
-            <img src="/images/Sample Poster 1.png" alt="poster1" />
-            <PosterTitle>HackOverFlow</PosterTitle>
-          </Wrap>
-          <Wrap className="items">
-            <img src="/images/Sample Poster 2.png" alt="poster2" />
-            <PosterTitle>HackOverFlow</PosterTitle>
-          </Wrap>
-          <Wrap className="items">
-            <img src="/images/Sample Poster 3.png" alt="poster3" />
-            <PosterTitle>HackOverFlow</PosterTitle>
-          </Wrap>
-          <Wrap className="items">
-            <img src="/images/Sample Poster 1.png" alt="poster1" />
-            <PosterTitle>HackOverFlow</PosterTitle>
-          </Wrap>
-          <Wrap className="items">
-            <img src="/images/Sample Poster 2.png" alt="poster2" />
-            <PosterTitle>HackOverFlow</PosterTitle>
-          </Wrap>
-        </Slider>
-        <Button>VIEW ALL</Button>
-      </Container>
+      <>
+        <Container id="ret_suy">
+          <h2>EVENTS</h2>
+          <Slider className="events_slider_perin" {...settings}>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/codeCombat.png" alt="poster1" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/codm.png" alt="poster2" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/capturePoint5353.png" alt="poster3" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/designing.png" alt="poster1" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/swotTheTrend.png" alt="poster2" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/theChoiceMatrix.png" alt="poster2" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/valorant.png" alt="poster2" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/ceoConference.png" alt="poster2" />
+              </a>
+            </Wrap>
+            <Wrap className="items">
+              <a onClick={Enlarge} href="#">
+                <img src="/images/Hackoverflow.png" alt="poster2" />
+              </a>
+            </Wrap>
+          </Slider>
+          <NavLink onClick={() => goToSection("header")} to="/events">
+            <Button>VIEW ALL</Button>
+          </NavLink>
+        </Container>
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={this.state.big}
+          onClick={handleClose}
+        >
+          <img className="bigImg" src={this.state.src_suy} alt="error" />
+        </Backdrop>
+      </>
     );
   }
 }
@@ -126,8 +193,8 @@ const PosterTitle = styled.div`
   font-size: 25px;
   position: absolute;
   bottom: 6px;
-  left: 29px;
-  right: 29px;
+  left: 26px;
+  right: 26px;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 25px;

@@ -45,57 +45,320 @@ const Carousel = ({ children }) => {
 
   let Day1 = [
     {
-      Topic: "Hackoverflovg, De5igne4",
+      Topic: "Ignitor 3.O Talk",
       Content:
-        "Themes of Hackeroverflow and De5igne4 releases. Call of Duty, Cadence Valour team registration commences.",
-      Time: "0:00 AM"
+        "The third session in the series of IIITV-ICD’s Ignitor talks, Ignitor 3.0 - the talk by Prashant Kumar (Founder and CEO of Eigenlytics). Come one, come all! Speaker session revolving around evolving startup culture, technical aspects, and much more.",
+      Time: "6:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2c2NzNlaHVtMTNtZnVxNGx2a3VyYzQ0dGkgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     },
     {
-      Topic: "Inaguration",
+      Topic: "Call of Duty: Resurgence",
       Content:
-        "Inauguration of Technical Fest @ Malala Auditorium. Do not forget to be there on time and witness a blast!",
-      Time: "4:00 PM"
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     },
+
     {
-      Topic: "Ignitor 3.O",
-      Content: "Ignitor 3.O talk @ Malala Auditorium.",
-      Time: "6:00 PM"
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
   ];
   let Day2 = [
     {
-      Topic: "CS: Cannon Crev•z",
+      Topic: "CEO's Conference",
       Content:
-        "   Team registrations for CS: Cannon Crew and Capture Point 5353 begin Code Combat registration ends.",
-      Time: "0:00 AM"
+        "A two-day real-world problem-solving event. With 10 minutes to present your solution, are you up for the challenge? Participate in teams of 4.",
+      Time: "6:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MG1mYXQ3bm1rZWZoamlscTBjbmFhczhiNjAgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     },
     {
-      Topic: "Code Combat",
+      Topic: "Call of Duty: Resurgence",
       Content:
-        "Code combat begins! Be ready to indulge into a breathtaking ride into problem solving. Contest ends at 12:30 PM.",
-      Time: "11:00 AM"
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
   ];
   let Day3 = [
     {
-      Topic: "Hackoverflow",
+      Topic: "CEO's Conference",
       Content:
-        "Developers buckle up your skills, here starts the most awaited 48 hours long hackathon with grand celebration.",
-      Time: "9:00 AM"
+        "A two-day real-world problem-solving event. With 10 minutes to present your solution, are you up for the challenge? Participate in teams of 4.",
+      Time: "6:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MG1mYXQ3bm1rZWZoamlscTBjbmFhczhiNjAgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Call of Duty: Resurgence",
+      Content:
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
   ];
   let Day4 = [
     {
-      Topic: "Hackoverflow",
-      Content: "Phew! the 48 hours are up. Ending ceremony for hackoverflow.",
-      Time: "9:00 PM"
+      Topic: "De5igne4(ongoning)",
+      Content:
+        "Channelize your inner Picasso! Online graphic design and artwork contest accepting individual participation. Use any design software of your choice to create on the given theme.",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Mmg5dmw5Mm02ZWhsa3Eza2R1cGRob2pjaHIgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Capture Point 5353",
+      Content:
+        "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
   ];
   let Day5 = [
     {
+      Topic: "De5igne4(ongoning)",
+      Content:
+        "Channelize your inner Picasso! Online graphic design and artwork contest accepting individual participation. Use any design software of your choice to create on the given theme.",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Mmg5dmw5Mm02ZWhsa3Eza2R1cGRob2pjaHIgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Capture Point 5353",
+      Content:
+        "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+
+  let Day6 = [
+    {
+      Topic: "Capture Point 5353",
+      Content:
+        "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
+      Time: "9:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "De5igne4(ongoning)",
+      Content:
+        "Channelize your inner Picasso! Online graphic design and artwork contest accepting individual participation. Use any design software of your choice to create on the given theme.",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Mmg5dmw5Mm02ZWhsa3Eza2R1cGRob2pjaHIgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Cyber Security Workshop",
+      Content:
+        "A workshop on cyber security for all. A must watch in today's day and age, it will make students aware of various cyber threats.",
+      Time: "5:30 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3I3bzZmaXJ2Yzh1ODdzY2l0MDJrbGdrcmpfMjAyMzAyMTNUMTIwMDAwWiBjX2Y5NGY4NzNmYTY2MzBhNjQ4OWE4MWVkN2VjNWFiN2NhYjE2ZDEyOGY3OGUxNmViYTVjN2ZjZTc2NTIzN2ZhNmVAZw&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com&scp=ALL"
+    },
+
+    {
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Call of Duty: Resurgence",
+      Content:
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+
+  let Day7 = [
+    {
+      Topic: "SWOT The Trends (ongoing)",
+      Content:
+        "Interested in trading? SWOT the Trends - the virtual trading event for those who are interested in everything finance. Get ready to analyse the trends!",
+      Time: "9:15 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXV1aTYycGVnbG5waTRmMmI1aDRoOTU0a2EgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "Cyber Security Workshop",
+      Content:
+        "A workshop on cyber security for all. A must watch in today's day and age, it will make students aware of various cyber threats.",
+      Time: "5:30 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3I3bzZmaXJ2Yzh1ODdzY2l0MDJrbGdrcmpfMjAyMzAyMTNUMTIwMDAwWiBjX2Y5NGY4NzNmYTY2MzBhNjQ4OWE4MWVkN2VjNWFiN2NhYjE2ZDEyOGY3OGUxNmViYTVjN2ZjZTc2NTIzN2ZhNmVAZw&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com&scp=ALL"
+    },
+    {
+      Topic: "Call of Duty: Resurgence",
+      Content:
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+
+  let Day8 = [
+    {
+      Topic: "SWOT The Trends (ongoing)",
+      Content:
+        "Interested in trading? SWOT the Trends - the virtual trading event for those who are interested in everything finance. Get ready to analyse the trends!",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXV1aTYycGVnbG5waTRmMmI1aDRoOTU0a2EgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "The Choice Matrix (Round-1)",
+      Content:
+        "From Finance to Programming to Gaming and much more! The Choice Matrix – a two-round quiz with intriguing questions and increasing pressure. Participate in teams of 2.",
+      Time: "6:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHZxbzM1a2YyNDU2cm0xcGExbnBlNTMwZnQgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Call of Duty: Resurgence",
+      Content:
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+
+  let Day9 = [
+    {
+      Topic: "SWOT The Trends (ongoing)",
+      Content:
+        "Interested in trading? SWOT the Trends - the virtual trading event for those who are interested in everything finance. Get ready to analyse the trends!",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXV1aTYycGVnbG5waTRmMmI1aDRoOTU0a2EgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "Code Combat",
+      Content:
+        "Coding event ,boost your knowledge regarding DSA and Competitive Coding.",
+      Time: "5:30 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NDFsdnR1ZG9rdDBjOHQ2bmpuamtlOTNwdWggY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
+      Topic: "Call of Duty: Resurgence",
+      Content:
+        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWM1bW5idDNtZGY5MWU5MHQyMmRndGtmOG0gY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "The cadence valour",
+      Content:
+        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNnZmFlN3N2aWZlM3JjOW0zbjBxb2tlY2MgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+
+  let Day10 = [
+    {
+      Topic: "SWOT The Trends (ongoing)",
+      Content:
+        "Interested in trading? SWOT the Trends - the virtual trading event for those who are interested in everything finance. Get ready to analyse the trends!",
+      Time: "3:30 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXV1aTYycGVnbG5waTRmMmI1aDRoOTU0a2EgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+
+    {
+      Topic: "The Choice Matrix(Round-2)",
+      Content:
+        "From Finance to Programming to Gaming and much more! The Choice Matrix – a two-round quiz with intriguing questions and increasing pressure. Participate in teams of 2.",
+      Time: "6:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWVzZXNmcDZnMm1sajVjOGplaGU3bmpzbTAgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    },
+    {
       Topic: "Hackoverflow",
-      Content: "Phew! the 48 hours are up. Ending ceremony for hackoverflow.",
-      Time: "9:00 PM"
+      Content:
+        "48 hours to cook up innovative solutions to real-life problems and implement them using Android or Web development. ",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWp0YWU4NHM1Z3JxN2Zxa250MWZzaWtrcXIgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+  let Day11 = [
+    {
+      Topic: "Hackoverflow",
+      Content:
+        "This a golden opportunity to showcase your creative and development skills!",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWp0YWU4NHM1Z3JxN2Zxa250MWZzaWtrcXIgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
+    }
+  ];
+
+  let Day12 = [
+    {
+      Topic: "Hackoverflow",
+      Content: "",
+      Time: "9:00 PM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWp0YWU4NHM1Z3JxN2Zxa250MWZzaWtrcXIgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
   ];
 
@@ -114,6 +377,27 @@ const Carousel = ({ children }) => {
     }
     if (activeIndex === 4) {
       setdays(Day5);
+    }
+    if (activeIndex === 5) {
+      setdays(Day6);
+    }
+    if (activeIndex === 6) {
+      setdays(Day7);
+    }
+    if (activeIndex === 7) {
+      setdays(Day8);
+    }
+    if (activeIndex === 8) {
+      setdays(Day9);
+    }
+    if (activeIndex === 9) {
+      setdays(Day10);
+    }
+    if (activeIndex === 10) {
+      setdays(Day11);
+    }
+    if (activeIndex === 11) {
+      setdays(Day12);
     }
   }, [activeIndex]);
 
@@ -264,11 +548,7 @@ const Carousel = ({ children }) => {
                 <p className="content">{Day1.Content}</p>
 
                 <button className="view-button">
-                  <a
-                    rel="noreferrer"
-                    target="_blank"
-                    href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MnJ2cGNjNzMwODVtNWQ4cjQ0ODUzc2k2OTMgZmFtaWx5MDEyNDIyOTA2MDU4NzAyNTU0ODdAZw&amp;tmsrc=family01242290605870255487%40group.calendar.google.com"
-                  >
+                  <a rel="noreferrer" target="_blank" href={Day1.calender}>
                     <h3 className="button-text">Add to Calendar</h3>
                   </a>
                 </button>

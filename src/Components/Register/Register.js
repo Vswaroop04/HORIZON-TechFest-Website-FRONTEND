@@ -6,12 +6,7 @@ import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
 
-function Register({
-  register,
-  setRegister,
-  teamsize,
-  eventid
-}) {
+function Register({ register, setRegister, teamsize, eventid }) {
   const host = Data.URL;
   const navigate = useNavigate();
   const rows = [];
@@ -178,40 +173,101 @@ const Wrap = styled.div`
   margin: auto;
   position: relative;
   color: white;
+  padding: 40px 0px;
   width: 40%;
   height: 100%;
-  background: linear-gradient(
-    114.88deg,
-    #b2016b 9.29%,
-    #1e149d 49.91%,
-    #b2016b 89.51%
-  );
   display: flex;
-
   justify-content: center;
+
+  background: rgba(19, 105, 198, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  @media (max-width: 667px) {
+    position: none;
+    width: 328px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+
+    .close_sign_up_button {
+      width: 15px;
+      height: 15px;
+    }
+  }
 
   .div_perin {
     overflow: auto;
 
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
     .label_perin {
       font-family: Poppins;
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 11.5px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 10px;
+      }
+
+      /* @media (max-width: 667px) {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0px;
+      } */
     }
+
+    .gen {
+      padding-right: 10px;
+    }
+
     .input_perin {
       width: 100%;
       height: 46px;
-      border: 4px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(90deg, #b2016b, #1e149d);
-      padding-left: 4px;
+      font-size: 25px;
+      padding: 0 10px;
+      border-radius: 5px;
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        height: 26.5px;
+        font-size: 15px;
+        padding: 0 5px;
+      }
+
+      @media (max-width: 669px) {
+        height: 25px;
+        font-size: 12px;
+        padding: 0 3px;
+      }
+
+      /* @media (max-width: 667px) {
+        width: 280px;
+        height: 25px;
+      } */
     }
+
+    .input_file {
+      font-size: 16px;
+      padding-top: 6px;
+      @media (max-width: 667px) {
+        font-size: 5px;
+        padding: 0;
+      }
+    }
+
     .input_perin:focus-visible {
       outline: none;
     }
@@ -219,7 +275,35 @@ const Wrap = styled.div`
     .checkbox_perin {
       width: 25px;
       height: 25px;
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        width: 15px;
+        height: 15px;
+      }
+      @media (max-width: 669px) {
+        /* font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left; */
+        width: 10px;
+        height: 10px;
+      }
     }
+
+    @media (min-width: 669px) and (max-width: 1150px) {
+      padding: 10px 48px;
+    }
+
+    @media (max-width: 669px) {
+      padding: 10px 18px;
+      line-height: 17px;
+    }
+
+    /* @media (max-width: 667px) {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    } */
   }
   button {
     margin: auto;
@@ -232,7 +316,7 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: linear-gradient(90deg, #b2016b 46.26%, #1e149d 94.71%);
+    background: #b2016b;
     border: 0px;
     margin-top: 20px;
 
@@ -242,20 +326,87 @@ const Wrap = styled.div`
       border-image-slice: 1;
       border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
     }
+
+    @media (min-width: 669px) and (max-width: 1150px) {
+      font-size: 8px;
+      width: 67px;
+      height: 33px;
+    }
+
+    @media (max-width: 669px) {
+      font-size: 9px;
+      width: 90px;
+      height: 23px;
+    }
+
+    /* @media (max-width: 667px) {
+      width: 90px;
+      height: 23px;
+      font-size: 9px;
+      font-weight: 900;
+      line-height: 9px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 50px;
+    } */
   }
   .heading_perin {
     text-align: center;
     line-height: 44px;
+
+    @media (max-width: 667px) {
+      padding-top: 20px;
+    }
+
     .h2_perin {
       font-size: 45px;
       font-weight: 900;
-      margin-top: 80px;
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 26px;
+        line-height: 26px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 15px;
+      }
+
+      /* @media (max-width: 667px) {
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 0em;
+        text-align: center;
+        margin: 0;
+        height: 15px;
+      } */
     }
     .p_perin {
       font-family: Poppins;
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
+
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 11.5px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 10px;
+        margin: 0;
+      }
+
+      /* @media (max-width: 667px) {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: center;
+        padding: auto;
+        margin: 0px;
+      } */
+
       .a_perin {
         cursor: pointer;
         font-family: Poppins;
@@ -265,8 +416,29 @@ const Wrap = styled.div`
         text-decoration: underline;
         color: #fc0198;
         font-weight: bold;
+
+        @media (min-width: 669px) and (max-width: 1150px) {
+          font-size: 11.5px;
+        }
+
+        @media (max-width: 669px) {
+          font-size: 10px;
+        }
+
+        /* @media (max-width: 667px) {
+          font-family: Poppins;
+          font-size: 10px;
+          font-weight: 400;
+          letter-spacing: 0em;
+          text-align: left;
+        } */
       }
     }
+  }
+
+  @media (max-width: 669px) {
+    width: 80%;
+    padding: 5px 16px;
   }
 `;
 /* Line 2 */

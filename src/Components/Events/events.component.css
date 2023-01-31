@@ -16,7 +16,7 @@
 .events-timeline {
   background: linear-gradient(90deg, #d12d2d 46.26%, #1e149d 94.71%);
   -webkit-transition: background 2s ease-out;
-  width: 100vw;
+  /* width: 100vw; */
   margin-top: 120px;
   display: flex;
   justify-content: space-around;

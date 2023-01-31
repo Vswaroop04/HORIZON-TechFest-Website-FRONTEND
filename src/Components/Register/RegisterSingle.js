@@ -6,11 +6,7 @@ import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
 
-function RegisterSingle({
-  registersingle,
-  setRegistersingle,
-  eventid
-}) {
+function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
   const host = Data.URL;
   const navigate = useNavigate();
   var [response, setResponse] = useState("");
@@ -169,14 +165,20 @@ const Wrap = styled.div`
     .input_perin {
       width: 100%;
       height: 46px;
+      font-size: 25px;
+      padding: 0 10px;
       border-radius: 5px;
 
       @media (min-width: 669px) and (max-width: 1150px) {
         height: 26.5px;
+        padding: 0 5px;
+        font-size: 15px;
       }
 
       @media (max-width: 669px) {
         height: 25px;
+        padding: 0 3px;
+        font-size: 12px;
       }
     }
     .input_perin:focus-visible {

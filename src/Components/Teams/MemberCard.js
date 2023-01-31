@@ -3,16 +3,24 @@ import styled from "styled-components";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 
-function MemberCard({ firstName, lastName }) {
+function MemberCard({ firstName, lastName, linkedin, email }) {
   return (
     <Container>
       <MemberDetails>
-        <img className="member_image" src="/images/member_image.png" alt="" />
+        <img
+          className="member_image"
+          src={"/images/people/" + firstName + ".jpg"}
+          alt=""
+        />
         <h3 className="member_fName">{firstName}</h3>
         <h3 className="member_lName">{lastName}</h3>
         <Image>
-          <LinkedInIcon className="lin_icon" />
-          <EmailIcon className="email_icon" />
+          <a target="_blank" href={linkedin}>
+            <LinkedInIcon className="lin_icon" />
+          </a>
+          <a target="_blank" href={"mailto:" + email}>
+            <EmailIcon className="email_icon" />
+          </a>
         </Image>
       </MemberDetails>
     </Container>
@@ -28,13 +36,13 @@ const Container = styled.div`
   width: 208px;
   height: 280px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 172px;
     height: 231px;
   }
   @media (max-width: 667px) {
-    width: 87px;
-    height: 117px;
+    width: 129px;
+    height: 174px;
   }
 `;
 const MemberDetails = styled.div`
@@ -66,8 +74,11 @@ const MemberDetails = styled.div`
     text-align: center;
     font-weight: 400;
   }
-
-  @media (max-width: 820px) {
+  .lin_icon,
+  .email_icon {
+    color: white;
+  }
+  @media (max-width: 1150px) {
     width: 172px;
     height: 231px;
     right: -12.5px;
@@ -91,8 +102,8 @@ const MemberDetails = styled.div`
     }
   }
   @media (max-width: 667px) {
-    width: 87px;
-    height: 117px;
+    width: 129px;
+    height: 174px;
     right: -6px;
     bottom: -6px;
 
@@ -106,9 +117,9 @@ const MemberDetails = styled.div`
     .member_fName,
     .member_lName {
       font-family: Poppins;
-      font-size: 8px;
+      font-size: 10px;
       font-weight: 400;
-      line-height: 5px;
+      line-height: 6px;
       letter-spacing: 0em;
       text-align: center;
     }
@@ -119,7 +130,7 @@ const Image = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     padding-top: 3px;
     .lin_icon,
     .email_icon {
@@ -128,11 +139,11 @@ const Image = styled.div`
     }
   }
   @media (max-width: 768px) {
-    padding-top: 3px;
+    padding-top: 25px;
     .lin_icon,
     .email_icon {
-      width: 10px;
-      height: 10px;
+      width: 20px;
+      height: 20px;
     }
   }
 `;

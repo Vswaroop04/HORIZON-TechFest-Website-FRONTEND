@@ -43,9 +43,6 @@ const Question = (props) => {
               <li onClick={() => handleClickTeams(MemberNames.CoreTeam)}>
                 Core Team
               </li>
-              <li onClick={() => handleClickTeams(MemberNames.Management)}>
-                Management
-              </li>
               <li onClick={() => handleClickTeams(MemberNames.Designing)}>
                 Designing Team
               </li>
@@ -94,7 +91,7 @@ export default Question;
 const Container = styled.div`
   background: linear-gradient(90deg, #d12d2d 16%, #3333ff 94.71%);
   opacity: 0.8;
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     .members_option {
       font-family: Poppins;
       font-size: 15px;
@@ -115,7 +112,7 @@ const MobileList = styled.div`
     padding-top: 15px;
     padding-left: 0;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       font-size: 15px;
       font-weight: 900;
       line-height: 45px;

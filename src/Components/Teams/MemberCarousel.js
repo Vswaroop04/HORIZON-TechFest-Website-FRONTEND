@@ -30,12 +30,16 @@ export default function EventsCarousel({ teamName }) {
                   <MemberCard
                     firstName={teamName.firstName[index]}
                     lastName={teamName.lastName[index]}
+                    linkedin={teamName.linkedin[index]}
+                    email={teamName.email[index]}
                   />
                 </UpperCard>
                 <BottomCard>
                   <MemberCard
                     firstName={teamName.firstName[index + 1]}
                     lastName={teamName.lastName[index + 1]}
+                    linkedin={teamName.linkedin[index] + 1}
+                    email={teamName.email[index] + 1}
                   />
                 </BottomCard>
               </Wrap>
@@ -49,6 +53,8 @@ export default function EventsCarousel({ teamName }) {
                     <MemberCard
                       firstName={teamName.firstName[index]}
                       lastName={teamName.lastName[index]}
+                      linkedin={teamName.linkedin[index]}
+                      email={teamName.email[index]}
                     />
                   </UpperCard>
                 </Wrap>
@@ -66,7 +72,7 @@ const Container = styled.div`
   height: 100%;
   object-fit: cover;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 80%;
     margin: auto;
     padding-top: 80px;
@@ -84,13 +90,13 @@ const UpperCard = styled.div`
   margin-bottom: 80px;
   height: 298px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     height: 270px;
     margin-bottom: 30px;
   }
   @media (max-width: 667px) {
     height: 117px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
   }
 `;
 const BottomCard = styled.div`
@@ -98,10 +104,10 @@ const BottomCard = styled.div`
   justify-content: center;
   height: 298px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     height: 298px;
   }
   @media (max-width: 667px) {
-    height: 125px;
+    height: 200px;
   }
 `;

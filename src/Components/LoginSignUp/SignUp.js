@@ -6,7 +6,7 @@ import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
 
-function SignUp({ signUp, setSignUp, setLogin }) {
+function SignUp({ signUp, setSignUp, setLogin, goHome }) {
   const host = Data.URL;
 
   const navigate = useNavigate();
@@ -74,6 +74,7 @@ function SignUp({ signUp, setSignUp, setLogin }) {
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
+            if (goHome) window.location.href = `https://hf2gk1.csb.app/`;
             setSignUp(false);
           }}
         ></Close>
@@ -112,7 +113,7 @@ function SignUp({ signUp, setSignUp, setLogin }) {
             />
           </div>
           <div className="div_perin gender">
-            <label>Gender</label>
+            <label className="label_perin gen">Gender</label>
 
             <select onChange={(e) => SetGR(e.target.value)}>
               <option value="male"></option>
@@ -209,7 +210,7 @@ function SignUp({ signUp, setSignUp, setLogin }) {
               type="checkbox"
               name="checkbox"
             />
-            <label className="" htmlFor="">
+            <label className="label_perin" htmlFor="">
               I hereby declare that all the information provided by me are
               correct. I also agree to follow all the guidelines of the fest and
               agree to the fact that in case of any discrepancy, the decision of
@@ -270,44 +271,78 @@ const Wrap = styled.div`
   }
 
   .div_perin {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
     overflow: auto;
 
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
     .label_perin {
       font-family: Poppins;
       font-size: 20px;
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
 
-      @media (max-width: 667px) {
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 11.5px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 10px;
+      }
+
+      /* @media (max-width: 667px) {
         font-family: Poppins;
         font-size: 10px;
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
         margin: 0px;
-      }
+      } */
     }
+
+    .gen {
+      padding-right: 10px;
+    }
+
     .input_perin {
       width: 100%;
       height: 46px;
+      font-size: 25px;
+      padding: 0 10px;
       border-radius: 5px;
 
-      @media (max-width: 667px) {
+      @media (min-width: 669px) and (max-width: 1150px) {
+        height: 26.5px;
+        font-size: 15px;
+        padding: 0 5px;
+      }
+
+      @media (max-width: 669px) {
+        height: 25px;
+        font-size: 12px;
+        padding: 0 3px;
+      }
+
+      /* @media (max-width: 667px) {
         width: 280px;
         height: 25px;
-      }
+      } */
     }
 
     .input_file {
       font-size: 16px;
       padding-top: 6px;
       @media (max-width: 667px) {
-        font-size: 10px;
+        font-size: 5px;
         padding: 0;
       }
     }
@@ -320,21 +355,34 @@ const Wrap = styled.div`
       width: 25px;
       height: 25px;
 
-      @media (max-width: 667px) {
-        font-family: Poppins;
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0em;
-        text-align: left;
+      @media (min-width: 669px) and (max-width: 1150px) {
         width: 15px;
         height: 15px;
       }
+      @media (max-width: 669px) {
+        /* font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left; */
+        width: 10px;
+        height: 10px;
+      }
     }
 
-    @media (max-width: 667px) {
+    @media (min-width: 669px) and (max-width: 1150px) {
+      padding: 10px 48px;
+    }
+
+    @media (max-width: 669px) {
+      padding: 10px 18px;
+      line-height: 17px;
+    }
+
+    /* @media (max-width: 667px) {
       padding-top: 8px;
       padding-bottom: 8px;
-    }
+    } */
   }
   button {
     margin: auto;
@@ -358,7 +406,19 @@ const Wrap = styled.div`
       border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
     }
 
-    @media (max-width: 667px) {
+    @media (min-width: 669px) and (max-width: 1150px) {
+      font-size: 8px;
+      width: 67px;
+      height: 33px;
+    }
+
+    @media (max-width: 669px) {
+      font-size: 9px;
+      width: 90px;
+      height: 23px;
+    }
+
+    /* @media (max-width: 667px) {
       width: 90px;
       height: 23px;
       font-size: 9px;
@@ -368,7 +428,7 @@ const Wrap = styled.div`
       text-align: center;
       margin-top: 8px;
       margin-bottom: 50px;
-    }
+    } */
   }
   .heading_perin {
     text-align: center;
@@ -382,14 +442,23 @@ const Wrap = styled.div`
       font-size: 45px;
       font-weight: 900;
 
-      @media (max-width: 667px) {
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 26px;
+        line-height: 26px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 15px;
+      }
+
+      /* @media (max-width: 667px) {
         font-size: 15px;
         font-weight: 900;
         letter-spacing: 0em;
         text-align: center;
         margin: 0;
         height: 15px;
-      }
+      } */
     }
     .p_perin {
       font-family: Poppins;
@@ -397,7 +466,16 @@ const Wrap = styled.div`
       font-weight: 700;
       color: rgba(181, 176, 176, 1);
 
-      @media (max-width: 667px) {
+      @media (min-width: 669px) and (max-width: 1150px) {
+        font-size: 11.5px;
+      }
+
+      @media (max-width: 669px) {
+        font-size: 10px;
+        margin: 0;
+      }
+
+      /* @media (max-width: 667px) {
         font-family: Poppins;
         font-size: 10px;
         font-weight: 700;
@@ -406,7 +484,7 @@ const Wrap = styled.div`
         text-align: center;
         padding: auto;
         margin: 0px;
-      }
+      } */
 
       .a_perin {
         cursor: pointer;
@@ -418,15 +496,28 @@ const Wrap = styled.div`
         color: #fc0198;
         font-weight: bold;
 
-        @media (max-width: 667px) {
+        @media (min-width: 669px) and (max-width: 1150px) {
+          font-size: 11.5px;
+        }
+
+        @media (max-width: 669px) {
+          font-size: 10px;
+        }
+
+        /* @media (max-width: 667px) {
           font-family: Poppins;
           font-size: 10px;
           font-weight: 400;
           letter-spacing: 0em;
           text-align: left;
-        }
+        } */
       }
     }
+  }
+
+  @media (max-width: 669px) {
+    width: 80%;
+    padding: 5px 16px;
   }
 `;
 /* Line 2 */

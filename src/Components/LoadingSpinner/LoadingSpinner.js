@@ -1,10 +1,11 @@
 import React from "react";
 import "./spinner.css";
+import spinner from "./Frame_2.gif";
 
 export default function LoadingSpinner() {
   return (
-    <div className="spinner-container">
-      <div className="loading-spinner"></div>
+    <div class="loader">
+      <img src={spinner} alt="loading" />
     </div>
   );
 }

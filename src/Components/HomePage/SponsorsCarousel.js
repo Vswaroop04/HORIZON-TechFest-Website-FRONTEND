@@ -5,6 +5,19 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import img1 from "../About/SponsorImg/Filecoin.png";
+import img2 from "../About/SponsorImg/HoverRobotix.png";
+import img3 from "../About/SponsorImg/devfolio.png";
+import img4 from "../About/SponsorImg/elearnmarkets.png";
+import img5 from "../About/SponsorImg/macv.png";
+import img6 from "../About/SponsorImg/noticwbard.png";
+import img7 from "../About/SponsorImg/polygon.png";
+import img8 from "../About/SponsorImg/portraysketch.png";
+import img9 from "../About/SponsorImg/roostoo.png";
+import img10 from "../About/SponsorImg/startupnews.png";
+import img11 from "../About/SponsorImg/taskade.png";
+import { NavLink } from "react-router-dom";
+
 export default class EventsCarousel extends Component {
   render() {
     const settings = {
@@ -34,46 +47,129 @@ export default class EventsCarousel extends Component {
         }
       ]
     };
+    function goToSection(id) {
+      const section = document.getElementById(id);
+      if (!section) return;
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth"
+      });
+    }
+
     return (
       <Container>
         <h2>SPONSORS</h2>
         <Slider className="sponsors_slider_perin" {...settings}>
           <Wrap className="items">
-            <img src="/images/Sample Poster 1.png" alt="poster1" />
+            <div className="items_suy">
+              <img src={img1} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 2.png" alt="poster2" />
+            <div className="items_suy">
+              <img src={img2} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 3.png" alt="poster3" />
+            <div className="items_suy">
+              <img src={img3} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 1.png" alt="poster1" />
+            <div className="items_suy">
+              <img src={img4} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 2.png" alt="poster2" />
+            <div className="items_suy">
+              <img src={img5} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 1.png" alt="poster1" />
+            <div className="items_suy">
+              <img src={img6} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 2.png" alt="poster2" />
+            <div className="items_suy">
+              <img src={img7} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 3.png" alt="poster3" />
+            <div className="items_suy">
+              <img src={img8} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 1.png" alt="poster1" />
+            <div className="items_suy">
+              <img src={img9} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 2.png" alt="poster2" />
+            <div className="items_suy">
+              <img src={img10} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
           <Wrap className="items">
-            <img src="/images/Sample Poster 3.png" alt="poster3" />
+            <div className="items_suy">
+              <img src={img11} alt="error" />
+              <span>Jay Patel</span>
+            </div>
           </Wrap>
         </Slider>
-        <Button>VIEW ALL</Button>
+        <NavLink onClick={() => goToSection("header")} to="/about">
+          <Button>VIEW ALL</Button>
+        </NavLink>
       </Container>
+      // <Container>
+      //   <h2>SPONSORS</h2>
+      //   <Slider className="sponsors_slider_perin" {...settings}>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 1.png" alt="poster1" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 2.png" alt="poster2" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 3.png" alt="poster3" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 1.png" alt="poster1" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 2.png" alt="poster2" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 1.png" alt="poster1" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 2.png" alt="poster2" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 3.png" alt="poster3" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 1.png" alt="poster1" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 2.png" alt="poster2" />
+      //     </Wrap>
+      //     <Wrap className="items">
+      //       <img src="/images/Sample Poster 3.png" alt="poster3" />
+      //     </Wrap>
+      //   </Slider>
+      //   <Button>VIEW ALL</Button>
+      // </Container>
     );
   }
 }
@@ -122,13 +218,13 @@ const Wrap = styled.a`
     margin: auto;
     width: 80%;
     padding: 2.5px;
-    border: 4px solid;
+    /* border: 4px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(
       90deg,
       rgba(209, 45, 45, 0.92) 0%,
       #1e149d 65.43%
-    );
+    ); */
   }
 `;
 const Button = styled.div`

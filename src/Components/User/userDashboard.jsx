@@ -53,7 +53,9 @@ const UserDashboard = () => {
   return (
     <>
       {isLoading ? (
-        <LoadingSpinner style={{ marginLeft: "50%" }} />
+        <div className="cover">
+          <LoadingSpinner />
+        </div>
       ) : (
         <div className="user_main">
           <div className="user_info">
@@ -81,6 +83,7 @@ const UserDashboard = () => {
               <IndividualCard
                 heading={output.eventname}
                 content={output.description}
+                status={output.eventstatus}
               />
             ))}
           </div>

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
 
-function SignIn({ setLogin, setSignUp, login }) {
+function SignIn({ setLogin, setSignUp, login, headPerin, goHome }) {
   const host = Data.URL;
 
   const navigate = useNavigate();
@@ -50,6 +50,7 @@ function SignIn({ setLogin, setSignUp, login }) {
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
+            if (goHome) window.location.href = `https://hf2gk1.csb.app/`;
             return setLogin(false);
           }}
         ></Close>
@@ -60,7 +61,7 @@ function SignIn({ setLogin, setSignUp, login }) {
           style={{ width: "100%" }}
         >
           <div className="div_perin heading_perin">
-            <h2 className="h2_perin">LOGIN</h2>
+            <h2 className="h2_perin">{headPerin}</h2>
             <p className="p_perin">
               New User?{" "}
               <a
@@ -169,14 +170,20 @@ const Wrap = styled.div`
     .input_perin {
       width: 100%;
       height: 46px;
+      font-size: 25px;
+      padding: 0 10px;
       border-radius: 5px;
 
       @media (min-width: 669px) and (max-width: 1150px) {
         height: 26.5px;
+        padding: 0 5px;
+        font-size: 15px;
       }
 
       @media (max-width: 669px) {
         height: 25px;
+        padding: 0 3px;
+        font-size: 12px;
       }
     }
     .input_perin:focus-visible {

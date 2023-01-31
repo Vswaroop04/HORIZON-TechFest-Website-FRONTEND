@@ -26,9 +26,6 @@ function Teams() {
             <li onClick={() => handleClickTeams(MemberNames.CoreTeam)}>
               Core Team
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Management)}>
-              Management
-            </li>
             <li onClick={() => handleClickTeams(MemberNames.Designing)}>
               Designing Team
             </li>
@@ -91,7 +88,7 @@ const Container = styled.div`
     display: none;
   }
 
-  @media (max-width: 821px) {
+  @media (max-width: 1150px) {
     margin-left: 46px;
     margin-right: 46px;
     display: block;
@@ -118,13 +115,13 @@ const Container = styled.div`
 const Heading = styled.div`
   width: 50%;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 100%;
   }
 
   .parent_div {
     width: 417px;
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       width: 100%;
     }
   }
@@ -161,7 +158,7 @@ const Heading = styled.div`
     }
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     .heading_teams {
       font-size: 25px;
       font-weight: 900;

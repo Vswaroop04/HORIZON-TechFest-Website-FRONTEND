@@ -88,11 +88,11 @@
   margin-right: 20px;
 }
 
-.a1_suy a,
-a:hover,
-a:visited,
-a:active {
-  color: inherit;
+.a_suy a,
+.a_suy a:hover,
+.a_suy a:visited,
+.a_suy a:active {
+  color: white !important;
   text-decoration: none;
 }
 
@@ -105,10 +105,13 @@ a:active {
   height: 62px;
   border: 3px solid #534e93;
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 .tribute_soldier {
-  width: 35%;
+  width: 25vw;
+  height: 28vw;
+  object-fit: cover;
 }
 
 .tribute_end_line {
@@ -183,10 +186,13 @@ a:active {
     max-width: 174px;
     height: 37px;
     border: 2px solid #534e93;
+    margin-right: 10px;
   }
 
   .tribute_soldier {
-    width: 35%;
+    width: 20vw;
+    height: 25vw;
+    object-fit: cover;
   }
 
   .tribute_end_line {
@@ -258,7 +264,7 @@ a:active {
     height: 25px;
     border: 2px solid #534e93;
 
-    margin-right: 12px;
+    margin-right: 8px;
   }
 
   .a2_suy {
@@ -269,6 +275,7 @@ a:active {
     width: 112px;
     height: 25px;
     border: 2px solid #534e93;
+    margin-right: 8px;
   }
 
   .tribute_soldier {
@@ -290,6 +297,8 @@ a:active {
 
   .tribute_soldier_mob {
     display: block;
-    width: 65%;
+    width: 22vw;
+    height: 28vw;
+    object-fit: cover;
   }
 }

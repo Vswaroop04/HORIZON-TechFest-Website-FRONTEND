@@ -76,15 +76,12 @@ const AvatarDropdown = () => {
     }
   };
 
-  // useEffect(() => {
-  //   console.log(avatar);
-  //   changeAvatar(avatar);
-  // }, [avatar]);
-
   return (
     <>
       {isLoading ? (
-        <LoadingSpinner />
+        <div className="user_img">
+          <LoadingSpinner />
+        </div>
       ) : (
         <div className="user_img">
           <img className="avatar_img" src={avatar} alt="User Avatar" />

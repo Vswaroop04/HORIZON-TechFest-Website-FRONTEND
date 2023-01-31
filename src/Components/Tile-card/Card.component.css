@@ -6,6 +6,7 @@
   justify-content: space-around;
   margin-right: 50px;
   margin-block: 25px;
+  border-radius: 5px;
 
   background-color: blueviolet;
   -moz-osx-font-smoothing: grayscale;
@@ -69,6 +70,7 @@
     margin-block: 15px;
     margin-inline: 0;
     padding: 15px;
+    border-radius: 3px;
   }
   .heading_vis {
     font-size: 12px;
@@ -106,6 +108,7 @@
     height: 185px;
     margin: 15px;
     padding: 10px;
+    border-radius: 2px;
   }
   .heading_vis {
     font-size: 8px;

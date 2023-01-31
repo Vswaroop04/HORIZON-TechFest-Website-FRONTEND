@@ -70,7 +70,7 @@ export default class AutoCarousal extends Component {
       ]
     };
     return (
-      <div>
+      <div id="spon_suy">
         <Slider {...settings}>
           <div>
             <div className="items_suy">
