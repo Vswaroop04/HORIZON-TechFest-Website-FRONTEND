@@ -205,6 +205,9 @@ const Nav = styled.div`
   font-family: "Bujji", sans-serif;
   color: white;
   background-color: black;
+  a {
+    box-shadow: none;
+  }
 
   .burger_nav_icon {
     display: none;

@@ -44,7 +44,8 @@ const SingleEvent = () => {
         "Any team caught using malpractices will be disqualified.",
         "All updates and communication with the participants will be done through discord or Whatsapp as per the requirements at the time of the event. All Teams shall appoint one captain to be the point of contact."
       ],
-      Themes: ["Will be live soon. Stay Tuned!"]
+      Themes: ["Will be live soon. Stay Tuned!"],
+      Register: 1
     }
   ];
 
@@ -77,7 +78,10 @@ const SingleEvent = () => {
         "The organizers are permitted to call any participant after the event and ask any questions that they deem fit regarding the contest.",
         "All decisions made by the judges and the organizers are final and binding."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 0,
+      OutLink: 1,
+      Link: "https://www.vishnuswaroop.live"
     }
   ];
 
@@ -114,7 +118,8 @@ const SingleEvent = () => {
         "The organizers are permitted to call any team after the event and ask any questions that they deem fit regarding the contest.",
         "All decisions made by the organizers are final and binding."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 1
     }
   ];
 
@@ -148,7 +153,10 @@ const SingleEvent = () => {
         "In case of any dispute, the decision of the organisers will be final and binding.",
         "Any further rules would be conveyed in due time."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 0,
+      OutLink: 1,
+      Link: "https://www.vishnuswaroop.live"
     }
   ];
 
@@ -184,7 +192,8 @@ const SingleEvent = () => {
         "Similarities among solutions can be tolerated to a certain extent, but an exact copy of any other group's solution will result in immediate disqualification.",
         "In case of any disputes, the decision of the organisers will be final."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 1
     }
   ];
 
@@ -221,7 +230,9 @@ const SingleEvent = () => {
         "Teams must stop hacking once the time is up. However, teams are allowed to debug and make small fixes to their programs after time is up. e.g., If during demonstrating your hack, you find a bug that breaks your application and the fix is only a few lines of code, it's okay to fix that. This code needs to be pushed to the repository.",
         "In case of any disputes, the decision of the organisers will be final."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 0,
+      OutLink: 0
     }
   ];
 
@@ -256,7 +267,10 @@ const SingleEvent = () => {
         "In case of any dispute, decisions taken by the designing club or technical committee will be the final.",
         "The best posts will be uploaded on our Instagram, LinkedIn and FB pages."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 0,
+      OutLink: 1,
+      Link: "https://www.vishnuswaroop.live"
     }
   ];
 
@@ -291,7 +305,10 @@ const SingleEvent = () => {
         "Using automated means (including but not limited to harvesting bots, robots, parsers, spiders, or screen scrapers) to obtain, collect or access any information is strictly prohibited.",
         "In case of any dispute, decisions taken by the organisers will be the final."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 0,
+      OutLink: 1,
+      Link: "https://www.vishnuswaroop.live"
     }
   ];
 
@@ -326,7 +343,8 @@ const SingleEvent = () => {
         "Any team caught using malpractices will be disqualified.",
         "All updates and communication with the participants will be done through discord or WhatsApp as per the requirements at the time of the event. All Teams shall appoint one captain to be the point of contact."
       ],
-      Themes: ["Will be live on 17th February 2023. Stay Tuned!"]
+      Themes: ["Will be live on 17th February 2023. Stay Tuned!"],
+      Register: 1
     }
   ];
 
@@ -433,12 +451,26 @@ const SingleEvent = () => {
                 <p className="content-box">{Event.Themes}</p>
               </div>
               <div className="single_vis">
-                <button
-                  className="single-viewbutton"
-                  onClick={handleClickRegister}
-                >
-                  <p className="single-buttontext"> Register </p>
-                </button>
+                {Event.Register ? (
+                  <button
+                    className="single-viewbutton"
+                    onClick={handleClickRegister}
+                  >
+                    <p className="single-buttontext"> Register </p>
+                  </button>
+                ) : Event.OutLink ? (
+                  <button
+                    className="single-viewbutton"
+                    href="www.vishnuswaroop.live"
+                  >
+                    <a href={Event.Link} target="_blank" rel="noreferrer">
+                      {" "}
+                      <p className="single-buttontext"> Register </p>{" "}
+                    </a>
+                  </button>
+                ) : (
+                  <p className="event-title"> Stay Tuned</p>
+                )}
               </div>
             </div>
             <Register

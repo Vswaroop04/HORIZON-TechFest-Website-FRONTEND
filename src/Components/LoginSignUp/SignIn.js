@@ -4,9 +4,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import "./login_signup.css";
 
 function SignIn({ setLogin, setSignUp, login, headPerin, goHome }) {
   const host = Data.URL;
+  const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -15,6 +18,7 @@ function SignIn({ setLogin, setSignUp, login, headPerin, goHome }) {
   var [response, setResponse] = useState("");
 
   async function postUserDetails(e) {
+    setOpen(true);
     e.preventDefault();
 
     const response = await fetch(`${host}/loginuser`, {
@@ -35,83 +39,101 @@ function SignIn({ setLogin, setSignUp, login, headPerin, goHome }) {
       localStorage.setItem("user", JSON.stringify(json.user));
       setResponse("Succesfully Login");
       window.location.reload(false);
+      setOpen(false);
       document.body.style.overflow = "auto";
     } else {
       setResponse("Invalid credentials");
+      setOpen(false);
     }
   }
 
   return (
-    <Backdrop
-      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={login}
-    >
-      <Wrap>
-        <Close
-          onClick={() => {
-            document.body.style.overflow = "auto";
-            if (goHome) window.location.href = `https://hf2gk1.csb.app/`;
-            return setLogin(false);
-          }}
-        ></Close>
-        <form
-          action=""
-          method=""
-          onSubmit={postUserDetails}
-          style={{ width: "100%" }}
-        >
-          <div className="div_perin heading_perin">
-            <h2 className="h2_perin">{headPerin}</h2>
-            <p className="p_perin">
-              New User?{" "}
-              <a
-                className="a_perin"
-                onClick={() => {
-                  setLogin(false);
-                  setSignUp(true);
-                }}
+    <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 2 }}
+        open={open}
+      >
+        <LoadingSpinner />
+      </Backdrop>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={login}
+      >
+        <Wrap>
+          <Close
+            onClick={() => {
+              document.body.style.overflow = "auto";
+              if (goHome) window.location.href = `https://hf2gk1.csb.app/`;
+              return setLogin(false);
+            }}
+          ></Close>
+          <form
+            action=""
+            method=""
+            onSubmit={postUserDetails}
+            style={{ width: "100%" }}
+          >
+            <div className="div_perin heading_perin">
+              <h2 className="h2_perin">{headPerin}</h2>
+              <p className="p_perin">
+                New User?{" "}
+                <a
+                  className="a_perin"
+                  onClick={() => {
+                    setLogin(false);
+                    setSignUp(true);
+                  }}
+                >
+                  SignUp
+                </a>
+              </p>
+              <p
+                className={
+                  response === "Succesfully Login"
+                    ? "success_suy"
+                    : "invalid_suy"
+                }
               >
-                SignUp
-              </a>
-            </p>
-            <p className="p_perin"> {response} </p>
-          </div>
-          <div className=" div_perin email">
-            <label className="label_perin" htmlFor="">
-              Email
-            </label>
-            <br />
-            <input
-              value={ML}
-              onChange={(e) => SetML(e.target.value)}
-              className="input_perin"
-              type="email"
-              required={true}
-              name=""
-              id=""
-            />
-          </div>
-          <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Password
-            </label>
-            <br />
-            <input
-              value={PD}
-              onChange={(e) => SetPD(e.target.value)}
-              className="input_perin"
-              type="password"
-              required={true}
-              name=""
-              id=""
-            />
-          </div>
-          <div className="div_perin">
-            <button type="submit">Login</button>
-          </div>
-        </form>
-      </Wrap>
-    </Backdrop>
+                {response}
+              </p>
+            </div>
+            <div className=" div_perin email">
+              <label className="label_perin" htmlFor="">
+                Email
+              </label>
+              <br />
+              <input
+                value={ML}
+                onChange={(e) => SetML(e.target.value)}
+                className="input_perin"
+                type="email"
+                required={true}
+                name=""
+                id=""
+              />
+            </div>
+            <div className="div_perin password">
+              <label className="label_perin" htmlFor="">
+                Password
+              </label>
+              <br />
+              <input
+                value={PD}
+                onChange={(e) => SetPD(e.target.value)}
+                className="input_perin"
+                type="password"
+                required={true}
+                name=""
+                id=""
+              />
+            </div>
+            <div className="div_perin">
+              <button type="submit">LOGIN</button>
+            </div>
+          </form>
+        </Wrap>
+      </Backdrop>
+    </>
   );
 }
 
@@ -210,8 +232,9 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: #b2016b;
+    background: #d12d2d;
     border: 0px;
+    font-family: "bujji", sans-serif;
 
     @media (min-width: 669px) and (max-width: 1150px) {
       font-size: 8px;
@@ -229,7 +252,7 @@ const Wrap = styled.div`
       background: transparent;
       border: 2px solid;
       border-image-slice: 1;
-      border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
+      border-image-source: linear-gradient(90deg, #d12d2d, #1e149d);
     }
   }
   .heading_perin {
@@ -238,6 +261,7 @@ const Wrap = styled.div`
     .h2_perin {
       font-size: 45px;
       font-weight: 900;
+      font-family: "bujji";
 
       @media (min-width: 669px) and (max-width: 1150px) {
         font-size: 26px;
@@ -270,8 +294,9 @@ const Wrap = styled.div`
         font-weight: 400;
         text-align: left;
         text-decoration: underline;
-        color: #fc0198;
+        color: #d12d2d;
         font-weight: bold;
+        box-shadow: none;
 
         @media (min-width: 669px) and (max-width: 1150px) {
           font-size: 11.5px;

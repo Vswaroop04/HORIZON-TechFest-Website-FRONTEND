@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
-function MemberCard({ firstName, lastName, linkedin, email }) {
+function MemberCard({ firstName, lastName, linkedin, email, whatsapp }) {
   return (
     <Container>
       <MemberDetails>
@@ -20,6 +21,12 @@ function MemberCard({ firstName, lastName, linkedin, email }) {
           </a>
           <a target="_blank" href={"mailto:" + email}>
             <EmailIcon className="email_icon" />
+          </a>
+          <a target="_blank" href={"https://wa.me/" + whatsapp}>
+            <WhatsAppIcon
+              className="whatsapp_icon"
+              style={{ color: "white" }}
+            />
           </a>
         </Image>
       </MemberDetails>
@@ -133,7 +140,8 @@ const Image = styled.div`
   @media (max-width: 1150px) {
     padding-top: 3px;
     .lin_icon,
-    .email_icon {
+    .email_icon,
+    .whatsapp_icon {
       width: 25px;
       height: 25px;
     }
@@ -141,7 +149,8 @@ const Image = styled.div`
   @media (max-width: 768px) {
     padding-top: 25px;
     .lin_icon,
-    .email_icon {
+    .email_icon,
+    .whatsapp_icon {
       width: 20px;
       height: 20px;
     }

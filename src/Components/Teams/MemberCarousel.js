@@ -32,14 +32,16 @@ export default function EventsCarousel({ teamName }) {
                     lastName={teamName.lastName[index]}
                     linkedin={teamName.linkedin[index]}
                     email={teamName.email[index]}
+                    whatsapp={teamName.whatsapp[index]}
                   />
                 </UpperCard>
                 <BottomCard>
                   <MemberCard
                     firstName={teamName.firstName[index + 1]}
                     lastName={teamName.lastName[index + 1]}
-                    linkedin={teamName.linkedin[index] + 1}
-                    email={teamName.email[index] + 1}
+                    linkedin={teamName.linkedin[index + 1]}
+                    email={teamName.email[index + 1]}
+                    whatsapp={teamName.whatsapp[index + 1]}
                   />
                 </BottomCard>
               </Wrap>
@@ -55,6 +57,7 @@ export default function EventsCarousel({ teamName }) {
                       lastName={teamName.lastName[index]}
                       linkedin={teamName.linkedin[index]}
                       email={teamName.email[index]}
+                      whatsapp={teamName.whatsapp[index]}
                     />
                   </UpperCard>
                 </Wrap>

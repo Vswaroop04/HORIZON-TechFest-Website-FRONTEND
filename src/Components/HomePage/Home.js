@@ -25,7 +25,7 @@ function Home() {
             coding challenges to panel discussions, this event has something for
             everyone. Don't miss out!
           </Data>
-          <a href="#abt_suy">
+          <a className="underlined_button" href="#abt_suy">
             <Button>Know More</Button>
           </a>
         </Description>
@@ -66,7 +66,11 @@ function Home() {
               being the first year of “Horizon”, we aim to achieve new heights
               while simultaneously creating history.
             </p>
-            <NavLink onClick={() => goToSection("header")} to="/about">
+            <NavLink
+              className="underlined_button"
+              onClick={() => goToSection("header")}
+              to="/about"
+            >
               <Button>Read More</Button>
             </NavLink>
           </Content>
@@ -87,6 +91,9 @@ const Container = styled.div`
   font-family: "Bujji", sans-serif;
   height: 100%;
   width: 100%;
+  .underlined_button {
+    text-decoration: none;
+  }
 `;
 
 // Wrap Css
@@ -103,7 +110,7 @@ const Wrap = styled.div`
   background-color: black;
   background-image: url("./images/background.svg");
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 100vw;
     height: auto;
     padding-bottom: 121px;
@@ -124,7 +131,7 @@ const Description = styled.div`
   padding-left: 76px;
   /* margin-top: 80px; */
 
-  @media (max-width: 821px) {
+  @media (max-width: 1150px) {
     width: 100vw;
     padding-left: 34px;
     padding-right: 34px;
@@ -141,7 +148,7 @@ const Title = styled.div`
   font-weight: 900;
   margin: 26px 0 26px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-size: 52px;
     font-weight: 900;
     line-height: 51px;
@@ -168,7 +175,7 @@ const Data = styled.div`
   color: #b5b0b0;
   margin: 26px 0 26px;
 
-  @media (max-width: 821px) {
+  @media (max-width: 1150px) {
     font-family: Poppins;
     font-size: 12px;
     font-weight: 400;
@@ -219,7 +226,7 @@ const Button = styled.div`
     text-fill-color: transparent;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 121px;
     height: 34px;
     font-size: 9px;
@@ -244,7 +251,7 @@ const Button = styled.div`
 const Days = styled.div`
   padding-right: 150px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     padding-right: 100px;
   }
   @media (max-width: 667px) {
@@ -258,7 +265,7 @@ const DaysNum = styled.div`
   height: 65px;
   color: white;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-size: 35px;
     font-weight: 900;
     line-height: 34px;
@@ -282,7 +289,7 @@ const DaysName = styled.div`
   font-size: 30px;
   color: #b5b0b0;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-family: Poppins;
     font-size: 17px;
     font-weight: 700;
@@ -306,7 +313,7 @@ const PriceNum = styled.div`
   height: 65px;
   color: white;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-size: 35px;
     font-weight: 900;
     line-height: 34px;
@@ -330,7 +337,7 @@ const PriceName = styled.div`
   font-size: 30px;
   color: #b5b0b0;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-family: Poppins;
     font-size: 17px;
     font-weight: 700;
@@ -349,7 +356,7 @@ const PriceName = styled.div`
 const Event = styled.div`
   padding-left: 150px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     padding-left: 100px;
   }
   @media (max-width: 667px) {
@@ -364,7 +371,7 @@ const EventNum = styled.div`
   height: 65px;
   color: white;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-size: 35px;
     font-weight: 900;
     line-height: 34px;
@@ -388,7 +395,7 @@ const EventName = styled.div`
   font-size: 30px;
   color: #b5b0b0;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-family: Poppins;
     font-size: 17px;
     font-weight: 700;
@@ -410,7 +417,7 @@ const NumTag = styled.div`
   justify-content: space-between;
   background: linear-gradient(90deg, #d12d2d 37.74%, #0b0371 93.02%);
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 100vw;
     height: 123px;
   }
@@ -440,7 +447,7 @@ const About = styled.div`
     padding-right: 25px;
     margin-right: 100px;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       padding-right: 0px;
       margin-right: 50px;
     }
@@ -451,15 +458,22 @@ const About = styled.div`
   @media (max-width: 667px) {
     height: auto;
   }
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     height: auto;
   }
 `;
 const Content = styled.div`
   padding-right: 100px;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     padding-right: 70px;
+  }
+
+  @media (max-width: 667px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   h2 {
     color: white;
@@ -476,7 +490,7 @@ const Content = styled.div`
       text-fill-color: transparent;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       font-size: 23px;
       font-weight: 900;
       letter-spacing: 0em;
@@ -500,7 +514,7 @@ const Content = styled.div`
     color: #b5b0b0;
     padding-top: 25px;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       font-family: Poppins;
       font-size: 12px;
       font-weight: 400;

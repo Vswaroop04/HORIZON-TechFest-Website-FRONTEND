@@ -2,8 +2,6 @@ import "./user.css";
 import TeamCard from "./cards/team";
 import IndividualCard from "./cards/individual";
 import AvatarDropdown from "./avatarDropdown";
-import Avatar1 from "./avatars/Asset 1.svg";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Data from "../Host";

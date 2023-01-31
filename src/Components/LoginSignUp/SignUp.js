@@ -36,25 +36,29 @@ function SignUp({ signUp, setSignUp, setLogin, goHome }) {
     if (checkbox) {
       if (PD === CPD) {
         if (proof !== "") {
-          const config = {
-            headers: { "content-type": "multipart/form-data" }
-          };
-          const response = await axios
-            .post(`${host}/signupuser`, formimgData, config)
-            .then((res) => res.data);
-          console.log(response);
-          if (response.success) {
-            // Save the auth token and redirect
-            localStorage.setItem("auth-token", response.authtoken);
-            localStorage.setItem("user", JSON.stringify(response.user));
-            window.location.reload(false);
-            document.body.style.overflow = "auto";
-            setResponse("SuccessFully Created Account");
+          if (GR === "male" || GR === "female") {
+            const config = {
+              headers: { "content-type": "multipart/form-data" }
+            };
+            const response = await axios
+              .post(`${host}/signupuser`, formimgData, config)
+              .then((res) => res.data);
+            console.log(response);
+            if (response.success) {
+              // Save the auth token and redirect
+              localStorage.setItem("auth-token", response.authtoken);
+              localStorage.setItem("user", JSON.stringify(response.user));
+              window.location.reload(false);
+              document.body.style.overflow = "auto";
+              setResponse("SuccessFully Created Account");
+            } else {
+              setResponse("Cant Create Account, Pls Try Again");
+            }
           } else {
-            setResponse("Cant Create Account, Pls Try Again");
+            setResponse("Please Provide your Gender");
           }
         } else {
-          setResponse("Attach a valid Proof");
+          setResponse("Please Attach a valid Proof and provide all details");
         }
       } else {
         setResponse("Passwords Not Matched");

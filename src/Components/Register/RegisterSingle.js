@@ -5,18 +5,22 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
   const host = Data.URL;
   const navigate = useNavigate();
   var [response, setResponse] = useState("");
+  const [open, setOpen] = useState(false);
 
   async function handleRegister(e) {
     e.preventDefault();
+    setOpen(true);
     var chkbx = document.querySelectorAll(".cb");
     for (let i = 0; i < 2; i++) {
       if (!chkbx[i].checked) {
         setResponse("Please tick the check box");
+        setOpen(false);
         return;
       }
     }
@@ -34,10 +38,12 @@ function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
       setResponse(response.message);
       if (response.status) {
         document.body.style.overflow = "auto";
+        setOpen(false);
         navigate("/");
       }
     } else {
       setResponse("Please Login to Continue");
+      setOpen(false);
     }
   }
 
@@ -49,64 +55,81 @@ function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
     //       : { display: "none" }
     //   }
     // >
-    <Backdrop
-      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={registersingle}
-    >
-      <Wrap>
-        <Close
-          onClick={() => {
-            document.body.style.overflow = "auto";
-            setRegistersingle(false);
-          }}
-        ></Close>
-        <form action="" method="" onSubmit={handleRegister}>
-          <div className="div_perin heading_perin">
-            <h2 className="h2_perin">Register</h2>
-            <p className="p_perin">Individual Participation</p>
-            <p className="p_perin"> {response}</p>
-          </div>
-          <div className="div_perin name_home">
-            <p className="">Register for this event ?</p>
+    <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 2 }}
+        open={open}
+      >
+        <LoadingSpinner />
+      </Backdrop>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={registersingle}
+      >
+        <Wrap>
+          <Close
+            onClick={() => {
+              document.body.style.overflow = "auto";
+              setRegistersingle(false);
+            }}
+          ></Close>
+          <form action="" method="" onSubmit={handleRegister}>
+            <div className="div_perin heading_perin">
+              <h2 className="h2_perin">Register</h2>
+              <p className="p_perin">Individual Participation</p>
+              <p
+                className={
+                  response === "Succesfully Login"
+                    ? "success_suy"
+                    : "invalid_suy"
+                }
+              >
+                {" "}
+                {response}
+              </p>
+            </div>
+            <div className="div_perin name_home">
+              <p className="">Register for this event ?</p>
 
-            <input
-              type="checkbox"
-              className="checkbox_perin cb"
-              name=""
-              required={true}
-              value=""
-            />
-            <br />
+              <input
+                type="checkbox"
+                className="checkbox_perin cb"
+                name=""
+                required={true}
+                value=""
+              />
+              <br />
 
-            <label className="" for="">
-              {" "}
-              Yes
-            </label>
-          </div>
-          <div className="div_perin password">
-            <input
-              type="checkbox"
-              className="checkbox_perin cb"
-              id=""
-              required={true}
-              name=""
-              value=""
-            />
-            <br />
-            <label for="">
-              {" "}
-              I hereby declare that all the information provided by me are
-              correct. I also agree to follow all the guidelines of the fest and
-              agree to the fact that in case of any discrepancy, the decision of
-              the organizers will be final and binding.
-            </label>
-          </div>
-          <div className="div_perin">
-            <button type="submit">Register</button>
-          </div>
-        </form>
-      </Wrap>
-    </Backdrop>
+              <label className="" for="">
+                {" "}
+                Yes
+              </label>
+            </div>
+            <div className="div_perin password">
+              <input
+                type="checkbox"
+                className="checkbox_perin cb"
+                id=""
+                required={true}
+                name=""
+                value=""
+              />
+              <br />
+              <label for="">
+                {" "}
+                I hereby declare that all the information provided by me are
+                correct. I also agree to follow all the guidelines of the fest
+                and agree to the fact that in case of any discrepancy, the
+                decision of the organizers will be final and binding.
+              </label>
+            </div>
+            <div className="div_perin">
+              <button type="submit">Register</button>
+            </div>
+          </form>
+        </Wrap>
+      </Backdrop>
+    </>
     // </Container>
   );
 }

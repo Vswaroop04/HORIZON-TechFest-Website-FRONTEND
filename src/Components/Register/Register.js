@@ -5,12 +5,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 function Register({ register, setRegister, teamsize, eventid }) {
   const host = Data.URL;
   const navigate = useNavigate();
   const rows = [];
   var [response, setResponse] = useState("");
+  const [open, setOpen] = useState(false);
 
   for (let i = 1; i < teamsize; i++) {
     rows[i] = i;
@@ -18,6 +20,7 @@ function Register({ register, setRegister, teamsize, eventid }) {
 
   async function handleRegister(e) {
     e.preventDefault();
+    setOpen(true);
     if (document.querySelector(".chkbx").checked) {
       if (localStorage["auth-token"]) {
         var formdata = {};
@@ -36,14 +39,17 @@ function Register({ register, setRegister, teamsize, eventid }) {
           .catch((err) => err);
         setResponse(response.message);
         if (response.status) {
+          setOpen(false);
           navigate("/");
           document.body.style.overflow = "auto";
         }
       } else {
         setResponse("Please Login to Continue");
+        setOpen(false);
       }
     } else {
       setResponse("Please agree the terms & conditions");
+      setOpen(false);
     }
   }
   return (
@@ -52,105 +58,121 @@ function Register({ register, setRegister, teamsize, eventid }) {
     //     register === "Register" ? { display: "block" } : { display: "none" }
     //   }
     // >
-    <Backdrop
-      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={register}
-    >
-      <Wrap>
-        <Close
-          onClick={() => {
-            document.body.style.overflow = "auto";
-            setRegister(false);
-          }}
-        ></Close>
-        <form action="" method="" onSubmit={handleRegister}>
-          <div className="div_perin heading_perin">
-            <h2 className="h2_perin">Register</h2>
-            <p className="p_perin">Team Participation</p>
-            <p className="p_perin">{response}</p>
-          </div>
-          <div className="div_perin name_home">
-            <label className="label_perin" htmlFor="">
-              Team Name{" "}
-            </label>
-            <br />
-            <input
-              className="input_perin form-data-input"
-              type="name"
-              name="teamname"
-              required={true}
-              id=""
-            />
-          </div>
-          <div className="div_perin email">
-            <label className="label_perin" htmlFor="">
-              Team Leader Email ID{" "}
-            </label>
-            <p>
-              {" "}
-              The value of this field is pre-filled and cannot be changed. Only
-              the team leader needs to fill the form and in this case, it
-              displays your email ID.
-            </p>
-            <br />
-            <input
-              className="input_perin form-data-input"
-              type="email"
-              name="leaderemail"
-              id=""
-              disabled={true}
-              value={JSON.parse(localStorage["user"]).data.user.email}
-            />
-          </div>
-          <div className="div_perin email">
-            <br />
-            <p>
-              Please enter the email ID with which your teammate has registered
-              on the website. If not, please ask your teammate to sign up & then
-              fill the form.
-            </p>
-            <br />
-          </div>
-          {rows.map((i) => {
-            return (
-              <div className="div_perin email" key={i}>
-                <label className="label_perin" htmlFor="">
-                  Member {i} Email ID{" "}
-                </label>
-                <br />
-                <input
-                  className="input_perin form-data-input"
-                  type="email"
-                  required={true}
-                  name={"email" + i}
-                />
-              </div>
-            );
-          })}
-          <div className="div_perin password">
-            <br />
-            <input
-              type="checkbox"
-              className="checkbox_perin chkbx"
-              required={true}
-              name=""
-              value=""
-            />
-            <br />
-            <label for="">
-              {" "}
-              I hereby declare that all the information provided by me are
-              correct. I also agree to follow all the guidelines of the fest and
-              agree to the fact that in case of any discrepancy, the decision of
-              the organizers will be final and binding.
-            </label>
-          </div>
-          <div className="div_perin">
-            <button type="submit">Register</button>
-          </div>
-        </form>
-      </Wrap>
-    </Backdrop>
+    <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 2 }}
+        open={open}
+      >
+        <LoadingSpinner />
+      </Backdrop>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={register}
+      >
+        <Wrap>
+          <Close
+            onClick={() => {
+              document.body.style.overflow = "auto";
+              setRegister(false);
+            }}
+          ></Close>
+          <form action="" method="" onSubmit={handleRegister}>
+            <div className="div_perin heading_perin">
+              <h2 className="h2_perin">Register</h2>
+              <p className="p_perin">Team Participation</p>
+              <p
+                className={
+                  response === "Succesfully Login"
+                    ? "success_suy"
+                    : "invalid_suy"
+                }
+              >
+                {response}
+              </p>
+            </div>
+            <div className="div_perin name_home">
+              <label className="label_perin" htmlFor="">
+                Team Name{" "}
+              </label>
+              <br />
+              <input
+                className="input_perin form-data-input"
+                type="name"
+                name="teamname"
+                required={true}
+                id=""
+              />
+            </div>
+            <div className="div_perin email">
+              <label className="label_perin" htmlFor="">
+                Team Leader Email ID{" "}
+              </label>
+              <p>
+                {" "}
+                The value of this field is pre-filled and cannot be changed.
+                Only the team leader needs to fill the form and in this case, it
+                displays your email ID.
+              </p>
+              <br />
+              <input
+                className="input_perin form-data-input"
+                type="email"
+                name="leaderemail"
+                id=""
+                disabled={true}
+                value={JSON.parse(localStorage["user"]).data.user.email}
+              />
+            </div>
+            <div className="div_perin email">
+              <br />
+              <p>
+                Please enter the email ID with which your teammate has
+                registered on the website. If not, please ask your teammate to
+                sign up & then fill the form.
+              </p>
+              <br />
+            </div>
+            {rows.map((i) => {
+              return (
+                <div className="div_perin email" key={i}>
+                  <label className="label_perin" htmlFor="">
+                    Member {i} Email ID{" "}
+                  </label>
+                  <br />
+                  <input
+                    className="input_perin form-data-input"
+                    type="email"
+                    required={true}
+                    name={"email" + i}
+                  />
+                </div>
+              );
+            })}
+            <div className="div_perin password">
+              <br />
+              <input
+                type="checkbox"
+                className="checkbox_perin chkbx"
+                required={true}
+                name=""
+                value=""
+              />
+              <br />
+              <label for="">
+                {" "}
+                I hereby declare that all the information provided by me are
+                correct. I also agree to follow all the guidelines of the fest
+                and agree to the fact that in case of any discrepancy, the
+                decision of the organizers will be final and binding.
+              </label>
+            </div>
+            <div className="div_perin">
+              <button type="submit">Register</button>
+            </div>
+          </form>
+        </Wrap>
+      </Backdrop>
+    </>
     // {/* </Container> */}
   );
 }

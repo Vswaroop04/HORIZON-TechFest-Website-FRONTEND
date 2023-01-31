@@ -1,13 +1,13 @@
 import { Component } from "react";
 import Slider from "react-slick";
 
-import img1 from "./SponsorImg/Filecoin.png";
-import img2 from "./SponsorImg/HoverRobotix.png";
-import img3 from "./SponsorImg/devfolio.png";
+import img1 from "./SponsorImg/devfolio.png";
+import img2 from "./SponsorImg/polygon.png";
+import img3 from "./SponsorImg/Filecoin.png";
 import img4 from "./SponsorImg/elearnmarkets.png";
 import img5 from "./SponsorImg/macv.png";
 import img6 from "./SponsorImg/noticwbard.png";
-import img7 from "./SponsorImg/polygon.png";
+import img7 from "./SponsorImg/HoverRobotix.png";
 import img8 from "./SponsorImg/portraysketch.png";
 import img9 from "./SponsorImg/roostoo.png";
 import img10 from "./SponsorImg/startupnews.png";
@@ -87,55 +87,55 @@ export default class AutoCarousal extends Component {
           <div>
             <div className="items_suy">
               <img src={img3} alt="error" />
-              <span>Silver Sponsor</span>
+              <span>Gold Sponsor</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img4} alt="error" />
-              <span>Godshot</span>
+              <span>Gold Sponsor</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img5} alt="error" />
-              <span>Vivek Borole</span>
+              <span>Eyewear Sponsor</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img6} alt="error" />
-              <span>Jay Patel</span>
+              <span>Media Partner</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img7} alt="error" />
-              <span>Jay Patel</span>
+              <span>Silver Sponsor</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img8} alt="error" />
-              <span>Jay Patel</span>
+              <span>Silver Sponsor</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img9} alt="error" />
-              <span>Jay Patel</span>
+              <span>Platform Sponsor</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img10} alt="error" />
-              <span>Jay Patel</span>
+              <span>Media Partner</span>
             </div>
           </div>
           <div>
             <div className="items_suy">
               <img src={img11} alt="error" />
-              <span>Jay Patel</span>
+              <span>Gold Sponsor</span>
             </div>
           </div>
         </Slider>

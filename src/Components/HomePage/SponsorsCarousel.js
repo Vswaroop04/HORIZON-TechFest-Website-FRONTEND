@@ -62,72 +62,76 @@ export default class EventsCarousel extends Component {
         <Slider className="sponsors_slider_perin" {...settings}>
           <Wrap className="items">
             <div className="items_suy">
-              <img src={img1} alt="error" />
-              <span>Jay Patel</span>
+              <img className="glow" src={img1} alt="error" />
+              <span>Platinum Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img2} alt="error" />
-              <span>Jay Patel</span>
+              <span>Gold Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img3} alt="error" />
-              <span>Jay Patel</span>
+              <span>Gold Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img4} alt="error" />
-              <span>Jay Patel</span>
+              <span>Gold Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img5} alt="error" />
-              <span>Jay Patel</span>
+              <span>Eyewear Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img6} alt="error" />
-              <span>Jay Patel</span>
+              <span>Media Partner</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img7} alt="error" />
-              <span>Jay Patel</span>
+              <span>Silver Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img8} alt="error" />
-              <span>Jay Patel</span>
+              <span>Silver Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img9} alt="error" />
-              <span>Jay Patel</span>
+              <span>Platform Sponsor</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img10} alt="error" />
-              <span>Jay Patel</span>
+              <span>Media Partner</span>
             </div>
           </Wrap>
           <Wrap className="items">
             <div className="items_suy">
               <img src={img11} alt="error" />
-              <span>Jay Patel</span>
+              <span>Gold Sponsor</span>
             </div>
           </Wrap>
         </Slider>
-        <NavLink onClick={() => goToSection("header")} to="/about">
+        <NavLink
+          className="underlined_button"
+          onClick={() => goToSection("header")}
+          to="/about"
+        >
           <Button>VIEW ALL</Button>
         </NavLink>
       </Container>
@@ -188,7 +192,7 @@ const Container = styled.div`
     text-align: center;
     margin-bottom: 100px;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       margin-bottom: 57px;
       font-size: 23px;
       font-weight: 900;
@@ -261,7 +265,7 @@ const Button = styled.div`
     text-fill-color: transparent;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 110px;
     height: 40px;
     font-size: 9px;

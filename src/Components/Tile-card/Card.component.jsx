@@ -1,4 +1,5 @@
 import "./Card.component.css";
+import { NavLink } from "react-router-dom";
 
 const Card = (props) => {
   return (
@@ -7,9 +8,9 @@ const Card = (props) => {
         <h2 className="heading_vis">{props.heading}</h2>
         <p className="content_vis">{props.content}</p>
         <button className="view-button_vis">
-          <a href={props.link}>
+          <NavLink to={props.link}>
             <h3 className="button-text_suy">VIEW</h3>
-          </a>
+          </NavLink>
         </button>
       </div>
     </div>

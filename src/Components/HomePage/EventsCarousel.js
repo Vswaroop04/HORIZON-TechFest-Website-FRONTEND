@@ -106,7 +106,11 @@ export default class EventsCarousel extends Component {
               </a>
             </Wrap>
           </Slider>
-          <NavLink onClick={() => goToSection("header")} to="/events">
+          <NavLink
+            className="underlined_button"
+            onClick={() => goToSection("header")}
+            to="/events"
+          >
             <Button>VIEW ALL</Button>
           </NavLink>
         </Container>
@@ -134,7 +138,7 @@ const Container = styled.div`
     text-align: center;
     margin-bottom: 100px;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       font-size: 23px;
       font-weight: 900;
       line-height: 23px;
@@ -152,7 +156,7 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     margin-left: 50px;
     margin-right: 50px;
     height: auto;
@@ -182,7 +186,7 @@ const Wrap = styled.a`
       #1e149d 65.43%
     );
 
-    @media (max-width: 820px) {
+    @media (max-width: 1150px) {
       padding: 0px;
     }
   }
@@ -201,10 +205,9 @@ const PosterTitle = styled.div`
   word-wrap: break-word;
   text-align: center;
   line-height: 25px;
-  box-shadow: rgba(0, 0, 0, 100) 0px -65px 25px -15px inset;
   color: white;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0em;
@@ -215,7 +218,6 @@ const PosterTitle = styled.div`
     bottom: 4px;
     height: 50px;
     line-height: 70px;
-    box-shadow: rgba(0, 0, 0, 100) 0px -70px 15px -42px inset;
   }
   @media (max-width: 667px) {
     font-size: 6px;
@@ -228,7 +230,6 @@ const PosterTitle = styled.div`
     bottom: 4px;
     height: 30px;
     line-height: 40px;
-    box-shadow: rgba(0, 0, 0, 100) 0px -70px 12px -52px inset;
   }
 `;
 const Button = styled.div`
@@ -261,7 +262,7 @@ const Button = styled.div`
     text-fill-color: transparent;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1150px) {
     width: 110px;
     height: 40px;
     font-size: 9px;
