@@ -23,9 +23,8 @@ export default class EventsCarousel extends Component {
     const settings = {
       infinite: true,
       speed: 500,
-      slidesToShow: 6,
+      slidesToShow: 4,
       slidesToScroll: 1,
-      autoplay: true,
       autoplaySpeed: 2500,
       arrows: false,
       responsive: [
@@ -216,7 +215,7 @@ const Container = styled.div`
     height: auto;
   }
 `;
-const Wrap = styled.a`
+const Wrap = styled.div`
   position: relative;
   img {
     margin: auto;

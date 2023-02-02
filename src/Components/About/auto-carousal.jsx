@@ -12,20 +12,22 @@ import img8 from "./SponsorImg/portraysketch.png";
 import img9 from "./SponsorImg/roostoo.png";
 import img10 from "./SponsorImg/startupnews.png";
 import img11 from "./SponsorImg/taskade.png";
+import img12 from "./SponsorImg/techpartner1.png";
+import img13 from "./SponsorImg/techpartner2.png";
 
 import "./css/slick.css";
 import "./css/slick-theme.css";
 
 export default class AutoCarousal extends Component {
   render() {
-    const settings = {
+    const settings2 = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2500,
+      autoplaySpeed: 1750,
       initialSlide: 0,
       arrows: false,
       responsive: [
@@ -71,7 +73,7 @@ export default class AutoCarousal extends Component {
     };
     return (
       <div id="spon_suy">
-        <Slider {...settings}>
+        <Slider {...settings2}>
           <div>
             <div className="items_suy">
               <img className="glow" src={img1} alt="error" />
@@ -93,6 +95,12 @@ export default class AutoCarousal extends Component {
           <div>
             <div className="items_suy">
               <img src={img4} alt="error" />
+              <span>Gold Sponsor</span>
+            </div>
+          </div>
+          <div>
+            <div className="items_suy">
+              <img src={img11} alt="error" />
               <span>Gold Sponsor</span>
             </div>
           </div>
@@ -134,8 +142,14 @@ export default class AutoCarousal extends Component {
           </div>
           <div>
             <div className="items_suy">
-              <img src={img11} alt="error" />
-              <span>Gold Sponsor</span>
+              <img src={img12} alt="error" />
+              <span>Tech Partner</span>
+            </div>
+          </div>
+          <div>
+            <div className="items_suy">
+              <img src={img13} alt="error" />
+              <span>Tech Partner</span>
             </div>
           </div>
         </Slider>

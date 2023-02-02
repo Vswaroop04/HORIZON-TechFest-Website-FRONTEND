@@ -385,7 +385,7 @@ const Tribute = () => {
     <div className="tribute_main">
       <div className="tribute_body">
         <div className="per_suy">
-          <img className="tribute_soldier_mob" src={soldier_img} alt="" />
+          <img className="tribute_soldier_mob" src={element.image} alt="" />
           <div className="tribute_content">
             <span className="l1_suy">{element.firstname}</span>
             <br />

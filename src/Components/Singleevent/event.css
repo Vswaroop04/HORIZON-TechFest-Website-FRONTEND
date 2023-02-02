@@ -2,7 +2,10 @@
   font-family: Bujji;
   src: url("../../../public/Matroska.ttf");
 }
-
+.themes_width {
+  width: 100%;
+  text-align: center;
+}
 .single-viewbutton {
   color: white;
   font-family: bujji;
@@ -110,7 +113,7 @@
 .details-box {
   font-family: "Poppins";
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background: transparent;
   border: 3px solid;
   border-image-slice: 1;
@@ -118,16 +121,20 @@
   color: #b5b0b0;
 }
 
+.ibox1 p {
+  margin-right: 190px;
+}
+
 .inside-box {
   /* width: 570px; */
-  padding: 20px 25px;
+  padding: 35px;
   justify-items: center;
 }
 
 .inside-box p {
   margin: 0;
   font-size: 22px;
-  padding: 8px;
+  padding: 8px 0px;
 }
 
 .inside-box p span {
@@ -166,7 +173,7 @@ body {
   color: #b5b0b0;
 }
 .details-event {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -211,6 +218,10 @@ body {
     margin: 20px;
   }
 
+  .ibox1 p {
+    margin-right: 0;
+  }
+
   .ibox2 {
     display: none;
   }
@@ -241,7 +252,9 @@ body {
   .eventdesc {
     font-size: 10px;
     margin-top: 15px;
+    text-align: center;
   }
+
   .details-event {
     max-width: 100%;
     flex-wrap: wrap;
@@ -268,7 +281,7 @@ body {
 
   .details-box {
     margin-top: 25px;
-    padding: 8px;
+    padding: 8px 12px;
     flex-direction: column;
   }
 
@@ -283,6 +296,15 @@ body {
   .content-box {
     font-size: 10px;
     padding: 12px;
+  }
+
+  .single-viewbutton {
+    width: 110px;
+    height: 23px;
+  }
+  .single-buttontext {
+    font-size: 9px;
+    margin: 0px;
   }
 }
 
@@ -341,6 +363,10 @@ body {
   }
   .topic {
     font-size: 25px;
+  }
+
+  .ibox1 p {
+    margin-right: 90px;
   }
 
   .inside-box p {

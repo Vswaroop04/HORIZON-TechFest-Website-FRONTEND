@@ -8,6 +8,7 @@ import "../About/css/about.css";
 
 function Teams() {
   const [teamName, setTeamName] = useState(MemberNames.CoreTeam);
+  const [active, setActive] = useState();
 
   function handleClickTeams(teamName) {
     setTeamName(teamName);
@@ -23,45 +24,81 @@ function Teams() {
             teams for the events and connect with them.
           </p>
           <ul className="member_list">
-            <li onClick={() => handleClickTeams(MemberNames.CoreTeam)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.CoreTeam)}
+            >
               Core Team
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Designing)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.Designing)}
+            >
               Designing Team
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Development)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.Development)}
+            >
               Development
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Hackoverflow)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.Hackoverflow)}
+            >
               Hackoverflow
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.CapturePoint)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.CapturePoint)}
+            >
               Capture Point 5353
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Swot)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.Swot)}
+            >
               SWOT the Trends
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.ChoiceMatrixQuiz)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.ChoiceMatrixQuiz)}
+            >
               Choice Matrix Quiz
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.CodeCombat)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.CodeCombat)}
+            >
               Code Combat
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Valorant)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.Valorant)}
+            >
               The Cadence Valour
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.CODM)}>
-              COD: Siachin Rewind
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.CODM)}
+            >
+              COD: Resurgence
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.De5igne4)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.De5igne4)}
+            >
               De5igne4
             </li>
-            <li onClick={() => handleClickTeams(MemberNames.Igniter)}>
+            <li
+              className="item_perin"
+              onClick={() => handleClickTeams(MemberNames.Igniter)}
+            >
               Igniter 3.0
             </li>
           </ul>
         </div>
-        <Accordion allowToggle className="toggle_member_list">
+        <Accordion className="toggle_member_list">
           <MemberList setTeamName={setTeamName} />
         </Accordion>
       </Heading>
@@ -147,10 +184,11 @@ const Heading = styled.div`
     font-weight: 900;
     padding-left: 0;
   }
-  .member_list li {
+  .item_perin {
     list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
 
     &:hover {
       background: linear-gradient(90deg, #d12d2d 26.26%, #1e149d 94.71%);

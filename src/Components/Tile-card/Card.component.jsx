@@ -9,7 +9,7 @@ const Card = (props) => {
         <p className="content_vis">{props.content}</p>
         <button className="view-button_vis">
           <NavLink to={props.link}>
-            <h3 className="button-text_suy">VIEW</h3>
+            <h3 className="btn button-text_suy">VIEW</h3>
           </NavLink>
         </button>
       </div>

@@ -51,6 +51,10 @@ const Container = styled.div`
     width: 129px;
     height: 174px;
   }
+  @media (max-width: 450px) {
+    width: 100px;
+    height: 140px;
+  }
 `;
 const MemberDetails = styled.div`
   display: flex;
@@ -131,6 +135,29 @@ const MemberDetails = styled.div`
       text-align: center;
     }
   }
+  @media (max-width: 450px) {
+    width: 100px;
+    height: 140px;
+    right: -6px;
+    bottom: -6px;
+
+    .member_image {
+      padding-left: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 17px;
+    }
+
+    .member_fName,
+    .member_lName {
+      font-family: Poppins;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 6px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+  }
 `;
 const Image = styled.div`
   padding-top: 10px;
@@ -138,7 +165,7 @@ const Image = styled.div`
   justify-content: center;
 
   @media (max-width: 1150px) {
-    padding-top: 3px;
+    padding-top: 12px;
     .lin_icon,
     .email_icon,
     .whatsapp_icon {
@@ -146,8 +173,18 @@ const Image = styled.div`
       height: 25px;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 667px) {
     padding-top: 25px;
+    .lin_icon,
+    .email_icon,
+    .whatsapp_icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  }
+  @media (max-width: 450px) {
+    padding-top: 10px;
     .lin_icon,
     .email_icon,
     .whatsapp_icon {

@@ -41,10 +41,12 @@ function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
         setOpen(false);
         navigate("/");
       }
+      setOpen(false);
     } else {
       setResponse("Please Login to Continue");
       setOpen(false);
     }
+    setOpen(false);
   }
 
   return (
@@ -135,15 +137,15 @@ function RegisterSingle({ registersingle, setRegistersingle, eventid }) {
 }
 export default RegisterSingle;
 
-const Container = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  background-color: rgba(7, 7, 7, 0.75);
-  z-index: 2;
-  font-family: "bujji", sans-serif;
-`;
+// const Container = styled.div`
+//   position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   top: 0;
+//   background-color: rgba(7, 7, 7, 0.75);
+//   z-index: 2;
+//   font-family: "bujji", sans-serif;
+// `;
 
 const Wrap = styled.div`
   &::-webkit-scrollbar {
@@ -156,11 +158,15 @@ const Wrap = styled.div`
   padding: 40px 0px;
   width: 40%;
   height: auto;
-  background: rgba(19, 105, 198, 0.6);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 10px;
+  background: linear-gradient(
+    114.88deg,
+    rgba(209, 45, 45, 0.6) 9.29%,
+    rgba(30, 20, 157, 0.6) 49.91%,
+    rgba(209, 45, 45, 0.6) 89.51%
+  );
+  backdrop-filter: blur(50px);
+
+  border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   justify-content: center;

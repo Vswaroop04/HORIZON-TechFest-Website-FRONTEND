@@ -77,6 +77,14 @@ const UserDashboard = () => {
             <span className="rem">Participations</span>
           </div>
           <div className="card_grid">
+            {ind.length === 0 ? (
+              <IndividualCard
+                heading="You have not participated in any individual event yet!! "
+                content="NA"
+              />
+            ) : (
+              <></>
+            )}
             {ind.map((output) => (
               <IndividualCard
                 heading={output.eventname}
@@ -90,6 +98,17 @@ const UserDashboard = () => {
             <span className="rem">Participations</span>
           </div>
           <div className="card_grid">
+            {team.length === 0 ? (
+              <TeamCard
+                heading="You have not participated in any team event yet!! "
+                content="NA"
+                members={[]}
+                leader="NA"
+                teamName="NA"
+              />
+            ) : (
+              <></>
+            )}
             {team.map((output) => (
               <TeamCard
                 heading={output.eventname}

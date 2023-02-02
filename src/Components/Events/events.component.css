@@ -53,11 +53,14 @@
   transition: background 2s ease-out;
 }
 .timeline-button:hover {
-  /* background: linear-gradient(90deg, #d12d2d 46.26%, #1e149d 94.71%);
-  -webkit-transition: background 2s ease-out;
-  border: 2px solid;
+  -webkit-background-clip: text;
+  background: transparent;
+  border: 3px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(225deg, #d12d2d, #1e149d); */
+  border-image-source: linear-gradient(225deg, #d12d2d, #1e149d);
+}
+
+.timeline-button-text {
   text-decoration: none;
 }
 .timeline-button:link {
@@ -140,7 +143,7 @@
     font-size: 16px;
     padding-top: 10px;
     margin-bottom: 10px;
-    padding-left: 16px;
+    padding-left: 26px;
   }
   .event-page {
     padding: 5px;

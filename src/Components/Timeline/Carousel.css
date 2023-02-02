@@ -79,7 +79,7 @@
   font-family: "bujji";
   font-style: normal;
   font-weight: 900;
-  font-size: 1.4vw;
+  font-size: 1.1vw;
   /* identical to box height */
 
   align-items: center;
@@ -88,21 +88,27 @@
   color: #ffffff;
 }
 
-.card-listall {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-  padding-top: 30px;
+.align_suy {
+  margin-inline: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 40px;
 }
-.cardevent {
+
+.card-listall {
   border: 2px solid;
   border-color: #d12d2d;
-  margin-left: 15vw;
-  width: 70vw;
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  -moz-osx-font-smoothing: grayscale;
+  padding-block: 50px;
+  width: 75%;
+  padding-inline: 45px;
+}
+
+.cardevent {
+  display: flex;
+  justify-content: space-between;
 }
 
 .heading {
@@ -141,6 +147,7 @@
 
   color: #b5b0b0;
 }
+
 .time {
   justify-content: right;
   left: 74.36%;
@@ -156,7 +163,6 @@
   display: inline;
   float: right;
   align-items: center;
-  text-align: right;
 
   color: #b5b0b0;
 }
@@ -206,31 +212,16 @@
 
 .arrows {
   margin-top: 3vw;
-  margin-left: 30.75vw;
-}
-.time1 {
-  justify-content: right;
-  left: 74.36%;
-  right: 4.91%;
-  bottom: 60.15%;
-  font-family: "bujji";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height */
-
-  color: #b5b0b0;
-  display: none;
+  margin-left: 31.25vw;
 }
 
 .arrows .img1,
 .img2 {
-  width: 4vw;
+  width: 3vw;
 }
 
 .arrows .img2 {
-  margin-left: 0.5vw;
+  margin-left: 1.5vw;
 }
 
 @media screen and (max-width: 1150px) {
@@ -287,26 +278,20 @@
     /* margin-top: -23vw; */
     margin-left: -6vw;
   }
-  .cardevent {
-    margin-left: 10vw;
-    width: 80vw;
-    padding: 10px;
+  .align_suy {
+    margin-inline: 40px;
+    margin-inline: 25px;
+  }
+  .card-listall {
+    padding-inline: 25px;
+    padding-block: 30px;
+    width: 100%;
   }
   .heading {
     font-size: 16px;
-    margin-bottom: 0.5rem;
-  }
-  .time1 {
-    display: none;
-    margin-bottom: 0.25rem;
-    font-size: 8px;
-    margin-bottom: 0px;
   }
   .time {
-    display: block;
     font-size: 12px;
-    margin-bottom: 0.25rem;
-    margin-bottom: 0px;
   }
   .indicators {
     width: 65vw;
@@ -384,20 +369,22 @@
   .temp2 {
     display: none;
   }
+  .align_suy {
+    margin-inline: 16px;
+    margin-block: 16px;
+  }
+  .card-listall {
+    padding-inline: 15px;
+    padding-block: 15px;
+    width: 100%;
+  }
   .cardevent {
-    margin-left: 7.5vw;
-    width: 85vw;
-    padding: 7.5px;
+    display: flex;
+    flex-direction: column;
   }
   .heading {
     font-size: 12px;
-    margin-bottom: 0rem;
-  }
-  .time1 {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-size: 8px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
   }
   .day {
     font-size: 14px;
@@ -405,15 +392,16 @@
   .date {
     font-size: 10px;
   }
-  .time {
-    display: none;
-  }
   .indicators {
     width: 65vw;
+  }
+  .time {
+    margin-bottom: 5px;
   }
   .content {
     font-size: 8px;
     line-height: 10px;
+    margin-bottom: 12px;
   }
   .button-text {
     font-size: 8px;

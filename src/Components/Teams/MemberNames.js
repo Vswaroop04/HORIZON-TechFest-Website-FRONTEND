@@ -2,10 +2,11 @@ import React from "react";
 
 export const MemberNames = {
   CoreTeam: {
+    title: "coreteam",
     firstName: [
       "Hrishubh",
-      "Dev",
       "Rajat",
+      "Dev",
       "Karan",
       "Ved",
       "Charu",
@@ -14,8 +15,8 @@ export const MemberNames = {
     ],
     lastName: [
       "Bhandari",
-      "Junja",
       "Singh",
+      "Junja",
       "Choudhary",
       "Vekhande",
       "Joshi",
@@ -24,8 +25,8 @@ export const MemberNames = {
     ],
     linkedin: [
       "https://www.linkedin.com/in/hrishubh-bhandari/",
-      "https://www.linkedin.com/in/dev-juneja/",
       "https://www.linkedin.com/in/rajat-singh-b41a26201/",
+      "https://www.linkedin.com/in/dev-juneja/",
       "https://www.linkedin.com/in/karan-chaudhary-5b420716a/",
       "https://www.linkedin.com/in/ved-vekhande",
       "https://www.linkedin.com/in/charu-joshi-398003229/",
@@ -34,8 +35,8 @@ export const MemberNames = {
     ],
     email: [
       "202011026@diu.iiitvadodara.ac.in",
-      "202011020@diu.iiitvadodara.ac.in",
       "202011061@diu.iiitvadodara.ac.in",
+      "202011020@diu.iiitvadodara.ac.in",
       "202011038@diu.iiitvadodara.ac.in",
       "202111087@diu.iiitvadodara.ac.in",
       "202111019@diu.iiitvadodara.ac.in",
@@ -54,7 +55,8 @@ export const MemberNames = {
     ]
   },
   Designing: {
-    firstName: ["Chinmay", "Raj", "Ashish", "Vartul "],
+    title: "designing",
+    firstName: ["Chinmay", "Raj", "Ashish", "Vartul"],
     lastName: ["Bhalodia", "Tejaswee", "Gupta", "Shrivastava"],
     linkedin: [
       "https://www.linkedin.com/in/chinmay-bhalodia-630034159/",
@@ -71,6 +73,7 @@ export const MemberNames = {
     whatsapp: ["9313402393", "7979086734", "8709494652", "9669691984"]
   },
   Development: {
+    title: "development",
     firstName: ["Perin", "Shubham", "Suyash", "Vishnu", "Kundena", "Rohith"],
     lastName: ["Mangukiya", "Senani", "Rajput", "Swaroop", "Gautham", "M"],
     linkedin: [
@@ -99,6 +102,7 @@ export const MemberNames = {
     ]
   },
   Hackoverflow: {
+    title: "hackoverflow",
     firstName: ["Dev", "Hrishubh"],
     lastName: ["Juneja", "Bhandari"],
     linkedin: [
@@ -112,6 +116,7 @@ export const MemberNames = {
     whatsapp: ["7570071635", "9149445865"]
   },
   CapturePoint: {
+    title: "capturepoint",
     firstName: ["Yashesh", "Rajat"],
     lastName: ["Bhavsar", "Singh"],
     linkedin: [
@@ -125,6 +130,7 @@ export const MemberNames = {
     whatsapp: ["8780654420", "6396225916"]
   },
   Swot: {
+    title: "swot",
     firstName: ["Avichal", "Gunal"],
     lastName: ["Bansal", "Gupta"],
     linkedin: [
@@ -138,7 +144,8 @@ export const MemberNames = {
     whatsapp: ["7455967339", "9521401232"]
   },
   ChoiceMatrixQuiz: {
-    firstName: ["Jigyashu", "Charu C."],
+    title: "choicematrixquiz",
+    firstName: ["Jigyashu", "Charu"],
     lastName: ["Gupta", "Joshi"],
     linkedin: [
       "https://www.linkedin.com/in/jigyashu-gupta-78aa84220/",
@@ -151,6 +158,7 @@ export const MemberNames = {
     whatsapp: ["8320563216", "9667140578"]
   },
   CodeCombat: {
+    title: "codecombat",
     firstName: ["Tushar", "Suraj"],
     lastName: ["Vyas", "Kumar"],
     linkedin: [
@@ -164,6 +172,7 @@ export const MemberNames = {
     whatsapp: ["8955606667", "7250952280"]
   },
   Valorant: {
+    title: "valorant",
     firstName: ["Deep", "Divay"],
     lastName: ["Chaudhary", "Kansal"],
     linkedin: [
@@ -177,6 +186,7 @@ export const MemberNames = {
     whatsapp: ["9799873554", "9557461566"]
   },
   CODM: {
+    title: "codm",
     firstName: ["Deep", "Bharath"],
     lastName: ["Chaudhary", "Venkat"],
     linkedin: ["http://www.linkedin.com/in/godshot", "#"],
@@ -187,6 +197,7 @@ export const MemberNames = {
     whatsapp: ["9799873554", "9691832455"]
   },
   De5igne4: {
+    title: "de5igne4",
     firstName: ["Raj", "Harsh"],
     lastName: ["Tejaswee", "Taunk"],
     linkedin: [
@@ -200,6 +211,7 @@ export const MemberNames = {
     whatsapp: ["7979086734", "7987970629"]
   },
   Igniter: {
+    title: "igniter",
     firstName: ["Yash C", "Ishita"],
     lastName: ["Gupta", "Agarwal"],
     linkedin: [

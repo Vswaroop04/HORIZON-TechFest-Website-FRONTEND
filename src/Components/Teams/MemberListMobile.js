@@ -16,13 +16,16 @@ const Question = (props) => {
   const RotateLogo = () => {
     if (rotate === "arrow_down") {
       setRotate("arrow_up");
+      // document.getElementsByClassName('just_for_fun').style.display='block';
     } else {
       setRotate("arrow_down");
+      // document.getElementsByClassName('just_for_fun').style.display='none';
     }
   };
 
   function handleClickTeams(teamName) {
     props.setTeamName(teamName);
+
     RotateLogo();
   }
 
@@ -37,7 +40,10 @@ const Question = (props) => {
             <img className={rotate} src={Arrow} alt="Arrow" />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>
+        <AccordionPanel
+          style={{ display: rotate === "arrow_down" ? "none" : "block" }}
+          pb={4}
+        >
           <MobileList>
             <ul className="member_list_mobile">
               <li onClick={() => handleClickTeams(MemberNames.CoreTeam)}>
@@ -70,7 +76,7 @@ const Question = (props) => {
                 The Cadence Valour
               </li>
               <li onClick={() => handleClickTeams(MemberNames.CODM)}>
-                COD: Siachin Rewind
+                COD: Resurgence
               </li>
               <li onClick={() => handleClickTeams(MemberNames.De5igne4)}>
                 De5igne4
@@ -130,6 +136,7 @@ const MobileList = styled.div`
   .member_list_mobile li {
     list-style: none;
     padding-left: 12px;
+    cursor: pointer;
 
     &:hover {
       /* background: linear-gradient(90deg, #d12d2d 26.26%, #1e149d 94.71%); */

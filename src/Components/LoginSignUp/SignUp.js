@@ -6,7 +6,7 @@ import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
 
-function SignUp({ signUp, setSignUp, setLogin, goHome }) {
+function SignUp({ signUp, setSignUp, setLogin }) {
   const host = Data.URL;
 
   const navigate = useNavigate();
@@ -78,7 +78,6 @@ function SignUp({ signUp, setSignUp, setLogin, goHome }) {
         <Close
           onClick={() => {
             document.body.style.overflow = "auto";
-            if (goHome) window.location.href = `https://hf2gk1.csb.app/`;
             setSignUp(false);
           }}
         ></Close>
@@ -120,8 +119,9 @@ function SignUp({ signUp, setSignUp, setLogin, goHome }) {
             <label className="label_perin gen">Gender</label>
 
             <select onChange={(e) => SetGR(e.target.value)}>
-              <option value="male"></option>
-              <option value="male">Male</option>
+              <option value="male" defaultValue>
+                Male
+              </option>
               <option value="female">Female</option>
             </select>
           </div>
@@ -232,15 +232,15 @@ function SignUp({ signUp, setSignUp, setLogin, goHome }) {
 
 export default SignUp;
 
-const Container = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  background-color: rgba(7, 7, 7, 0.75);
-  z-index: 2;
-  font-family: "bujji", sans-serif;
-`;
+// const Container = styled.div`
+//   position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   top: 0;
+//   background-color: rgba(7, 7, 7, 0.75);
+//   z-index: 2;
+//   font-family: "bujji", sans-serif;
+// `;
 const Wrap = styled.div`
   &::-webkit-scrollbar {
     display: none;
@@ -255,11 +255,15 @@ const Wrap = styled.div`
   display: flex;
   justify-content: center;
 
-  background: rgba(19, 105, 198, 0.6);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 10px;
+  background: linear-gradient(
+    114.88deg,
+    rgba(209, 45, 45, 0.6) 9.29%,
+    rgba(30, 20, 157, 0.6) 49.91%,
+    rgba(209, 45, 45, 0.6) 89.51%
+  );
+  backdrop-filter: blur(50px);
+
+  border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 
   @media (max-width: 667px) {
@@ -399,9 +403,10 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: #b2016b;
+    background: red;
     border: 0px;
     margin-top: 20px;
+    font-family: "bujji", sans-serif;
 
     &:hover {
       background: transparent;
@@ -445,6 +450,7 @@ const Wrap = styled.div`
     .h2_perin {
       font-size: 45px;
       font-weight: 900;
+      font-family: "bujji", sans-serif;
 
       @media (min-width: 669px) and (max-width: 1150px) {
         font-size: 26px;
@@ -497,7 +503,7 @@ const Wrap = styled.div`
         font-weight: 400;
         text-align: left;
         text-decoration: underline;
-        color: #fc0198;
+        color: red;
         font-weight: bold;
 
         @media (min-width: 669px) and (max-width: 1150px) {
