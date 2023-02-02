@@ -63,7 +63,7 @@ function SignIn({ setLogin, setSignUp, login, headPerin, goHome }) {
           <Close
             onClick={() => {
               document.body.style.overflow = "auto";
-              if (goHome) window.location.href = `https://hf2gk1.csb.app/`;
+              if (goHome) window.location.href = `/`;
               return setLogin(false);
             }}
           ></Close>
