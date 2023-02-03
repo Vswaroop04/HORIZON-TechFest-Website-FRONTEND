@@ -412,7 +412,7 @@ const Tribute = () => {
         <div className="tribute_end_line">
           <div>
             Let this story not go unnoticed. Share on your social media with
-            #tributeByPravinya! &ensp;
+            #tributeByHorizon! &ensp;
           </div>
           <div>
             <a href="https://www.instagram.com/">
