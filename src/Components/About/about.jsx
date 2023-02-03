@@ -59,12 +59,12 @@ const About = () => {
           <Accordion allowToggle className="lol">
             <Question
               ques="What is HORIZON?"
-              ans="HORIZON is the annual technical festival of IIITV-ICD that takes the form of a twelve-day, intense and exhilarating experience consisting of sensational events, intriguing lessons, and impelling prizes."
+              ans="HORIZON is the annual technical festival of IIITV-ICD that takes the form of a eleven-day, intense and exhilarating experience consisting of sensational events, intriguing lessons, and impelling prizes."
             />
             <Question
               ques="What is the history of HORIZON?"
               ans="HORIZON is starting its journey in the year 2023. It aims to provide an exhilarating experience while simultaneously achieving milestones & creating history;"
-              ans2="A Journey of a Thousand Miles begins with a Single Step” – Lao Tzu. "
+              ans2="'A Journey of a Thousand Miles begins with a Single Step' – Lao Tzu. "
             />
             <Question
               ques="How many events are there?"
@@ -80,7 +80,7 @@ const About = () => {
             />
             <Question
               ques="What is the timeline for the festival?"
-              ans="HORIZON will commence on the 8th of February, 2023, and end on the 19th of February, 2023."
+              ans="HORIZON will commence on the 9th of February, 2023, and end on the 19th of February, 2023."
             />
             <Question
               ques="How to participate in events?"
