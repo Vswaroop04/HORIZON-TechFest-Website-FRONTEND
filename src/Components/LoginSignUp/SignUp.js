@@ -2,241 +2,144 @@ import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import Data from "../Host";
 import { Backdrop } from "@mui/material";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import "./login_signup.css";
 
-function SignUp({ signUp, setSignUp, setLogin }) {
+function SignIn({ setLogin, setSignUp, login, headPerin }) {
   const host = Data.URL;
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-  const [FN, SetFN] = useState("");
-  const [IN, SetIN] = useState("");
+
   const [ML, SetML] = useState("");
-  const [MN, SetMN] = useState("");
   const [PD, SetPD] = useState("");
-  const [GR, SetGR] = useState("");
-  const [CPD, SetCPD] = useState("");
-  const [checkbox, SetCheckbox] = useState(false);
-  const [proof, SetProof] = useState("");
   var [response, setResponse] = useState("");
 
   async function postUserDetails(e) {
     setOpen(true);
     e.preventDefault();
-    const formimgData = new FormData();
-    formimgData.append("proof", proof);
-    formimgData.append("gender", GR);
-    formimgData.append("name", FN);
-    formimgData.append("institute", IN);
-    formimgData.append("number", MN);
-    formimgData.append("email", ML);
-    formimgData.append("password", PD);
-    console.log(formimgData);
 
-    if (checkbox) {
-      if (PD === CPD) {
-        if (proof !== "") {
-          if (GR === "male" || GR === "female") {
-            const config = {
-              headers: { "content-type": "multipart/form-data" }
-            };
-            const response = await axios
-              .post(`${host}/signupuser`, formimgData, config)
-              .then((res) => res.data);
-            console.log(response);
-            if (response.success) {
-              // Save the auth token and redirect
-              localStorage.setItem("auth-token", response.authtoken);
-              localStorage.setItem("user", JSON.stringify(response.user));
-              window.location.reload(false);
-              document.body.style.overflow = "auto";
-              setResponse("SuccessFully Created Account");
-            } else {
-              setResponse("Cant Create Account, Pls Try Again");
-            }
-          } else {
-            setResponse("Please Provide your Gender");
-          }
-        } else {
-          setResponse("Please Attach a valid Proof and provide all details");
-        }
-      } else {
-        setResponse("Passwords Not Matched");
-      }
+    const response = await fetch(`${host}/loginuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: ML,
+        password: PD
+      })
+    });
+    const json = await response.json();
+    console.log(json);
+    if (json.success) {
+      // Save the auth token and redirect
+      localStorage.setItem("auth-token", json.authtoken);
+      localStorage.setItem("user", JSON.stringify(json.user));
+      setResponse("Succesfully Login");
+      window.location.reload(false);
+      setOpen(false);
+      document.body.style.overflow = "auto";
     } else {
-      setResponse("Please agree the terms & conditions");
+      setResponse("Invalid credentials");
+      setOpen(false);
     }
-    e.preventDefault();
     setOpen(false);
   }
 
   return (
-    <Backdrop
-      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={signUp}
-    >
-      <Wrap>
-        <Close
-          onClick={() => {
-            document.body.style.overflow = "auto";
-            setSignUp(false);
-          }}
-        ></Close>
-
-        <form action="" method="" onSubmit={postUserDetails}>
-          <div className="div_perin heading_perin">
-            <h2 className="h2_perin">SIGN UP</h2>
-
-            <p className="p_perin">
-              Already Registered?{" "}
-              <a
-                className="a_perin"
-                onClick={() => {
-                  setLogin(true);
-                  setSignUp(false);
-                }}
+    <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 2 }}
+        open={open}
+      >
+        <LoadingSpinner />
+      </Backdrop>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={login}
+      >
+        <Wrap>
+          <Close
+            onClick={() => {
+              document.body.style.overflow = "auto";
+              return setLogin(false);
+            }}
+          ></Close>
+          <form
+            action=""
+            method=""
+            onSubmit={postUserDetails}
+            style={{ width: "100%" }}
+          >
+            <div className="div_perin heading_perin">
+              <h2 className="h2_perin">{headPerin}</h2>
+              <p className="p_perin">
+                New User?{" "}
+                <a
+                  className="a_perin"
+                  onClick={() => {
+                    setLogin(false);
+                    setSignUp(true);
+                  }}
+                >
+                  SignUp
+                </a>
+              </p>
+              <p
+                className={
+                  response === "Succesfully Login"
+                    ? "success_suy"
+                    : "invalid_suy"
+                }
               >
-                Login
-              </a>
-            </p>
-            <p className="p_perin"> {response} </p>
-          </div>
-          <div className="div_perin name_home">
-            <label className="label_perin" htmlFor="">
-              Name
-            </label>
-            <br />
-            <input
-              onChange={(e) => {
-                SetFN(e.target.value);
-              }}
-              className="input_perin"
-              required={true}
-              type="text"
-              name="name"
-            />
-          </div>
-          <div className="div_perin gender">
-            <label className="label_perin gen">Gender</label>
-
-            <select onChange={(e) => SetGR(e.target.value)}>
-              <option value="none" selected disabled hidden>
-                Select an Option
-              </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-
-          <div className="div_perin email">
-            <label className="label_perin" htmlFor="">
-              Email (Institute ID preferred)
-            </label>
-            <br />
-            <input
-              onChange={(e) => SetML(e.target.value)}
-              className="input_perin"
-              name="email"
-              required={true}
-              type="email"
-            />
-          </div>
-          <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Password
-            </label>
-            <br />
-            <input
-              onChange={(e) => SetPD(e.target.value)}
-              className="input_perin"
-              name="password"
-              required={true}
-              type="password"
-            />
-          </div>
-          <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Re-enter Password
-            </label>
-            <br />
-            <input
-              onChange={(e) => SetCPD(e.target.value)}
-              className="input_perin"
-              required={true}
-              type="password"
-            />
-          </div>
-          <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Contact Number
-            </label>
-            <br />
-            <input
-              onChange={(e) => SetMN(e.target.value)}
-              className="input_perin"
-              required={true}
-              type="number"
-              name="number"
-            />
-          </div>
-          <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Name of the Institute
-            </label>
-            <br />
-            <input
-              onChange={(e) => SetIN(e.target.value)}
-              className="input_perin"
-              name="institute"
-              required={true}
-              type="text"
-            />
-          </div>
-          <div className="div_perin password">
-            <label className="label_perin" htmlFor="">
-              Proof of Enrollment in Institute (Please upload either Jpg or Png
-              file with filesize less than 2MB)
-            </label>
-            <br />
-            <input
-              //   onChange={handleFileChange}
-              onChange={(e) => SetProof(e.target.files[0])}
-              className="input_perin"
-              name="proof"
-              required={true}
-              type="file"
-            />
-          </div>
-          <div className="div_perin password">
-            <br />
-            <input
-              onClick={(e) => SetCheckbox(true)}
-              className="checkbox_perin"
-              required={true}
-              type="checkbox"
-              name="checkbox"
-            />
-            <label className="label_perin" htmlFor="">
-              I hereby declare that all the information provided by me are
-              correct. I also agree to follow all the guidelines of the fest and
-              agree to the fact that in case of any discrepancy, the decision of
-              the organizers will be final and binding.
-            </label>
-          </div>
-          <div className="div_perin">
-            <button type="submit">SIGN UP</button>
-          </div>
-        </form>
-      </Wrap>
-    </Backdrop>
+                {response}
+              </p>
+            </div>
+            <div className=" div_perin email">
+              <label className="label_perin" htmlFor="">
+                Email
+              </label>
+              <br />
+              <input
+                value={ML}
+                onChange={(e) => SetML(e.target.value)}
+                className="input_perin"
+                type="email"
+                required={true}
+                name=""
+                id=""
+              />
+            </div>
+            <div className="div_perin password">
+              <label className="label_perin" htmlFor="">
+                Password
+              </label>
+              <br />
+              <input
+                value={PD}
+                onChange={(e) => SetPD(e.target.value)}
+                className="input_perin"
+                type="password"
+                required={true}
+                name=""
+                id=""
+              />
+            </div>
+            <div className="div_perin">
+              <button type="submit">LOGIN</button>
+            </div>
+          </form>
+        </Wrap>
+      </Backdrop>
+    </>
   );
 }
 
-export default SignUp;
+export default SignIn;
 
-// const Container = styled.div`
+// const container = styled.div`
 //   position: fixed;
 //   width: 100vw;
 //   height: 100vh;
@@ -245,19 +148,17 @@ export default SignUp;
 //   z-index: 2;
 //   font-family: "bujji", sans-serif;
 // `;
+
 const Wrap = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
   overflow: auto;
-  margin: auto;
   position: relative;
   color: white;
   padding: 40px 0px;
   width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 
   background: linear-gradient(
     114.88deg,
@@ -269,32 +170,13 @@ const Wrap = styled.div`
 
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-
-  @media (max-width: 667px) {
-    position: none;
-    width: 328px;
-    margin-top: 28px;
-    margin-bottom: 28px;
-
-    .close_sign_up_button {
-      width: 15px;
-      height: 15px;
-    }
-  }
+  display: flex;
+  justify-content: center;
 
   .div_perin {
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      margin: 0;
-    }
-    overflow: auto;
-
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-left: 100px;
     padding-right: 100px;
     .label_perin {
@@ -310,21 +192,7 @@ const Wrap = styled.div`
       @media (max-width: 669px) {
         font-size: 10px;
       }
-
-      /* @media (max-width: 667px) {
-        font-family: Poppins;
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0em;
-        text-align: left;
-        margin: 0px;
-      } */
     }
-
-    .gen {
-      padding-right: 10px;
-    }
-
     .input_perin {
       width: 100%;
       height: 46px;
@@ -334,67 +202,28 @@ const Wrap = styled.div`
 
       @media (min-width: 669px) and (max-width: 1150px) {
         height: 26.5px;
-        font-size: 15px;
         padding: 0 5px;
+        font-size: 15px;
       }
 
       @media (max-width: 669px) {
         height: 25px;
-        font-size: 12px;
         padding: 0 3px;
-      }
-
-      /* @media (max-width: 667px) {
-        width: 280px;
-        height: 25px;
-      } */
-    }
-
-    .input_file {
-      font-size: 16px;
-      padding-top: 6px;
-      @media (max-width: 667px) {
-        font-size: 5px;
-        padding: 0;
+        font-size: 12px;
       }
     }
-
     .input_perin:focus-visible {
       outline: none;
     }
 
-    .checkbox_perin {
-      width: 25px;
-      height: 25px;
-
-      @media (min-width: 669px) and (max-width: 1150px) {
-        width: 15px;
-        height: 15px;
-      }
-      @media (max-width: 669px) {
-        /* font-family: Poppins;
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0em;
-        text-align: left; */
-        width: 10px;
-        height: 10px;
-      }
-    }
-
     @media (min-width: 669px) and (max-width: 1150px) {
-      padding: 10px 48px;
+      padding: 13px 60px;
     }
 
     @media (max-width: 669px) {
       padding: 10px 18px;
       line-height: 17px;
     }
-
-    /* @media (max-width: 667px) {
-      padding-top: 8px;
-      padding-bottom: 8px;
-    } */
   }
   button {
     margin: auto;
@@ -407,17 +236,9 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: red;
+    background: #d12d2d;
     border: 0px;
-    margin-top: 20px;
     font-family: "bujji", sans-serif;
-
-    &:hover {
-      background: transparent;
-      border: 2px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(225deg, #b2016b, #1e149d);
-    }
 
     @media (min-width: 669px) and (max-width: 1150px) {
       font-size: 8px;
@@ -431,30 +252,20 @@ const Wrap = styled.div`
       height: 23px;
     }
 
-    /* @media (max-width: 667px) {
-      width: 90px;
-      height: 23px;
-      font-size: 9px;
-      font-weight: 900;
-      line-height: 9px;
-      letter-spacing: 0em;
-      text-align: center;
-      margin-top: 8px;
-      margin-bottom: 50px;
-    } */
+    &:hover {
+      background: transparent;
+      border: 2px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(90deg, #d12d2d, #1e149d);
+    }
   }
   .heading_perin {
     text-align: center;
     line-height: 44px;
-
-    @media (max-width: 667px) {
-      padding-top: 20px;
-    }
-
     .h2_perin {
       font-size: 45px;
       font-weight: 900;
-      font-family: "bujji", sans-serif;
+      font-family: "bujji";
 
       @media (min-width: 669px) and (max-width: 1150px) {
         font-size: 26px;
@@ -464,15 +275,6 @@ const Wrap = styled.div`
       @media (max-width: 669px) {
         font-size: 15px;
       }
-
-      /* @media (max-width: 667px) {
-        font-size: 15px;
-        font-weight: 900;
-        letter-spacing: 0em;
-        text-align: center;
-        margin: 0;
-        height: 15px;
-      } */
     }
     .p_perin {
       font-family: Poppins;
@@ -489,17 +291,6 @@ const Wrap = styled.div`
         margin: 0;
       }
 
-      /* @media (max-width: 667px) {
-        font-family: Poppins;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 30px;
-        letter-spacing: 0em;
-        text-align: center;
-        padding: auto;
-        margin: 0px;
-      } */
-
       .a_perin {
         cursor: pointer;
         font-family: Poppins;
@@ -507,31 +298,23 @@ const Wrap = styled.div`
         font-weight: 400;
         text-align: left;
         text-decoration: underline;
-        color: red;
+        color: #d12d2d;
         font-weight: bold;
+        box-shadow: none;
 
         @media (min-width: 669px) and (max-width: 1150px) {
           font-size: 11.5px;
         }
-
         @media (max-width: 669px) {
           font-size: 10px;
         }
-
-        /* @media (max-width: 667px) {
-          font-family: Poppins;
-          font-size: 10px;
-          font-weight: 400;
-          letter-spacing: 0em;
-          text-align: left;
-        } */
       }
     }
   }
 
   @media (max-width: 669px) {
     width: 80%;
-    padding: 5px 16px;
+    padding: 9px 40px;
   }
 `;
 /* Line 2 */
