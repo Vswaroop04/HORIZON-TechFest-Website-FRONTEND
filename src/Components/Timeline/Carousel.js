@@ -103,27 +103,10 @@ const Carousel = ({ children }) => {
         "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2c2NzNlaHVtMTNtZnVxNGx2a3VyYzQ0dGkgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     },
     {
-      Topic: "Call of Duty: Resurgence",
-      Content:
-        "Guns loaded, armour equipped, meds ready!Call Of Duty: Resurgence aims at creating a competitive and fun experience. Participate in teams of 5 and get the maximum number of kills!",
-      Time: "9:00 PM",
-      calender:
-        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MHJucWZzZjd2bnUxbDdoMTBzYjQwdGVqbXAgMjAyMDExMDI2QGRpdS5paWl0dmFkb2RhcmEuYWMuaW4&tmsrc=202011026%40diu.iiitvadodara.ac.in"
-    },
-
-    {
-      Topic: "The cadence valour",
-      Content:
-        "Amateur or pro, your opportunity to shine at Valorant is here! Cadence Valour is the flagship valorant event of “Horizon”. Participate in teams of 5.",
-      Time: "9:00 PM",
-      calender:
-        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGk2dG1sZG0yODRvMmZrOGE0MWMwMmRramMgMjAyMDExMDI2QGRpdS5paWl0dmFkb2RhcmEuYWMuaW4&tmsrc=202011026%40diu.iiitvadodara.ac.in"
-    },
-    {
       Topic: "Capture Point 5353",
       Content:
         "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
-      Time: "00:00 AM",
+      Time: "09:00 PM",
       calender:
         "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
@@ -160,7 +143,7 @@ const Carousel = ({ children }) => {
       Topic: "Capture Point 5353",
       Content:
         "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
-      Time: "Till 12:00 AM",
+      Time: "Till 9:00 AM",
       calender:
         "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     },
