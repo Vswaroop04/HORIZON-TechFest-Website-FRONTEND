@@ -188,6 +188,14 @@ const Wrap = styled.a`
 
     @media (max-width: 1150px) {
       padding: 0px;
+      border: 2px solid;
+
+      border-image-slice: 1;
+      border-image-source: linear-gradient(
+        90deg,
+        rgba(209, 45, 45, 0.92) 0%,
+        #1e149d 65.43%
+      );
     }
   }
 `;

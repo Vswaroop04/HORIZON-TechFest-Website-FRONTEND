@@ -92,16 +92,16 @@ const SingleEvent = () => {
       image: "capturePoint5353.png",
       mode: "Online",
       details: [
-        "Start Date: Feburary 12, 2023",
+        "Start Date: Feburary 11, 2023",
         "End Date: Feburary 13, 2023",
         "Mode of Conduct: Hybrid",
-        "Time of Start: 0:00AM"
+        "Time of Start: 9:00PM"
       ],
       eventtype: "team",
       Topic: "CTF Event",
       Content:
         "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible! ",
-      Time: "0:00 AM",
+      Time: "9:00 PM",
       Prize: "6,000",
       TeamSize: 2,
       Participants: "0",
@@ -438,7 +438,7 @@ const SingleEvent = () => {
               </div>
 
               <h1 className="event-title">RULES & REGULATIONS </h1>
-              <div className="s2div">
+              <div className="s2div" style={{ display: "block" }}>
                 <p className="content-box">
                   {Event.Rules?.map(function (element) {
                     return <p>{element}</p>;

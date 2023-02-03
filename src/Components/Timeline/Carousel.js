@@ -118,6 +118,14 @@ const Carousel = ({ children }) => {
       Time: "9:00 PM",
       calender:
         "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGk2dG1sZG0yODRvMmZrOGE0MWMwMmRramMgMjAyMDExMDI2QGRpdS5paWl0dmFkb2RhcmEuYWMuaW4&tmsrc=202011026%40diu.iiitvadodara.ac.in"
+    },
+    {
+      Topic: "Capture Point 5353",
+      Content:
+        "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
+      Time: "00:00 AM",
+      calender:
+        "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     }
   ];
   let Day4 = [
@@ -125,7 +133,7 @@ const Carousel = ({ children }) => {
       Topic: "Capture Point 5353",
       Content:
         "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible!",
-      Time: "00:00 AM",
+      Time: "Ongoing",
       calender:
         "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGhhdDJhczFob3Q1ZHZ1a2JjbTNwODJ0ZHUgY19mOTRmODczZmE2NjMwYTY0ODlhODFlZDdlYzVhYjdjYWIxNmQxMjhmNzhlMTZlYmE1YzdmY2U3NjUyMzdmYTZlQGc&tmsrc=c_f94f873fa6630a6489a81ed7ec5ab7cab16d128f78e16eba5c7fce765237fa6e%40group.calendar.google.com"
     },

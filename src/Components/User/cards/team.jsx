@@ -15,9 +15,9 @@ const TeamCard = (props) => {
         Team <span className="c2">{props.teamName}</span>
       </div>
       <div className="card_content2">
-        <div>Leader:{props.leader}</div>
+        <div>Leader:&nbsp;{props.leader}</div>
         {props.members.map((output) => (
-          <div>Member:{output}</div>
+          <div>Member:&nbsp;{output}</div>
         ))}
       </div>
     </div>

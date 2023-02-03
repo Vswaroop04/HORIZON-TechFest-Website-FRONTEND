@@ -7,7 +7,7 @@ const Events = () => {
   const checkvalid = () => {
     const authtoken = localStorage.getItem("auth-token");
     if (!authtoken) {
-      alert("Please Login To Continue");
+      alert("Login");
     }
   };
   return (

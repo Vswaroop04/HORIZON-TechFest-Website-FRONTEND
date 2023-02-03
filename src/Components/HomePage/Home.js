@@ -182,7 +182,7 @@ const Data = styled.div`
     line-height: 17px;
     letter-spacing: 0em;
     text-align: left;
-    width: 480px;
+    max-width: 480px;
   }
   @media (max-width: 667px) {
     font-family: Poppins;

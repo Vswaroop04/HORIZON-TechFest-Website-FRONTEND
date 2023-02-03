@@ -119,9 +119,10 @@ function SignUp({ signUp, setSignUp, setLogin }) {
             <label className="label_perin gen">Gender</label>
 
             <select onChange={(e) => SetGR(e.target.value)}>
-              <option value="male" defaultValue>
-                Male
+              <option value="none" selected disabled hidden>
+                Select an Option
               </option>
+              <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </div>
