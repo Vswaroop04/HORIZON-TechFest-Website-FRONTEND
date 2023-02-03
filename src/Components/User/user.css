@@ -285,7 +285,7 @@
   z-index: 0.7;
 }
 
-@media (max-width: 1150px) 
+@media (max-width: 1150px) {
   .user_main {
     margin-top: 30px;
     margin-inline: 35px;
