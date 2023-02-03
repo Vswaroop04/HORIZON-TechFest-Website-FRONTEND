@@ -285,7 +285,7 @@
   z-index: 0.7;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1150px) 
   .user_main {
     margin-top: 30px;
     margin-inline: 35px;
@@ -492,7 +492,7 @@
   }
 
   .teamCard {
-    height: 245px;
+    height: 280px;
     max-width: 500px;
     padding-top: 12px;
     padding-bottom: 20px;
