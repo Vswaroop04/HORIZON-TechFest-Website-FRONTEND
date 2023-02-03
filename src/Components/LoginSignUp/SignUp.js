@@ -8,6 +8,7 @@ import { Backdrop } from "@mui/material";
 
 function SignUp({ signUp, setSignUp, setLogin }) {
   const host = Data.URL;
+  const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
   const [FN, SetFN] = useState("");
@@ -22,6 +23,7 @@ function SignUp({ signUp, setSignUp, setLogin }) {
   var [response, setResponse] = useState("");
 
   async function postUserDetails(e) {
+    setOpen(true);
     e.preventDefault();
     const formimgData = new FormData();
     formimgData.append("proof", proof);
@@ -67,6 +69,7 @@ function SignUp({ signUp, setSignUp, setLogin }) {
       setResponse("Please agree the terms & conditions");
     }
     e.preventDefault();
+    setOpen(false);
   }
 
   return (
