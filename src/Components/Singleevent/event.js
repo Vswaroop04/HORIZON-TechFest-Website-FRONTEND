@@ -64,7 +64,7 @@ const SingleEvent = () => {
       Topic: "Coding Event",
       Content:
         " Want to test out your DSA and Problem-Solving skills? The battle has begun, get ready for CodeCombat! 8 challenging problems with increasing difficulty levels and a total of 3 hours at hand.",
-      Time: "5:30 PM",
+      Time: "6:00 PM",
       Prize: "4,500",
       TeamSize: 1,
       Participants: "0",

@@ -187,14 +187,14 @@ export const MemberNames = {
   },
   CODM: {
     title: "codm",
-    firstName: ["Deep", "Bharath"],
-    lastName: ["Chaudhary", "Venkat"],
-    linkedin: ["http://www.linkedin.com/in/godshot", "#"],
+    firstName: ["Lakshay", "Bharath"],
+    lastName: ["Kankariya", "Venkat"],
+    linkedin: ["https://www.linkedin.com/in/lakshya-kankariya-963b4a22b/", "#"],
     email: [
-      "202011019@diu.iiitvadodara.ac.in",
+      "202011043@diu.iiitvadodara.ac.in",
       "202111016@diu.iiitvadodara.ac.in"
     ],
-    whatsapp: ["9799873554", "9691832455"]
+    whatsapp: ["7016112326", "9691832455"]
   },
   De5igne4: {
     title: "de5igne4",
