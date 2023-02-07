@@ -72,11 +72,11 @@ const About = () => {
             />
             <Question
               ques="What are the participate criteria?"
-              ans="You can participate if you are a student in any of the IITs, NITs, IIITs, or any other reputed government institute.  "
+              ans="You can participate if you are enrolled in any undergraduate course in an Institute recognised by the Govt. of India.  "
             />
             <Question
               ques="What kind of events are there?              "
-              ans="There are 4 types of events: 5 Technical Events, 2 Gaming Events, 1 Designing Event, and 2 Talks.  "
+              ans="There are 5 types of events: 6 Technical Events, 2 Gaming Events, 1 Designing Event, 1 offline workshop and 2 Talks.  "
             />
             <Question
               ques="What is the timeline for the festival?"
@@ -85,6 +85,10 @@ const About = () => {
             <Question
               ques="How to participate in events?"
               ans="To participate in an event, go to the EVENTS section. Choose the event, and click on register. You are all set! Don’t forget to check the timeline and rules and regulations.              "
+            />
+            <Question
+              ques="Have any doubts?"
+              ans="You can email us at technical@diu.iiitvadodara.ac.in or Whatsapp us at 7558224026 or 9149445865."
             />
           </Accordion>
         </div>
