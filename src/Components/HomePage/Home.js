@@ -57,10 +57,10 @@ function Home() {
             </h2>
             <p>
               “Horizon” is the premier edition of the annual technical festival
-              of IIITV-ICD that takes place in the form of a twelve-day, intense
+              of IIITV-ICD that takes place in the form of a eleven-day, intense
               and exhilarating experience consisting of sensational events,
               interesting learnings, and impelling prizes. The fest contains a
-              total of 11 amazing events covering 5 technical events, 2 gaming
+              total of 11 amazing events covering 6 technical events, 2 gaming
               events, 1 designing event, 1 workshop and 2 speaker sessions
               forming the pillars of this frenzy and amusing festival. With 2023
               being the first year of “Horizon”, we aim to achieve new heights
