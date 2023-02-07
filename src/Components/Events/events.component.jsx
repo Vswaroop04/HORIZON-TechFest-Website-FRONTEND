@@ -83,15 +83,6 @@ const Events = () => {
             link="/event/T7"
           />
         </div>
-        <h1 className="events-header">Talks</h1>
-        <div className="events_cards">
-          <TalkCard
-            heading="Ignitor 3.0"
-            content="
-            The third session in the series of IIITV-ICD’s Ignitor talks, Ignitor 3.0 - the talk by Prashant Kumar (Founder and CEO of Eigenlytics). Come one, come all! Speaker session revolving around evolving startup culture, technical aspects, and much more."
-            link="/event/T8"
-          />
-        </div>
       </div>
       <div className="events-timeline">
         <div className="event-div one">
