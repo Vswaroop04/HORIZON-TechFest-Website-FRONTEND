@@ -140,7 +140,7 @@ const SingleEvent = () => {
       eventtype: "team",
       Topic: "Quiz",
       Content:
-        "Get ready to debug! 36 hours, puzzling problems, and intense competition is all that is standing between you and the prizes. Compete in teams of 2 to Capture the Flag as quickly as possible! ",
+        "From Finance to Programming to Gaming and much more! The Choice Matrix – a two-round quiz with intriguing questions and increasing pressure. Participate in teams of 2.",
       Time: "6:00 PM",
       Prize: "4,000",
       TeamSize: 2,
