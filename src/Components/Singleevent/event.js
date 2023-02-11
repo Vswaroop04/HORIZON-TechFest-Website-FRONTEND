@@ -203,7 +203,7 @@ const SingleEvent = () => {
       eventid: "63d6ffc56859ccbede1107ba",
       eventname: "Hackoverflow",
       image: "Hackoverflow.png",
-      mode: "Hybrid",
+      mode: "Online",
       details: [
         "Start Date: Feburary 17, 2023",
         "End Date: Feburary 19, 2023",
