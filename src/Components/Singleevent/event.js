@@ -270,7 +270,7 @@ const SingleEvent = () => {
         "In case of any dispute, decisions taken by the designing club or technical committee will be the final.",
         "The best posts will be uploaded on our Instagram, LinkedIn and FB pages."
       ],
-      Themes: ["Will be live soon. Stay Tuned!"],
+      Themes: ["Design the poster of a Music concert of any artist of your choice. You are allowed to use elements/stock images of the singer.", "Design an instagram advertisement for a clothing/fashion company (topwear, bottomwear, footwear, accessories). You can use stock images of any product of your choice."],
       Register: 1
     }
   ];
@@ -306,7 +306,7 @@ const SingleEvent = () => {
         "Using automated means (including but not limited to harvesting bots, robots, parsers, spiders, or screen scrapers) to obtain, collect or access any information is strictly prohibited.",
         "In case of any dispute, decisions taken by the organisers will be the final."
       ],
-      Themes: ["Greedy to know the theme? Stay Tuned to find out!"],
+      Themes: ["It will be a 24*7 live cryptocurrency trading event."],
       Register: 1
     }
   ];
